@@ -1,0 +1,19 @@
+# some information about you
+name: "Luratic"
+nickname: "Luratic"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Somos"
+image: "images/author/luratic.png"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "info@luratic.com"
+  phone: ""
+
+# some summary about what you do
+summary:
+  - Somos analistas digitales
+  - Somos programadores
+  - Somos amigos
+  - Somos el nexo entre IT y Marketing
+  - Somos curiosos, divertidos y apasionados
+  - Ayudamos, colaboramos y experimentamos
