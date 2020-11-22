@@ -1,4 +1,4 @@
-baseURL: https://hugo-toha.github.io
+baseURL: https://luratic.netlify.com
 
 languageCode: en-us
 title: "Luratic"
@@ -15,7 +15,7 @@ languages:
     weight: 2
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
-DefaultContentLanguage: en
+# DefaultContentLanguage: en
 
 # Allow raw html in markdown file
 markup:
