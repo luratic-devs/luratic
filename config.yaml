@@ -50,7 +50,7 @@ params:
   logo:
     main: /images/site/main-logo.png
     inverted: /images/site/inverted-logo.png
-    favicon: /images/site/favicon.png
+    favicon: /assets/favicon/favicon.ico
 
   # Enable Google Tag Manager
   gtm_id : "GTM-5D7RV9H"

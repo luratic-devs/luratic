@@ -3,7 +3,7 @@
 {{ if eq .Site.Params.gtm_datalayer "basic"}}  <script>
 	window.dataLayer = window.dataLayer || [];
 	window.dataLayer.push({
-        'event':'bat_page_view',
+        'event':'lu_page_view',
         'page': {
             {{ if .ExpiryDate}}'pageExpiryDate': '{{ .ExpiryDate.format  "2006-01-02"  }}',{{ end }}
             'publish_date': '{{ .PublishDate.Format "2006-01-02" }}',
