@@ -5,6 +5,21 @@
 .home img {
     background-color: #ffffff;
 }
+
+.initial-navbar .navbar-brand {
+    color: #052159;
+    font-weight: 600;
+  }
+  
+  .initial-navbar li a {
+    color: #1c2d41;;
+  }
+  .initial-navbar .navbar-nav .active,
+  .initial-navbar li a:hover {
+    color: #f802fd;
+    transition: all 0.3s ease-out;
+  }
+
 /* ============= Device specific fixes ======= */
 
 /* Large screens such as TV */

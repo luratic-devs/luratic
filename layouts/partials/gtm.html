@@ -1,0 +1,42 @@
+{{ if .Site.Params.gtm_id}}<link href="https://www.googletagmanager.com" rel="preconnect" crossorigin> <link rel="dns-prefetch" href="https://www.googletagmanager.com">{{ end }}
+
+{{ if eq .Site.Params.gtm_datalayer "basic"}}  <script>
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+        'event':'bat_page_view',
+        'page': {
+            {{ if .ExpiryDate}}'pageExpiryDate': '{{ .ExpiryDate.format  "2006-01-02"  }}',{{ end }}
+            'publish_date': '{{ .PublishDate.Format "2006-01-02" }}',
+            'modified_date': '{{ .Lastmod.Format "2006-01-02"  }}',
+            {{ if eq .Kind "page" }}'reading_time_minutes': {{ .ReadingTime }},
+            'reading_time_seconds': {{ $readTime := mul (div (countwords .Content) 220.0) 60 }}{{ math.Round $readTime}},
+		    'word_count': {{ .WordCount }},
+		    'fuzzy_word_count': {{ .FuzzyWordCount }},{{ else }}{{ end }}
+		    'kind': '{{ .Kind }}',
+		    'id': '{{ with .File }}{{ .UniqueID }}{{ end }}',
+		    'title': '{{ .LinkTitle }}',
+		    'permalink': '{{ .Permalink }}',
+		    'type': '{{ .Type }}',
+		    'translated': '{{ .IsTranslated }}',
+		    {{ if .Params.author -}} 'author': '{{ if .Params.author -}}{{ .Params.author.name }}{{- else if .Site.Author.name -}}{{ .Site.Author.name }}{{- end }}',{{ end }}	
+		    {{ if .Params.categories}}{{$category := index (.Params.categories) 0}}'category':'{{ $category }}', {{ end }}
+		    {{ if .Params.tags}}'tags':'{{ delimit .Params.tags "|" }}', {{ end }}
+		    {{ if .IsHome }}'type2': 'home',{{ else if eq .Kind "taxonomy" }}'type2': 'tag',{{ else if eq .Type "page" }}'type2': 'page',{{ else }}'type2': 'post',{{ end }}
+		    'language': '{{ .Language }}',
+            'description': '{{ .Description}}',
+            'keywords': {{ .Keywords}}
+        },
+        'context': {
+            'build':{{ hugo.BuildDate }},
+            'commit':{{ hugo.CommitHash }},
+            'version': {{ hugo.Version }},
+            'environment': {{ hugo.Environment }}
+        }
+	 });
+  </script> {{ end}}
+
+  {{ if .Site.Params.gtm_id}}<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','{{ .Site.Params.gtm_id }}');</script>{{ end }}

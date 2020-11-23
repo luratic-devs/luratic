@@ -17,7 +17,7 @@
 {{ end }}
 
 <footer class="container-fluid text-center align-content-center footer pb-2">
-  <div class="container pt-5">
+  {{/*  <div class="container pt-5">  
     <div class="row text-left">
       <div class="col-md-4 col-sm-12">
         <h5>{{ i18n "navigation" }}</h5>
@@ -71,6 +71,7 @@
       {{ end }}
     </div>
   </div>
+  */}}
   <hr />
   <div class="container">
     <div class="row text-center">
@@ -83,12 +84,12 @@
       </div>
       <div class="col-md-4 text-center">{{ $copyrightNotice }}</div>
       <div class="col-md-4 text-center">
-        <a id="hugo" href="https://gohugo.io/">{{ i18n "hugoAttributionText" }}
-        <img
+        <a id="hugo" href="mailto:info@luratic.com">{{ i18n "hugoAttributionText" }} Luratic
+        {{/*  <img
           src="{{ "/assets/images/hugo-logo-wide.svg" | relURL }}"
           alt="Hugo Logo"
           height="18"
-        />
+        />  */}}
         </a>
       </div>  
     </div>

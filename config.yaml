@@ -30,6 +30,9 @@ markup:
 # Enable Google Analytics
 #googleAnalytics: UA-122321624-2
 
+# Enable Google Tag Manager
+gtmId: "GTM-5D7RV9H"
+gtmDatalayer: "basic"
 # Enable Disqus forum
 disqusShortname: does-not-exist
 
@@ -49,8 +52,11 @@ params:
     inverted: /images/site/inverted-logo.png
     favicon: /images/site/favicon.png
 
+  # Enable Google Tag Manager
+  gtm_id : "GTM-5D7RV9H"
+  gtm_datalayer : "basic"
   # GitHub repo URL of your site
-  gitRepo: https://github.com/hugo-toha/hugo-toha.github.io
+  gitRepo: https://github.com/luratic-devs/luratic
 
   # specify whether you want to write some blog posts or not
   enableBlogPost: true
