@@ -11,7 +11,6 @@ categories: ["branding"]
 description_en: "BlueKai is the industry’s leading cloud-based big data platform that enables marketing organizations to personalize online, offline, and mobile marketing campaigns with richer and more-actionable info."
 description: "En este artículo explicamos como añadir y configurar el píxel o herramienta [Oracle Bluekay DMP](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para Google Tag Manager."
 draft: false
-hero: "/images/site/portfolio/bluekai.png"
 menu:
   sidebar:
     parent: tags
