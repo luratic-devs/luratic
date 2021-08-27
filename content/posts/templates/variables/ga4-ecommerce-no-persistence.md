@@ -28,9 +28,9 @@ Para usar esta variable en Google Tag Manager sería tan sencillo como añadir e
 
 Una vez añadida la template o plantilla ir a *Variables > nueva* buscar la variable de *GA4 Ecommerce(no persistence)*  .
 
-- Configuración variable Timestamp:
+- Configuración variable Ecommerce GA4  (no persistence):
 
-![Configuración plantilla de variable Timestamp](https://user-images.githubusercontent.com/54624019/131191988-85a98760-0cec-4845-87bb-58c6725464c8.png).
+![Configuración plantilla de variable Ecommerce GA4  (no persistence)](https://user-images.githubusercontent.com/54624019/131191988-85a98760-0cec-4845-87bb-58c6725464c8.png).
 
 
 

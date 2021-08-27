@@ -1,5 +1,5 @@
 ---
-title: "GA4 Ecommerce without persistence"
+title: "Join Strings"
 date: 2020-08-12T12:14:34+06:00
 hero: "/images/site/portfolio/jstemplate.png"
 author:
@@ -7,7 +7,7 @@ author:
     hero: "/images/avatar.png"
 project_url : "#"
 categories: ["branding"]
-description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelve el objeto items evitando la persistencia del dataLayer en GA4, con esta solución nos evitamos tener que hacer un push previo para limpiar el objeto ecommerce."
+description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que permite concatenar strings y construir facilmente un nombre de página a partir de los valores del dataLayer."
 draft: false
 hero: "/images/site/portfolio/jstemplate.png"
 author:
@@ -16,21 +16,21 @@ author:
 menu:
   sidebar:
     parent: variables
-    name: Ecommerce GA4  (no persistence)
-    identifier: Ecommerce GA4  (no persistence)
+    name: Join Strings
+    identifier: Join Strings
     weight: 1
 ---
-En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelve el objeto items evitando la persistencia del dataLayer en GA4, con esta solución nos evitamos tener que hacer un push previo para limpiar el objeto ecommerce. 
+En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que permite concatenar strings y construir facilmente un nombre de página a partir de los valores del dataLayer. 
 
 ##   Configuración
 
 Para usar esta variable en Google Tag Manager sería tan sencillo como añadir esta [plantilla de variable para GTM](https://tagmanager.google.com/gallery/#/owners/precariostecnicos/templates/Timestamp) a vuestro espacio de trabajo.
 
-Una vez añadida la template o plantilla ir a *Variables > nueva* buscar la variable de *GA4 Ecommerce(no persistence)*  .
+Una vez añadida la template o plantilla ir a *Variables > nueva* buscar la variable de *Join Strings*  .
 
-- Configuración variable Ecommerce GA4  (no persistence):
+- Configuración variable Join Strings:
 
-![Configuración plantilla de variable Ecommerce GA4  (no persistence)](https://user-images.githubusercontent.com/54624019/131191988-85a98760-0cec-4845-87bb-58c6725464c8.png).
+![Configuración plantilla de variable Join Strings](https://user-images.githubusercontent.com/54624019/131194857-6b0fe1b5-b112-4ee6-8996-ea43185bbded.png).
 
 
 
