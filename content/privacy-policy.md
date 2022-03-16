@@ -3,7 +3,6 @@ categories = []
 client = ""
 date = 2022-03-15T23:00:00Z
 description = ""
-draft = true
 hero = ""
 project_url = ""
 title = "Privacy Policy"
