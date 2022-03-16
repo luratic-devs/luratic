@@ -5,7 +5,7 @@ date = 2022-03-15T23:00:00Z
 description = ""
 hero = ""
 project_url = ""
-title = "Privacy Policy Chrome Extension"
+title = "Privacy Policy"
 
 +++
 # Privacy Policy
