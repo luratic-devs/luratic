@@ -1,5 +1,5 @@
 ---
-title: "Clarity"
+title: "SealMetrics"
 date: 2019-05-12T12:14:34+06:00
 hero: "/images/site/portfolio/clarity.png"
 client: "Luratic"
