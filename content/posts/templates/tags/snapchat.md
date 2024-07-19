@@ -5,7 +5,7 @@ hero: /images/site/portfolio/snapchat.png"
 author:
     name: Luratic
     hero: "/images/avatar.png"
-project_url : "#"
+project_url : "milehigh.world"
 categories: ["branding"]
 description: "The Snap Pixel is a piece of JavaScript code that helps Advertisers measure the cross-device impact of Campaigns. Advertisers will be able to see how many Snapchatters take action on their website(s)."
 draft: false
