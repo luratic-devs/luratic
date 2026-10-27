@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Google Analytics UTILS - Privacy Policy</title>
+<style>
+:root { color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: #1b1b1b; color: #eaeaea; font: 16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+main { max-width: 800px; margin: 0 auto; padding: 52px 24px 72px; }
+header { border-bottom: 1px solid #383838; padding-bottom: 30px; margin-bottom: 34px; }
+.brand { color: #00e5e5; font-size: 13px; font-weight: 700; letter-spacing: .22em; text-decoration: none; }
+h1 { font-size: clamp(30px,5vw,44px); line-height: 1.18; margin: 18px 0 10px; letter-spacing: -.025em; }
+h2 { font-size: 20px; line-height: 1.3; margin-top: 38px; color: #f7f7f7; }
+p { margin: 14px 0; }
+.meta { color: #aaa; font-size: 14px; }
+a { color: #00e5e5; overflow-wrap: anywhere; }
+a:hover { color: #95ffff; }
+footer { border-top: 1px solid #383838; margin-top: 44px; padding-top: 20px; color: #aaa; font-size: 13px; }
+</style></head>
+<body>
+<main>
+<header>
+<a class="brand" href="https://www.luratic.com/">GOOGLE ANALYTICS UTILS</a>
+<h1>Privacy Policy</h1>
+<p class="meta">Effective date: 27 October 2026 · Google Analytics UTILS 0.7.1 · Published by Luratic</p>
+</header>
+<h2>Purpose</h2>
+<p>The extension helps users test and troubleshoot analytics implementations on websites they are authorised to inspect. It provides controls for GA4 requests, Google Tag Manager, Google tag, domain scope, and optional CSP/CORS response-header overrides.</p>
+<h2>Information processed in the browser</h2>
+<p>The extension stores the settings entered by the user: enabled features, Measurement IDs, container/tag IDs, and chosen domain restrictions. These settings are stored in Chrome extension storage on the user's device; no publisher account or publisher synchronisation service is used.</p>
+<p>Website URLs and domains are accessed to determine whether the selected features apply, reload the tested page, and create origin-specific CORS rules. The extension does not build a browsing history. CORS session rules contain the origins and tab identifiers required for open tabs, not the paths or query strings of visited pages, and are refreshed as tabs change.</p>
+<p>Analytics request matching and rewriting are performed by Chrome's declarative network engine. The extension does not read, log or replay request bodies, inspect cookies or passwords, or operate a proxy server. Injection diagnostics read only status/error strings associated with the extension's injected scripts, not the page's dataLayer or page content for publisher collection.</p>
+<h2>No extension telemetry or publisher collection endpoint</h2>
+<p>The extension does not send usage telemetry, browsing activity, configuration, identifiers or request payloads to a collection service operated by its publisher. It has no advertising SDK, user profiling or data-sale feature. Settings and website information are used only for the visible testing functions.</p>
+<h2>User-directed requests and third-party tags</h2>
+<p>Replacing a Measurement ID changes the destination identifier of matching requests that the website is already making. Those requests can still be sent to Google or to the original first-party collection endpoint. The Block Requests control, rather than an ID change, is the control intended to stop matching network sends.</p>
+<p>When the user explicitly enables GTM or Google tag injection, enters an ID, and permits Chrome's User Scripts functionality, the selected remote script is requested from Google in the tested page. The selected container can load additional scripts and transmit website or event data to the services configured by its owner. That code is not contained in the extension package. These third-party services and the tester's selected configuration have their own data practices; this policy does not claim that they collect no data.</p>
+<p>The extension does not sell or use this information for advertising, profiling, creditworthiness or lending decisions. Users should only inject trusted IDs and avoid sending personal or sensitive data to test destinations. Optional links in the popup open external websites under those websites' privacy policies.</p>
+<h2>CSP and CORS testing controls</h2>
+<p>These controls are off on a fresh installation and are activated by the user. They relax selected response-header checks in the user's browser; they do not fix server configuration for other visitors. CORS overrides can make cross-origin responses accessible to scripts on the tested page. Domain restrictions can limit the affected sites. Use the controls only for authorised testing on trusted sites and disable them afterwards.</p>
+<h2>Retention and user control</h2>
+<p>Settings remain in the browser until the user changes them, clears extension data or removes the extension. Origin-specific CORS rules are session rules and are removed when CORS is disabled, refreshed as tabs change, and cleared by Chrome when its session or the installed extension version changes. The extension rebuilds necessary rules from saved choices when it starts again.</p>
+<p>The user can switch features off, restrict them to chosen domains, revoke site access or Allow User Scripts, or remove the extension. Turning off or removing the extension cannot recall requests already sent to third-party services or undo data already stored by a website or an injected container.</p>
+<h2>Changes and contact</h2>
+<p>Changes to the extension's data practices should be reflected in an updated policy and Chrome Web Store disclosures. For support or privacy questions, contact <a href="mailto:info@luratic.com">info@luratic.com</a>.</p>
+<footer>Google Analytics UTILS · Luratic · Made in Galicia with love and sentidiño 💙</footer>
+</main>
+</body>
+</html>
