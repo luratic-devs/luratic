@@ -1,28 +1,31 @@
----
-title: "Encode Base64"
-date: 2020-08-19T13:14:34+05:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "[GitHub](https://github.com/precariostecnicos/encodeBase64)
-
-
-[GTM Template Gallery](https://tagmanager.google.com/gallery/#/owners/precariostecnicos/templates/EncodeBase64)
-"
-categories: ["UTILITY"]
-description_en: "Lets you to decode strings from their base64 representation. Returns undefined when provided with invalid input."
-description: En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permita codificar cadenas de texto en base64. Esta variable devuelve el valor undefined** cuándo el valor de entrada no sea codificable. 
-draft: false
-
-hero: "/images/site/portfolio/jstemplate.png"
-menu:
-  sidebar:
-    parent: variables
-    name: Encode Base64
-    identifier: Encode Base64
-    weight: 1
----
+{
+  "title": "Encode Base64",
+  "date": "2020-08-19T13:14:34+05:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/EncodeBase64",
+  "categories": [
+    "UTILITY"
+  ],
+  "description_en": "Lets you to decode strings from their base64 representation. Returns undefined when provided with invalid input.",
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permita codificar cadenas de texto en base64. Esta variable devuelve el valor undefined** cuándo el valor de entrada no sea codificable.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Encode Base64",
+      "identifier": "Encode Base64",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/encode-to-base64/"
+  ],
+  "resourceSlug": "encode-to-base64"
+}
 
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permita codificar cadenas de texto en base64. Esta variable devuelve el valor **undefined** cuándo el valor de entrada no sea convertible. 
 

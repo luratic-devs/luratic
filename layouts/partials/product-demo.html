@@ -1,0 +1,41 @@
+{{ $page := .page }}
+{{ $compact := .compact | default false }}
+{{ $key := $page.Params.demo }}
+{{ with index hugo.Data.demos $key }}
+{{ if .video }}
+{{ partial "extension-media.html" (dict "page" $page "compact" $compact "media" .) }}
+{{ else }}
+{{ $id := printf "demo-%s" $key }}
+<section class="product-demo demo-{{ $key }}{{ if $compact }} demo-compact{{ end }}" data-walkthrough data-step="0" aria-label="Demostración de {{ $page.Title }}">
+  <div class="demo-heading"><span class="demo-live-dot" aria-hidden="true"></span><strong>{{ .label }}</strong><span class="demo-kind">{{ .kind }}</span></div>
+  <div class="demo-body">
+    <div class="demo-viewport" aria-live="off">
+      {{ range $i, $step := .steps }}
+      <div class="demo-frame{{ if eq $i 0 }} is-current{{ end }}" data-demo-frame="{{ $i }}" id="{{ $id }}-frame-{{ $i }}"{{ if ne $i 0 }} hidden{{ end }}>
+        {{ if $step.image }}
+        <a class="demo-capture{{ with $step.view }} capture-{{ . }}{{ end }}" href="{{ $step.image | relURL }}" target="_blank" rel="noopener" aria-label="Ampliar captura: {{ $step.title }} (se abre en otra pestaña)"><img src="{{ $step.image | relURL }}" alt="{{ $step.alt }}" width="{{ $step.imageWidth | default 1363 }}" height="{{ $step.imageHeight | default 936 }}" loading="lazy" decoding="async"><span class="capture-expand">Ver captura completa ↗</span></a>
+        {{ else }}
+        {{ partial (printf "demos/%s.html" $key) (dict "step" $i) }}
+        {{ end }}
+      </div>
+      {{ end }}
+      {{ if not (index .steps 0).image }}<span class="demo-example-stamp">Ejemplo ilustrativo</span>{{ end }}
+    </div>
+    <div class="demo-explanation">
+      <div class="demo-step-tabs" role="group" aria-label="Pasos de la demostración">
+        {{ range $i, $step := .steps }}<button type="button" class="demo-step-button{{ if eq $i 0 }} is-current{{ end }}" data-demo-step="{{ $i }}" aria-pressed="{{ if eq $i 0 }}true{{ else }}false{{ end }}" aria-controls="{{ $id }}-frame-{{ $i }}" aria-label="Paso {{ add $i 1 }}: {{ $step.title }}"><span>{{ printf "%02d" (add $i 1) }}</span>{{ $step.short }}</button>{{ end }}
+      </div>
+      <div class="demo-captions">
+        {{ range $i, $step := .steps }}<div class="demo-caption" data-demo-caption="{{ $i }}"{{ if ne $i 0 }} hidden{{ end }}><strong>{{ $step.title }}</strong><p>{{ $step.body }}</p></div>{{ end }}
+      </div>
+      <div class="demo-controls" hidden>
+        <button type="button" data-demo-play aria-label="Reproducir demostración" aria-pressed="false"><span data-play-icon aria-hidden="true">▶</span><span data-play-label>Reproducir</span></button>
+        <span class="demo-position" aria-hidden="true"><b data-demo-position>01</b> / {{ printf "%02d" (len .steps) }}</span>
+        <button type="button" class="demo-next" data-demo-next aria-label="Siguiente paso de la demostración">Siguiente <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+  </div>
+  <p class="demo-note">{{ .note }}</p>
+</section>
+{{ end }}
+{{ end }}

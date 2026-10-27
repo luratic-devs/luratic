@@ -1,0 +1,67 @@
+{
+  "tools": [
+    {
+      "slug": "ga4-spy",
+      "summary": "Explora la configuración pública de GA4 y sigue sus cambios.",
+      "icon": "search",
+      "screenshot": {
+        "src": "home/ga4-spy.jpg",
+        "alt": "Configuración de eventos en GA4 Spy"
+      }
+    },
+    {
+      "slug": "ga4-data",
+      "summary": "Consulta dimensiones, métricas y eventos. Prepara tus informes de GA4.",
+      "icon": "table",
+      "screenshot": {
+        "src": "home/ga4-data.jpg",
+        "alt": "Búsqueda de dimensiones y métricas en GA4 Spy / Data"
+      }
+    },
+    {
+      "slug": "google-analytics-utils",
+      "summary": "Activa Debug Mode y controla tus pruebas de GA4, GTM y Google tag.",
+      "icon": "toggle",
+      "screenshot": {
+        "src": "home/google-analytics-utils.png",
+        "alt": "Popup real de Google Analytics UTILS con Debug Mode activado"
+      }
+    },
+    {
+      "slug": "ga4-enhanced-debugview",
+      "summary": "Revisa parámetros, propiedades e ítems de tus eventos en la consola.",
+      "icon": "terminal",
+      "screenshot": {
+        "src": "home/ga4-enhanced-debugview.png",
+        "alt": "Eventos y parámetros de GA4 Enhanced DebugView en la consola de Chrome"
+      }
+    },
+    {
+      "slug": "microsoft-clarity",
+      "summary": "Conecta Clarity con GTM y añade contexto a tus sesiones.",
+      "icon": "tag",
+      "screenshot": {
+        "src": "home/microsoft-clarity.png",
+        "alt": "Configuración real de la plantilla de Microsoft Clarity en Google Tag Manager"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Google Analytics 4",
+      "description": "La herramienta de Google para medir qué hacen las visitas en tu web o en tu app."
+    },
+    {
+      "name": "Google Tag Manager",
+      "description": "Un gestor para añadir y controlar las etiquetas de medición sin tocar el código de la web cada vez."
+    },
+    {
+      "name": "dataLayer",
+      "description": "Los datos que tu web le pasa a Tag Manager: qué página se ve, qué se pulsa, qué se compra."
+    },
+    {
+      "name": "Plantilla de GTM",
+      "description": "Una pieza reutilizable para configurar etiquetas o variables en Tag Manager; por ejemplo, conectar Clarity sin programar."
+    }
+  ]
+}

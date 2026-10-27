@@ -1,22 +1,14 @@
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
-<!-- ============ import common css ========== -->
-<link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/layouts/main.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
-<link rel="stylesheet" href="{{ "/assets/css/navigators/navbar.css" | relURL }}"/>
-
-<!--=================== cdn ==============================-->
-<link href="https://fonts.googleapis.com/css2?family=Muli:wght@300;400;500;600" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
-
-<!--================= fab-icon =========================-->
-<link rel="icon" type="image/png" href="{{ site.Params.logo.favicon | default "/assets/images/favicon.ico" | relURL }}" />
-<link rel="apple-touch-icon" sizes="180x180" href="{{ `/assets/favicon/favicon.png/apple-touch-icon.png` | relURL  }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ `/assets/favicon/favicon-32x32.png` | relURL  }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ `/assets/favicon/favicon-16x16.png` | relURL  }}">
-<link rel="manifest" href="{{ `/assets/favicon/site.webmanifest` | relURL  }}">
-<!--================= custom style overrides =========================-->
-<link rel="stylesheet" href="{{ "/assets/css/style.css" | relURL }}"/>
+{{ if .IsHome }}{{ partial "home/header.html" . }}{{ else }}
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="{{ "/" | relURL }}" aria-label="Luratic, inicio"><img src="{{ .Site.Params.logo | relURL }}" width="44" height="44" alt=""><span>Luratic<span class="brand-dot">.</span></span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir navegación">{{ partial "icon.html" "menu" }}</button>
+    <nav id="site-nav" class="site-nav" aria-label="Navegación principal">
+      <a href="{{ "/recursos/" | relURL }}" {{ if eq .Section "recursos" }}aria-current="page"{{ end }}>Recursos</a>
+      <a href="{{ "/equipo/" | relURL }}" {{ if eq .Section "equipo" }}aria-current="page"{{ end }}>Quiénes somos</a>
+      <a href="{{ "/posts/" | relURL }}" {{ if eq .Section "posts" }}aria-current="page"{{ end }}>Documentación</a>
+      <a class="github-nav" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ partial "icon.html" "github" }}<span>GitHub</span>{{ partial "icon.html" "external" }}</a>
+    </nav>
+  </div>
+</header>
+{{ end }}

@@ -1,25 +1,31 @@
----
-title: "Timestamp"
-date: 2020-08-12T12:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelva un número que representa el tiempo transcurrido (en milisegundos) desde el inicio del registro de tiempo (zona horaria UTC)."
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-menu:
-  sidebar:
-    parent: variables
-    name: Timestamp
-    identifier: Timestamp
-    weight: 1
----
+{
+  "title": "Timestamp",
+  "date": "2020-08-12T12:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/Timestamp",
+  "categories": [
+    "branding"
+  ],
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelva un número que representa el tiempo transcurrido (en milisegundos) desde el inicio del registro de tiempo (zona horaria UTC).",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Timestamp",
+      "identifier": "Timestamp",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/timestamp/"
+  ],
+  "resourceSlug": "timestamp"
+}
+
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelva un número que representa el tiempo transcurrido (en milisegundos) desde el inicio del registro de tiempo (zona horaria UTC). 
 
 ##   Configuración

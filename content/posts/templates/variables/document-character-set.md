@@ -1,24 +1,31 @@
----
-title: "Document Character Set"
-date: 2020-08-19T12:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description_en: "Returns the value of document.characterSet."
-description:  En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el document.characterSet.
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-
-menu:
-  sidebar:
-    parent: variables
-    name: Document Character Set
-    identifier: Document Character Set
-    weight: 1
----
+{
+  "title": "Document Character Set",
+  "date": "2020-08-19T12:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/DocumentCharacterSet",
+  "categories": [
+    "branding"
+  ],
+  "description_en": "Returns the value of document.characterSet.",
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el document.characterSet.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Document Character Set",
+      "identifier": "Document Character Set",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/document-character-set/"
+  ],
+  "resourceSlug": "document-character-set"
+}
 
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el **document.characterSet**.
 

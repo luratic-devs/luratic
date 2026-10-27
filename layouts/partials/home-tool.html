@@ -1,0 +1,24 @@
+{{ $page := .page }}
+{{ $entry := .entry }}
+{{ $web := eq $page.Params.category "web" }}
+{{ $extension := eq $page.Params.category "extension" }}
+<article class="home-tool home-tool--{{ $page.Params.category }}{{ if .featured }} is-featured{{ end }}" aria-labelledby="home-tool-{{ $entry.slug }}" data-home-tool="{{ $entry.slug }}" data-home-category="{{ $page.Params.category }}" data-home-title="{{ $page.Title }}" data-home-search="{{ $page.Title }} {{ $entry.summary }} {{ delimit $page.Params.tags " " }} {{ if $web }}consultar GA4 herramienta web{{ else if $extension }}probar etiquetas extensión Chrome{{ else }}plantilla Google Tag Manager GTM{{ end }}">
+  {{ with $entry.screenshot }}
+    {{ with resources.Get .src }}
+      {{ $small := .Resize "220x webp q82" }}
+      {{ $large := .Resize "440x webp q82" }}
+      <a class="home-tool-media" href="{{ $page.RelPermalink }}" aria-label="Ver {{ $page.Title }} en detalle" data-home-action="detail">
+        <img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} 220w, {{ $large.RelPermalink }} 440w" sizes="(max-width: 759px) 272px, (max-width: 1100px) 30vw, 240px" width="{{ $small.Width }}" height="{{ $small.Height }}" alt="{{ $entry.screenshot.alt }}" decoding="async">
+        {{ with $page.Params.releaseNotice }}<span class="home-tool-status">Actualización en revisión</span>{{ end }}
+      </a>
+    {{ end }}
+  {{ end }}
+  <div class="home-tool-body">
+    <span class="home-tool-meta"><span class="home-tool-icon" aria-hidden="true">{{ partial "icon.html" $entry.icon }}</span>{{ if $web }}Herramienta web{{ else if $extension }}Extensión de Chrome{{ else }}Plantilla para GTM{{ end }}</span>
+    <h3 id="home-tool-{{ $entry.slug }}"><a href="{{ $page.RelPermalink }}" data-home-action="detail">{{ $page.Title }}</a></h3>
+    <p>{{ $entry.summary }}</p>
+    {{ if $web }}<a class="home-tool-primary" href="{{ $page.Params.installUrl }}" target="_blank" rel="noopener" aria-label="Abrir {{ $page.Title }} (nueva pestaña)" data-home-action="open">Abrir herramienta {{ partial "icon.html" "external" }}</a>
+    {{ else if $extension }}<a class="home-tool-primary" href="{{ $page.Params.installUrl }}" target="_blank" rel="noopener" aria-label="Añadir {{ $page.Title }} a Chrome (nueva pestaña)" data-home-action="open">Añadir a Chrome {{ partial "icon.html" "external" }}</a>
+    {{ else }}<a class="home-tool-primary" href="{{ $page.RelPermalink }}" aria-label="Ver la plantilla de {{ $page.Title }}" data-home-action="detail">Ver plantilla</a>{{ end }}
+  </div>
+</article>

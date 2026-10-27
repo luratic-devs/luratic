@@ -1,0 +1,13 @@
+<header class="home-header">
+  <div class="home-header-inner home-shell">
+    <a class="home-brand" href="{{ "/" | relURL }}" aria-label="Luratic, inicio"><img src="{{ .Site.Params.logo | relURL }}" width="34" height="34" alt=""><span>Luratic<span class="brand-dot">.</span></span></a>
+    <button class="menu-toggle home-menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Abrir navegación">{{ partial "icon.html" "menu" }}</button>
+    <nav id="site-nav" class="site-nav home-nav" aria-label="Navegación principal">
+      <a href="#recursos">Recursos</a>
+      <a href="{{ "/recursos/?tipo=template" | relURL }}" data-home-nav-filter="template">Plantillas para GTM</a>
+      
+      <a href="#equipo">Quiénes somos</a>
+      <a class="github-nav home-github" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">GitHub {{ partial "icon.html" "external" }}</a>
+    </nav>
+  </div>
+</header>

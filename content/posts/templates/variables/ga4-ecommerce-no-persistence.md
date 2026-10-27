@@ -1,25 +1,31 @@
----
-title: "GA4 Ecommerce without persistence"
-date: 2020-08-12T12:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelve el objeto items evitando la persistencia del dataLayer en GA4, con esta solución nos evitamos tener que hacer un push previo para limpiar el objeto ecommerce."
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-menu:
-  sidebar:
-    parent: variables
-    name: Ecommerce GA4  (no persistence)
-    identifier: Ecommerce GA4  (no persistence)
-    weight: 1
----
+{
+  "title": "GA4 Ecommerce without persistence",
+  "date": "2020-08-12T12:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/ga4-ecommerce-variable-no-persistence",
+  "categories": [
+    "branding"
+  ],
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelve el objeto items evitando la persistencia del dataLayer en GA4, con esta solución nos evitamos tener que hacer un push previo para limpiar el objeto ecommerce.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Ecommerce GA4  (no persistence)",
+      "identifier": "Ecommerce GA4  (no persistence)",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/ga4-ecommerce-no-persistence/"
+  ],
+  "resourceSlug": "ga4-ecommerce-sin-persistencia"
+}
+
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te devuelve el objeto items evitando la persistencia del dataLayer en GA4, con esta solución nos evitamos tener que hacer un push previo para limpiar el objeto ecommerce. 
 
 ##   Configuración

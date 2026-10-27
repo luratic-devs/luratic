@@ -1,23 +1,37 @@
----
-title: "Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase"
-date: 2020-08-19T13:14:34+06:00
-image: "/images/portfolio/firebase.jpg"
-author:
-    name: Luratic
-    image: "/images/avatar.png"
-project_url : "#"
-categories: ["firebase", "incidencias firebase","ecommerce", "apps", "android", "ios"]
-description_en: ""
-description:  En este artículo se irán recogiendo todas las problemáticas habituales que nos vamos encontrando en la integración de la analítica en apps con el nuevo paradigma Firebase.  
-draft: true
-hero: "/images/portfolio/firebase.jpg"
-menu:
-  sidebar:
-    parent: Firebase
-    name: Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase
-    identifier: Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase
-    weight: 1
----
+{
+  "title": "Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase",
+  "date": "2020-08-19T13:14:34+06:00",
+  "image": "/images/portfolio/firebase.jpg",
+  "author": {
+    "name": "Luratic",
+    "image": "/images/avatar.png"
+  },
+  "project_url": "#",
+  "categories": [
+    "firebase",
+    "incidencias firebase",
+    "ecommerce",
+    "apps",
+    "android",
+    "ios"
+  ],
+  "description_en": "",
+  "description": "En este artículo se irán recogiendo todas las problemáticas habituales que nos vamos encontrando en la integración de la analítica en apps con el nuevo paradigma Firebase.",
+  "draft": true,
+  "hero": "/images/portfolio/firebase.jpg",
+  "menu": {
+    "sidebar": {
+      "parent": "Firebase",
+      "name": "Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase",
+      "identifier": "Problemas habituales en apps con el nuevo paradigma Firebase y su integración con Google Analytics a través de Google Tag Manager for Firebase",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/firebase/problemas-tipicos-firebase/"
+  ]
+}
+
 En este artículo se irán recogiendo todas las problemáticas habituales que nos vamos encontrando en la integración de la analítica en apps con el nuevo paradigma Firebase.  Google Tag Manager for Firebase y la integración de Google Analytics  y su resolución. 
 Qué nuestro dolor no se propague  
 

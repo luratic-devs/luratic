@@ -1,28 +1,31 @@
----
-title: "Decode from Base64"
-date: 2020-08-19T11:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "[GitHub](https://github.com/precariostecnicos/DecodeBase64)
-
-
-[GTM Template Gallery](https://tagmanager.google.com/gallery/#/owners/precariostecnicos/templates/DecodeBase64)
-"
-categories: ["UTILITY"]
-description_en: "Lets you to decode strings from their base64 representation. Returns undefined when provided with invalid input."
-description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permite decodificar cadenas de texto en base64. Esta variable devuelve el valor **undefined** cuándo el valor de entrada es incorrecto."
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-menu:
-  sidebar:
-    parent: variables
-    name: Decode from Base64
-    identifier: Decode from Base64
-    weight: 1
-
----
+{
+  "title": "Decode from Base64",
+  "date": "2020-08-19T11:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/DecodeBase64",
+  "categories": [
+    "UTILITY"
+  ],
+  "description_en": "Lets you to decode strings from their base64 representation. Returns undefined when provided with invalid input.",
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permite decodificar cadenas de texto en base64. Esta variable devuelve el valor **undefined** cuándo el valor de entrada es incorrecto.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Decode from Base64",
+      "identifier": "Decode from Base64",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/decode-from-base64/"
+  ],
+  "resourceSlug": "decode-from-base64"
+}
 
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que te permite decodificar cadenas de texto en base64. Devuelve el valor **undefined** cuándo el valor de entrada es incorrecto".
 

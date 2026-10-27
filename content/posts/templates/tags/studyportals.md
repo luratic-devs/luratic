@@ -1,27 +1,33 @@
----
-title: "Studyportals"
-date: 2020-08-18T12:14:34+06:00
-hero: /images/site/portfolio/studyportals.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description_en: "Receive data insights about what international students are interested in, what information they need, how they search for their degree options, where they come from and more."
-description: "En este artículo explicamos como añadir y configurar el píxel o herramienta [Studyportals](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para Google Tag Manager."
-draft: false
-hero: "/images/site/portfolio/studyportals.png"
+{
+  "title": "Studyportals",
+  "date": "2020-08-18T12:14:34+06:00",
+  "hero": "/images/site/portfolio/studyportals.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/StudyPortals",
+  "categories": [
+    "branding"
+  ],
+  "description_en": "Receive data insights about what international students are interested in, what information they need, how they search for their degree options, where they come from and more.",
+  "description": "Configura el píxel de Studyportals con datos de conversión.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "tags",
+      "name": "Studyportals",
+      "identifier": "Studyportals",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/tags/studyportals/"
+  ],
+  "resourceSlug": "studyportals"
+}
 
-menu:
-  sidebar:
-    parent: tags
-    name: Studyportals
-    identifier: Studyportals
-    weight: 1
----
-
-
-En este artículo explicamos como añadir y configurar el píxel de [Studyportals](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para [Google Tag Manager](https://tagmanager.google.com/). 
+En este artículo explicamos como añadir y configurar el píxel de [Studyportals](https://github.com/luratic/StudyPortals) a través de GTM usando nuestro template para [Google Tag Manager](https://tagmanager.google.com/). 
 
 ##   Configuración
 

@@ -1,82 +1,57 @@
-<!DOCTYPE html>
-<html lang={{ .Site.Language.Lang }}>
-  <head>
-    <title>{{- .Site.Title -}}</title>
-    {{ $siteDescription := .Site.Params.description }}
-    {{ if (index .Site.Data .Site.Language.Lang).site }}
-      {{ $siteConfig := (index .Site.Data .Site.Language.Lang).site }}
-      {{ if $siteConfig.description }}
-        {{ $siteDescription = $siteConfig.description }}
-      {{ end }}
-    {{ end }}
-    <meta name="description" content="{{ $siteDescription }}" />
-    
-    <!-- import common headers -->
-    {{- partial "header.html" . -}}
-
-    <!-- import index page specific headers -->
-    <link rel="stylesheet" href="{{ "/assets/css/sections/home.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/about.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/skills.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/experiences.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/projects.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/recent-posts.css" | relURL }}"/>
-    <link rel="stylesheet" href="{{ "/assets/css/sections/achievements.css" | relURL }}"/>
-
-    <!-- Add Google Analytics if enabled in configuration -->
-    {{ if site.GoogleAnalytics }}
-        {{ template "_internal/google_analytics_async.html" . }}
-    {{ end }}
-
-    {{ if .Site.Params.gtm_id}}
-      {{- partial "gtm.html" . }}
-    {{ end }}
-  </head>
-  <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
-
-    <!--- NAVBAR ------------------------->
-    {{- partial "navigators/navbar.html" . -}}
-
-    <!--- ADD HOME SECTION ---------------->
-    {{- partial "sections/home.html" . -}}
-
-    <!--- ADD OPTIONAL SECTIONS ----------->
-    {{ $sections:= site.Data.sections }}
-    {{ if (index site.Data site.Language.Lang).sections }}
-      {{ $sections = (index site.Data site.Language.Lang).sections }}
-    {{ end }}
-
-    {{ if $sections }}
-      {{ $background:= "bg-white"}}
-      {{ range sort $sections "section.weight" }}
-        {{ if .section.enable }}
-          <div class="container-fluid section-holder d-flex {{ $background }}">
-            {{ if .section.template }}
-              {{- partial .section.template . -}}
-            {{ else }}
-              {{- partial (printf "sections/%s.html" (replace (lower .section.id) " " "-")) . -}}
-            {{ end }}
-          </div>
-          <!--- alter background color for next section --->
-          {{ if eq $background "bg-white" }}
-            {{ $background = "bg-dimmed" }}
-          {{ else }}
-            {{ $background = "bg-white" }}
-          {{end}}
+{{ define "main" }}
+{{ $resources := where .Site.RegularPages "Section" "recursos" }}
+{{ $templates := where $resources "Params.category" "template" }}
+{{ $people := (where .Site.RegularPages "Section" "equipo").ByWeight }}
+<section class="home-stage" id="recursos" aria-labelledby="titulo-home" data-home-catalog data-catalog-url="{{ "/recursos/" | relURL }}" data-resource-count="{{ len $resources }}" data-template-count="{{ len $templates }}">
+  <div class="home-shell home-stage-inner">
+    <div class="home-intro">
+      <div class="home-byline"><span class="home-avatars" aria-hidden="true">{{ range $people }}<img src="{{ .Params.photo | relURL }}" alt="" width="36" height="36">{{ end }}</span><span lang="gl">Feito por Brais e Txema, en Galicia</span></div>
+      <h1 id="titulo-home">Herramientas para que la analítica web sea un poco más fácil<span>.</span></h1>
+      <p>Webs, extensiones de Chrome y plantillas de Google Tag Manager para medir, depurar y trabajar mejor con los datos. Las hacemos y las compartimos.</p>
+    </div>
+    <aside class="home-visit" id="home-visit" aria-labelledby="home-visit-title" data-home-visit>
+      <div class="home-visit-header"><h2 id="home-visit-title">Tu visita, en directo</h2><p>Demo local. No envía datos ni cambia tus permisos.</p></div>
+      <div class="home-visit-log" data-home-log role="log" aria-live="polite" aria-relevant="additions"><p class="home-demo-intro">Al filtrar o abrir un recurso verás aquí un ejemplo del evento.</p></div>
+      <div class="home-visit-controls">
+        <div class="home-consent-group"><span id="home-consent-label">Analítica (demo)</span><div class="home-consent-options" role="group" aria-labelledby="home-consent-label"><button type="button" data-home-consent="denied" aria-pressed="true">No</button><button type="button" data-home-consent="granted" aria-pressed="false">Sí</button></div></div>
+        <button class="home-code-toggle" type="button" data-home-code aria-pressed="false">Ver el código</button>
+      </div>
+    </aside>
+    <div class="home-toolbar">
+      <div class="home-filters" role="group" aria-label="Filtrar herramientas destacadas">
+        <button type="button" data-home-filter="all" aria-pressed="true">Todo <span>{{ len hugo.Data.home.tools }}</span></button>
+        <button type="button" data-home-filter="web" aria-pressed="false">Consultar GA4</button>
+        <button type="button" data-home-filter="extension" aria-pressed="false">Probar mis etiquetas</button>
+        <button type="button" data-home-filter="template" aria-pressed="false">Plantillas para GTM</button>
+      </div>
+      <button class="home-search-toggle" type="button" data-home-search-toggle aria-label="Buscar un recurso" aria-controls="home-search-wrap" aria-expanded="false">{{ partial "icon.html" "search" }}</button>
+      <div class="home-search" id="home-search-wrap">{{ partial "icon.html" "search" }}<label class="sr-only" for="home-search">Buscar entre los recursos destacados</label><input id="home-search" data-home-search type="search" placeholder="Busca por nombre o por lo que necesitas" autocomplete="off"></div>
+      <a class="home-catalog-link home-catalog-desktop" href="{{ "/recursos/" | relURL }}" data-home-catalog-link>Ver los {{ len $resources }} recursos</a>
+    </div>
+    <div class="home-cards-area">
+      <h2 class="sr-only">Herramientas destacadas</h2>
+      <p class="sr-only" data-home-result-status role="status">{{ len hugo.Data.home.tools }} herramientas destacadas</p>
+      <div class="home-tool-grid" data-home-grid tabindex="0" role="region" aria-label="Herramientas destacadas; desliza para recorrerlas en móvil">
+        {{ range $index, $entry := hugo.Data.home.tools }}
+          {{ with $.Site.GetPage (printf "/recursos/%s" $entry.slug) }}{{ partial "home-tool.html" (dict "page" . "entry" $entry "featured" (eq $index 0)) }}{{ end }}
         {{ end }}
-      {{ end }}
-    {{ end }}
-
-    <!--- ADD FOOTER ----------------------->
-    {{- partial "footer.html" . -}}
-
-    <!--- ADD COMMON SCRIPTS --------------->
-    {{ partial "scripts.html" . }}
-
-    <!--- ADD INDEX PAGE SPECIFIC SCRIPTS -->
-    <script src="{{ "/assets/js/itype.min.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/github-button.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/home.js" | relURL }}"></script>
-    <script src="{{ "/assets/js/jquery.filterizr.min.js" | relURL }}"></script>
-  </body>
-</html>
+      </div>
+      <div class="home-empty" data-home-empty hidden><h3>Nada con esos filtros entre los destacados.</h3><p>Prueba con otra palabra o busca en el catálogo completo.</p><button type="button" class="home-outline-button" data-home-reset>Ver todos los destacados</button></div>
+      <a class="home-catalog-link home-catalog-mobile" href="{{ "/recursos/" | relURL }}" data-home-catalog-link>Ver los {{ len $resources }} recursos</a>
+      <noscript><p>Puedes abrir todas las herramientas y consultar el catálogo. Activa JavaScript para usar los filtros y la demo de eventos.</p></noscript>
+    </div>
+    <div class="home-visit-ticker"><span class="home-ticker-dot" aria-hidden="true"></span><span data-home-last-event>Tu visita, en directo · demo local</span><button type="button" data-home-panel-toggle aria-controls="home-visit" aria-expanded="false">Ver tu visita</button></div>
+  </div>
+</section>
+<section class="home-team" id="equipo" aria-labelledby="titulo-equipo">
+  <div class="home-shell home-team-inner">
+    <div class="home-team-copy">
+      <h2 id="titulo-equipo">Somos Brais y Txema</h2>
+      <p>Trabajamos con GA4 y GTM cada día. Cuando algo nos cuesta, hacemos una herramienta; si nos sirve, la compartimos. Así desde 2020.</p>
+      <p class="home-origin" lang="gl">Feito en Galicia, aberto ao mundo.</p>
+      <a class="home-outline-button" href="{{ "/equipo/" | relURL }}">Nuestra historia</a>
+    </div>
+    <ul class="home-people">{{ range $people }}<li class="home-person"><img src="{{ .Params.photo | relURL }}" alt="" width="80" height="80" loading="lazy"><div><strong>{{ .Params.displayName }}</strong><span>{{ .Params.role }}</span></div><a class="home-outline-button" href="{{ .RelPermalink }}" aria-label="Trayectoria de {{ .Params.displayName }}">Trayectoria</a></li>{{ end }}</ul>
+  </div>
+</section>
+{{ end }}

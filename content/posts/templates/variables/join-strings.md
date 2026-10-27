@@ -1,25 +1,31 @@
----
-title: "Join Strings"
-date: 2020-08-12T12:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description: "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que permite concatenar strings y construir facilmente un nombre de página a partir de los valores del dataLayer."
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-menu:
-  sidebar:
-    parent: variables
-    name: Join Strings
-    identifier: Join Strings
-    weight: 1
----
+{
+  "title": "Join Strings",
+  "date": "2020-08-12T12:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/join-strings",
+  "categories": [
+    "branding"
+  ],
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que permite concatenar strings y construir facilmente un nombre de página a partir de los valores del dataLayer.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Join Strings",
+      "identifier": "Join Strings",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/join-strings/"
+  ],
+  "resourceSlug": "join-strings"
+}
+
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que permite concatenar strings y construir facilmente un nombre de página a partir de los valores del dataLayer. 
 
 ##   Configuración

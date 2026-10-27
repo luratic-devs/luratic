@@ -1,0 +1,129 @@
+{
+  "reviewed": "2026-10-27",
+  "purpose": "Official videos and screenshots, linked by the Chrome Web Store listings. Original image files are stored without editing.",
+  "items": [
+    {
+      "slug": "ga4-enhanced-debugview",
+      "store_url": "https://chromewebstore.google.com/detail/ga4-enhanced-debugview-by/hgkkhcgpdigijpbclngegpckcabpjjej",
+      "media": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=c5vXeaEXqhc",
+          "title": "GA4 Enhanced DebugView by Luratic",
+          "author": "Luratic",
+          "duration_seconds": 107,
+          "published": "2022-03-15T08:55:18-07:00",
+          "poster_url": "https://img.youtube.com/vi/c5vXeaEXqhc/hqdefault.jpg",
+          "local_poster": "static/images/demos/store/ga4-enhanced-debugview-video-poster.jpg",
+          "poster_sha256": "1f838e3a378d498a67250ea3626a31efac918f804e53a6272faf9509336b5e7e"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/0g8R6Nxl4pD0-ozWZU8qUt8ya4XoUl1MWJhuKm5mDj9IdiTrMD-WbheAVCBEC1Gkm8LkIX9bc9h3aLHnWNolihtaADU=s0",
+          "local_file": "static/images/demos/store/ga4-enhanced-debugview-screenshot-1.png",
+          "width": 1280,
+          "height": 800,
+          "sha256": "646c2aac9e005a58eafcadc65c18e3ddccee9090a0962c0433919fde19b53094"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/2p0KhraPpXUAsY4PpzzS1Rn-3JWOlJFZBSxnZHZ9PZkvqh1HKx_nWHXkvHUrraELIfB17bwQ--4Bwo1kvfpR6eO70A=s0",
+          "local_file": "static/images/demos/store/ga4-enhanced-debugview-screenshot-2.png",
+          "width": 1280,
+          "height": 800,
+          "sha256": "23be7d240cdb6df4ae28ed193594e92729023bcb36b7dc848c88743d273aebeb"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/rQsd81r9uk9uyYOuz_ZTAtt1NGTK1M8g5PYCi1HD4jB4pzy7zuAnrmld3k7P8tGEwEGexCeF0oLvUYFSpg9lGZv0=s0",
+          "local_file": "static/images/demos/store/ga4-enhanced-debugview-screenshot-3.png",
+          "width": 1280,
+          "height": 800,
+          "sha256": "848fc88a07c8c32db6d1d5eeb0ccc5dfec9119a8eeead86b9d7d58aee87dfbbe"
+        }
+      ]
+    },
+    {
+      "slug": "google-analytics-utils",
+      "store_url": "https://chromewebstore.google.com/detail/google-analytics-utils/dmhoedahbmlaipacpamhefgjoiebamjm",
+      "media": [
+        {
+          "kind": "video",
+          "url": "https://www.youtube.com/watch?v=qMIQ7GOX9Bc",
+          "title": "Google Analytics Utils by Luratic",
+          "author": "Luratic",
+          "duration_seconds": 53,
+          "published": "2022-12-05T03:10:07-08:00",
+          "poster_url": "https://img.youtube.com/vi/qMIQ7GOX9Bc/hqdefault.jpg",
+          "local_poster": "static/images/demos/store/google-analytics-utils-video-poster.jpg",
+          "poster_sha256": "0d9d9b375d1e57bb19166df55af5d2a01c63153ee9afa41e16829f9317f5a9e0"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/OrsIt67tmtLyWYJptJD8PGYmqOw-xgV-ayvwZD-PEZfJwPn01DiAtcs17xdMoyiVvNAQXi9Jp1UmoPf0Chx_Gt34=s0",
+          "local_file": "static/images/demos/store/google-analytics-utils-screenshot-1.jpg",
+          "width": 1280,
+          "height": 800,
+          "sha256": "de3ed5f4f201f318b128fd13600fbcaa1029888667d845f97d71f20b47a39973"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/rvfNIqKNfQQQesZjL5QLBvRPmbT42wjN6y3gQzc_QwYy0wDsp3Ogrjsrke3hA7epJXWW86WvS5SYYkn5Zh22OMsnuA=s0",
+          "local_file": "static/images/demos/store/google-analytics-utils-screenshot-2.jpg",
+          "width": 1280,
+          "height": 800,
+          "sha256": "5796bae670abac366187321097ff8e6d77c06b592737b7be02bce6c05536f244"
+        },
+        {
+          "kind": "screenshot",
+          "url": "https://lh3.googleusercontent.com/oP64CiYkLy40Ki_T9qn_4MxDiXv4uFIiVoH4jIQFkBOxnSjf26vMzeDMJD8gcUVhfzngfVS7-7Qs9yozJbqvvddb=s0",
+          "local_file": "static/images/demos/store/google-analytics-utils-screenshot-3.jpg",
+          "width": 1280,
+          "height": 800,
+          "sha256": "b8ee2de1132d7dcbdab72b17776c6db81de74778326ab14028a012b7f987275e"
+        }
+      ]
+    }
+  ],
+  "home_thumbnails": {
+    "purpose": "Real screenshots shown in the upper strip of the five home cards. Original assets are preserved; Hugo generates responsive WebP thumbnails.",
+    "processing": "Hugo Resize: 220px and 440px wide, WebP q82. CSS crops a detail of each original screenshot in the 76px card header.",
+    "items": [
+      {
+        "slug": "ga4-spy",
+        "local_file": "assets/home/ga4-spy.jpg",
+        "original_file": "static/images/demos/ga4-spy-events-20261027.jpg",
+        "source_url": "https://ga4spy.com/",
+        "source_type": "Browser screenshot of the public tool"
+      },
+      {
+        "slug": "ga4-data",
+        "local_file": "assets/home/ga4-data.jpg",
+        "original_file": "static/images/demos/ga4-data-search-20261027.jpg",
+        "source_url": "https://data.ga4spy.com/",
+        "source_type": "Browser screenshot of the public tool"
+      },
+      {
+        "slug": "google-analytics-utils",
+        "local_file": "assets/home/google-analytics-utils.png",
+        "original_file": "static/images/demos/google-analytics-utils-debug-on-20261027.png",
+        "source_type": "User-provided screenshot of the current popup"
+      },
+      {
+        "slug": "ga4-enhanced-debugview",
+        "local_file": "assets/home/ga4-enhanced-debugview.png",
+        "original_file": "static/images/demos/ga4-enhanced-debugview-console-20261027.png",
+        "source_type": "User-provided screenshot of the Chrome console output"
+      },
+      {
+        "slug": "microsoft-clarity",
+        "local_file": "assets/home/microsoft-clarity.png",
+        "source_url": "https://github.com/user-attachments/assets/92996027-b2ea-483b-a482-aa37dd38cf8e",
+        "source_page": "https://github.com/luratic/Clarity/blob/master/README.md",
+        "source_type": "Real GTM Tag Configuration screenshot linked from the official repository",
+        "width": 860,
+        "height": 1205
+      }
+    ]
+  }
+}

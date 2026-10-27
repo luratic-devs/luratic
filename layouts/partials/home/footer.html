@@ -1,0 +1,9 @@
+<footer class="home-footer">
+  <div class="home-shell">
+    <div class="home-footer-top">
+      <div class="home-footer-about"><a class="home-footer-brand" href="{{ "/" | relURL }}"><span>Luratic<span class="brand-dot">.</span></span></a><p lang="gl">Curiosidade, código e un pouco de sentidiño. Feito en Galicia, compartido con todo o mundo.</p></div>
+      <nav class="home-footer-links" aria-label="Pie de página"><a href="#recursos">Recursos</a><a href="{{ "/recursos/?tipo=template" | relURL }}" data-home-nav-filter="template">Plantillas para GTM</a><a href="#equipo">Quiénes somos</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Código en GitHub</a><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></nav>
+    </div>
+    <div class="home-footer-bottom"><span>© {{ now.Year }} Luratic</span><div><a href="{{ "/privacy-policy/" | relURL }}">Privacidad</a><a href="{{ "/posts/" | relURL }}">Documentación</a></div></div>
+  </div>
+</footer>

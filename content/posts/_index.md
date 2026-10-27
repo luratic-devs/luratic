@@ -1,3 +1,8 @@
----
-title: Posts
----
+{
+  "title": "Posts",
+  "aliases": [
+    "/es/posts/"
+  ]
+}
+
+

@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="page-intro shell">
+  <a class="breadcrumb" href="{{ "/" | relURL }}">Inicio <span>/</span></a>
+  <div class="eyebrow">La caja de herramientas de Luratic</div>
+  <h1>Menos vueltas.<br><span>Más recursos.</span></h1>
+  <p>Extensiones, plantillas, herramientas web y utilidades para medir, depurar y automatizar. Encuentra la pieza que te falta.</p>
+</section>
+<section class="catalog-section shell" data-catalog>
+  <div class="catalog-toolbar">
+    <div class="filter-buttons" role="group" aria-label="Tipo de recurso">
+      <button data-filter="all" class="is-active" aria-pressed="true">Todos <span>{{ len .RegularPages }}</span></button>
+      <button data-filter="extension" aria-pressed="false">Extensiones <span>{{ len (where .RegularPages "Params.category" "extension") }}</span></button>
+      <button data-filter="template" aria-pressed="false">Plantillas GTM <span>{{ len (where .RegularPages "Params.category" "template") }}</span></button>
+      <button data-filter="web" aria-pressed="false">Herramientas web <span>{{ len (where .RegularPages "Params.category" "web") }}</span></button>
+      <button data-filter="utility" aria-pressed="false">Utilidades <span>{{ len (where .RegularPages "Params.category" "utility") }}</span></button>
+    </div>
+    <div class="catalog-search">{{ partial "icon.html" "search" }}<label class="sr-only" for="resource-search">Buscar recursos</label><input id="resource-search" type="search" placeholder="¿Qué necesitas?" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
+  </div>
+  <div class="catalog-meta"><p aria-live="polite" data-result-count>{{ len .RegularPages }} recursos para explorar</p><span>Creados para usarlos. Compartidos para mejorarlos.</span></div>
+  <h2 class="sr-only">Listado de recursos</h2>
+  <div class="catalog-grid">{{ range .RegularPages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
+  <div class="empty-state" data-empty-state hidden>{{ partial "icon.html" "search" }}<h2>Por aquí no lo encontramos.</h2><p>Prueba otro nombre, tecnología o tipo de recurso.</p><button class="button button-primary" data-clear-filters>Ver todos los recursos {{ partial "icon.html" "arrow" }}</button></div>
+  <noscript><p class="notice">Puedes explorar todas las fichas. Activa JavaScript para utilizar la búsqueda y los filtros.</p></noscript>
+</section>
+<section class="shell small-cta"><div><span class="eyebrow">Seguimos aprendiendo</span><h2>¿Tienes una idea o has encontrado un fallo?</h2></div><a class="button button-outline" href="mailto:{{ .Site.Params.email }}">Cuéntanos {{ partial "icon.html" "arrow" }}</a></section>
+{{ end }}

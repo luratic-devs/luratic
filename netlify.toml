@@ -1,31 +1,24 @@
 [build]
-command = "hugo --gc --minify"
+command = "hugo --gc --minify && python3 scripts/check_privacy.py && node scripts/check_tracking.mjs --production"
 publish = "public"
 
-[context.production.environment]
-HUGO_ENABLEGITINFO = "true"
-HUGO_ENV           = "production"
-HUGO_THEME         = "toha"
-HUGO_VERSION       = "0.77.0"
-
-[context.split1]
-command = "hugo --gc --minify --enableGitInfo"
-
-    [context.split1.environment]
-    HUGO_ENV     = "production"
-    HUGO_VERSION = "0.77.0"
+[build.environment]
+HUGO_VERSION = "0.168.0"
+HUGO_ENV = "production"
 
 [context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-    [context.deploy-preview.environment]
-    HUGO_VERSION = "0.77.0"
+command = "hugo --gc --minify --environment preview -b \"$DEPLOY_PRIME_URL\" && python3 scripts/check_privacy.py && node scripts/check_tracking.mjs --preview"
 
 [context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
+command = "hugo --gc --minify --environment preview -b \"$DEPLOY_PRIME_URL\" && python3 scripts/check_privacy.py && node scripts/check_tracking.mjs --preview"
 
-    [context.branch-deploy.environment]
-    HUGO_VERSION = "0.77.0"
+[[headers]]
+for = "/fonts/*"
+  [headers.values]
+  Cache-Control = "public, max-age=31536000, immutable"
 
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
+[[headers]]
+for = "/*"
+  [headers.values]
+  X-Content-Type-Options = "nosniff"
+  Referrer-Policy = "strict-origin-when-cross-origin"

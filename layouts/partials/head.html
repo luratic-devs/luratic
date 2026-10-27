@@ -1,0 +1,25 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}Luratic · Herramientas para quienes miden{{ else }}{{ .Title }} · Luratic{{ end }}</title>
+<meta name="description" content="{{ .Description | default .Site.Params.description }}">
+<meta name="theme-color" content="{{ if .IsHome }}#F1F2F6{{ else }}#f7f6f2{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="icon" href="{{ "assets/favicon/favicon.ico" | relURL }}" sizes="any">
+<link rel="apple-touch-icon" href="{{ "assets/favicon/apple-touch-icon.png" | relURL }}">
+{{ if .IsHome }}<link rel="preload" href="{{ "fonts/Archivo-Variable-Latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ else }}<link rel="preload" href="{{ "fonts/Manrope-Variable.woff" | relURL }}" as="font" type="font/woff" crossorigin>{{ end }}
+<link rel="stylesheet" href="{{ "assets/redesign/site.css" | relURL }}">
+{{ if .IsHome }}<link rel="stylesheet" href="{{ "assets/redesign/home.css" | relURL }}">{{ end }}
+{{ if .Params.demo }}<link rel="stylesheet" href="{{ "assets/redesign/demos.css" | relURL }}">{{ end }}
+{{ if in (slice "utils" "debugview") .Params.demo }}<link rel="stylesheet" href="{{ "assets/redesign/extension-media.css" | relURL }}">{{ end }}
+{{ if eq .Section "recursos" }}<link rel="stylesheet" href="{{ "assets/redesign/resource-details.css" | relURL }}">{{ end }}
+{{ if eq .Section "equipo" }}<link rel="stylesheet" href="{{ "assets/redesign/profiles.css" | relURL }}">{{ end }}
+{{ if in (slice "/privacy-policy/" "/posts/entradas/privacypolicy/" "/google-analytics-utils/privacy-policy/") .RelPermalink }}<link rel="stylesheet" href="{{ "assets/redesign/privacy.css" | relURL }}">{{ end }}
+<meta property="og:site_name" content="Luratic">
+<meta property="og:type" content="{{ if .IsHome }}website{{ else }}article{{ end }}">
+<meta property="og:title" content="{{ .Title }} · Luratic">
+<meta property="og:description" content="{{ .Description | default .Site.Params.description }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:image" content="{{ "assets/favicon/android-chrome-512x512.png" | absURL }}">
+<meta name="twitter:card" content="summary">
+{{ if ne hugo.Environment "production" }}<meta name="robots" content="noindex,nofollow">{{ end }}
+{{ with .OutputFormats.Get "RSS" }}<link rel="alternate" type="application/rss+xml" title="Luratic" href="{{ .Permalink }}">{{ end }}

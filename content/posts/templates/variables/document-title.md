@@ -1,25 +1,31 @@
----
-title: "Document Title"
-date: 2020-08-19T12:14:34+06:00
-hero: "/images/site/portfolio/jstemplate.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description_en: "Returns the value of document.title."
-description: En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el **document.title**.
-
-draft: false
-hero: "/images/site/portfolio/jstemplate.png"
-
-menu:
-  sidebar:
-    parent: variables
-    name: Document Title
-    identifier: Document Title
-    weight: 1
----
+{
+  "title": "Document Title",
+  "date": "2020-08-19T12:14:34+06:00",
+  "hero": "/images/site/portfolio/jstemplate.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/DocumentTitle",
+  "categories": [
+    "branding"
+  ],
+  "description_en": "Returns the value of document.title.",
+  "description": "En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el **document.title**.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "variables",
+      "name": "Document Title",
+      "identifier": "Document Title",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/variables/document-title/"
+  ],
+  "resourceSlug": "document-title"
+}
 
 En este artículo explicamos como añadir y configurar nuestra plantilla de  variable para Google Tag Manager que devuelva el **document.title**.
 

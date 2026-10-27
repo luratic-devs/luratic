@@ -1,24 +1,31 @@
----
-title: "Comandos útiles para la depuración y validación de la analítica en Android"
-date: 2020-08-19T13:14:34+06:00
-image: "/images/portfolio/firebase.jpg"
-author:
-    name: Luratic
-    image: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description_en: ""
-description:  Vamos indicar los comandos que nosotros utilizamos para la validación y depuración de la analítica en Android.. 
-draft: true
-hero: "/images/portfolio/firebase.jpg"
-menu:
-  sidebar:
-    parent: Firebase
-    name: Comandos útiles para Firebase en Android
-    identifier: Comandos útiles para Firebase en Android
-    weight: 1
----
-
+{
+  "title": "Comandos útiles para la depuración y validación de la analítica en Android",
+  "date": "2020-08-19T13:14:34+06:00",
+  "image": "/images/portfolio/firebase.jpg",
+  "author": {
+    "name": "Luratic",
+    "image": "/images/avatar.png"
+  },
+  "project_url": "#",
+  "categories": [
+    "branding"
+  ],
+  "description_en": "",
+  "description": "Vamos indicar los comandos que nosotros utilizamos para la validación y depuración de la analítica en Android..",
+  "draft": true,
+  "hero": "/images/portfolio/firebase.jpg",
+  "menu": {
+    "sidebar": {
+      "parent": "Firebase",
+      "name": "Comandos útiles para Firebase en Android",
+      "identifier": "Comandos útiles para Firebase en Android",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/firebase/comandos-utiles-depuracion-firebase/"
+  ]
+}
 
 ## Depuración Android
 

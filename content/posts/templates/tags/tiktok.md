@@ -1,23 +1,32 @@
----
-title: "TikTok"
-date: 2020-08-19T15:14:34+06:00
-hero: "/images/site/portfolio/tiktok.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-project_url : "[GitHub](https://github.com/precariostecnicos/TikTok)
-[GTM Template Gallery](https://tagmanager.google.com/gallery/#/owners/precariostecnicos/templates/TikTok)"
-categories: ["ANALYTICS", "MARKETING", "SOCIAL"]
-description: "TikTok is the leading destination for short-form mobile video, providing content that is exciting, spontaneous, and genuine."
-hero: "/images/site/portfolio/tiktok.png"
-draft: false
-menu:
-  sidebar:
-    parent: tags
-    name: TikTok
-    identifier: tiktok
-    weight: 1
----
+{
+  "title": "TikTok",
+  "date": "2020-08-19T15:14:34+06:00",
+  "hero": "/images/site/portfolio/tiktok.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/TikTok",
+  "categories": [
+    "ANALYTICS",
+    "MARKETING",
+    "SOCIAL"
+  ],
+  "description": "TikTok is the leading destination for short-form mobile video, providing content that is exciting, spontaneous, and genuine.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "tags",
+      "name": "TikTok",
+      "identifier": "tiktok",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/tags/tiktok/"
+  ],
+  "resourceSlug": "tiktok"
+}
 
 ##   Configuración
 

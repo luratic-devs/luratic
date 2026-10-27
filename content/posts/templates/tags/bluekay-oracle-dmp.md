@@ -1,23 +1,31 @@
----
-title: "Oracle BlueKai DMP"
-date: 2020-08-18T12:14:34+06:00
-hero: "/images/site/portfolio/bluekai.png"
-author:
-    name: Luratic
-    hero: "/images/avatar.png"
-    hero: "/images/avatar.png"
-project_url : "#"
-categories: ["branding"]
-description_en: "BlueKai is the industry’s leading cloud-based big data platform that enables marketing organizations to personalize online, offline, and mobile marketing campaigns with richer and more-actionable info."
-description: "En este artículo explicamos como añadir y configurar el píxel o herramienta [Oracle Bluekay DMP](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para Google Tag Manager."
-draft: false
-menu:
-  sidebar:
-    parent: tags
-    name: Oracle BlueKai DMP
-    identifier: Oracle BlueKai DMP
-    weight: 1
----
+{
+  "title": "Oracle BlueKai DMP",
+  "date": "2020-08-18T12:14:34+06:00",
+  "hero": "/images/site/portfolio/bluekai.png",
+  "author": {
+    "name": "Luratic",
+    "hero": "/images/author/luratic.png"
+  },
+  "project_url": "https://github.com/luratic/Bluekai",
+  "categories": [
+    "branding"
+  ],
+  "description_en": "BlueKai is the industry’s leading cloud-based big data platform that enables marketing organizations to personalize online, offline, and mobile marketing campaigns with richer and more-actionable info.",
+  "description": "En este artículo explicamos como añadir y configurar el píxel o herramienta [Oracle Bluekay DMP](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para Google Tag Manager.",
+  "draft": false,
+  "menu": {
+    "sidebar": {
+      "parent": "tags",
+      "name": "Oracle BlueKai DMP",
+      "identifier": "Oracle BlueKai DMP",
+      "weight": 1
+    }
+  },
+  "aliases": [
+    "/es/posts/templates/tags/bluekay-oracle-dmp/"
+  ],
+  "resourceSlug": "oracle-bluekai-dmp"
+}
 
 En este artículo explicamos como añadir y configurar el píxel [Oracle Bluekay DMP](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para [Google Tag Manager](https://tagmanager.google.com/). 
 

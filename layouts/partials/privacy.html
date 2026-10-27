@@ -1,0 +1,39 @@
+{{ $product := "GA4 Enhanced DebugView" }}
+{{ $resource := "/recursos/ga4-enhanced-debugview/" }}
+{{ $policy := .Content }}
+{{ $isUtils := eq .File.Path "google-analytics-utils/privacy-policy.md" }}
+{{ if $isUtils }}
+  {{ $product = "Google Analytics UTILS" }}
+  {{ $resource = "/recursos/google-analytics-utils/" }}
+  {{ with resources.Get "privacy/google-analytics-utils-original.html" }}
+    {{/* The archived source remains byte-identical. Only its branding footer is
+         excluded; the shared site footer supplies the current Galician brand copy. */}}
+    {{ $mains := findRE `(?is)<main\b[^>]*>.*?</main\s*>` .Content }}
+    {{ if ne (len $mains) 1 }}
+      {{ errorf "The archived UTILS privacy policy must contain exactly one main element" }}
+    {{ else }}
+      {{ $policy = replaceRE `(?is)^<main\b[^>]*>|</main\s*>$` "" (index $mains 0) }}
+      {{ $footers := findRE `(?is)<footer\b[^>]*>.*?</footer\s*>` $policy }}
+      {{ if ne (len $footers) 1 }}
+        {{ errorf "The archived UTILS privacy policy must contain exactly one branding footer" }}
+      {{ end }}
+      {{ $policy = replaceRE `(?is)<footer\b[^>]*>.*?</footer\s*>` "" $policy }}
+    {{ end }}
+  {{ else }}
+    {{ errorf "Missing original UTILS privacy policy asset" }}
+  {{ end }}
+{{ end }}
+<section class="shell privacy-page">
+  <a class="breadcrumb" href="{{ "/recursos/" | relURL }}">← Recursos</a>
+  <div class="privacy-context">
+    <span class="eyebrow">Información de privacidad</span>
+    <a class="privacy-product" href="{{ $resource | relURL }}">{{ $product }} {{ partial "icon.html" "arrow" }}</a>
+  </div>
+  <nav class="privacy-nav" aria-label="Políticas de privacidad">
+    <a href="{{ "/privacy-policy/" | relURL }}"{{ if not $isUtils }} aria-current="true"{{ end }}>{{ partial "icon.html" "puzzle" }}<span>GA4 Enhanced DebugView</span></a>
+    <a href="{{ "/google-analytics-utils/privacy-policy/" | relURL }}"{{ if $isUtils }} aria-current="true"{{ end }}>{{ partial "icon.html" "puzzle" }}<span>Google Analytics UTILS</span></a>
+  </nav>
+  <div class="privacy-sheet">
+    <article class="prose legacy-prose privacy-prose" lang="en">{{ $policy | safeHTML }}</article>
+  </div>
+</section>

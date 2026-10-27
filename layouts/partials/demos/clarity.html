@@ -1,0 +1,11 @@
+{{ $s := .step }}
+<div class="clarity-simulation" aria-label="Ejemplo de configuración de la plantilla Clarity">
+  <div class="sim-toolbar"><span class="sim-app-icon">C</span><strong>Microsoft Clarity</strong><span>Plantilla de GTM</span></div>
+  <div class="sim-clarity-content">
+    <div class="sim-form-row{{ if eq $s 0 }} sim-highlight{{ end }}"><span>Project ID</span><code>clarity-demo</code></div>
+    <div class="sim-form-row{{ if eq $s 1 }} sim-highlight{{ end }}"><span>Custom event</span><code>{{ if ge $s 1 }}solicitud_demo{{ else }}—{{ end }}</code></div>
+    <div class="sim-form-row{{ if eq $s 2 }} sim-highlight{{ end }}"><span>Custom tags</span><div>{{ if ge $s 2 }}<code>tipo_pagina</code><b class="sim-value">contacto</b>{{ else }}<span class="sim-placeholder">Añade contexto a la sesión</span>{{ end }}</div></div>
+    <div class="sim-consent-box{{ if eq $s 3 }} sim-highlight{{ end }}"><span class="sim-section-name">Consent V2</span><div><code>analytics_storage</code><b class="sim-state{{ if eq $s 3 }} granted{{ end }}">{{ if eq $s 3 }}granted{{ else }}denied{{ end }}</b></div><div><code>ad_storage</code><b class="sim-state">denied</b></div></div>
+    <div class="sim-flow-result"><span class="sim-flow-icon">{{ if eq $s 3 }}↻{{ else }}↗{{ end }}</span><span>{{ if eq $s 0 }}Un proyecto. El contexto de tu sitio.{{ else if eq $s 1 }}Una interacción que puedes localizar.{{ else if eq $s 2 }}Sesiones con información útil para filtrar.{{ else }}Estados recibidos desde tu CMP.{{ end }}</span></div>
+  </div>
+</div>
