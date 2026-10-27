@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="{{ "assets/favicon/apple-touch-icon.png" | relURL }}">
 {{ if .IsHome }}<link rel="preload" href="{{ "fonts/Archivo-Variable-Latin.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>{{ else }}<link rel="preload" href="{{ "fonts/Manrope-Variable.woff" | relURL }}" as="font" type="font/woff" crossorigin>{{ end }}
 <link rel="stylesheet" href="{{ "assets/redesign/site.css" | relURL }}">
-{{ if .IsHome }}<link rel="stylesheet" href="{{ "assets/redesign/home.css" | relURL }}">{{ end }}
+{{ if .IsHome }}<link rel="stylesheet" href="{{ "assets/redesign/home.css" | relURL }}"><link rel="stylesheet" href="{{ "assets/redesign/home-hotfix.css" | relURL }}">{{ end }}
 {{ if .Params.demo }}<link rel="stylesheet" href="{{ "assets/redesign/demos.css" | relURL }}">{{ end }}
 {{ if in (slice "utils" "debugview") .Params.demo }}<link rel="stylesheet" href="{{ "assets/redesign/extension-media.css" | relURL }}">{{ end }}
 {{ if eq .Section "recursos" }}<link rel="stylesheet" href="{{ "assets/redesign/resource-details.css" | relURL }}">{{ end }}

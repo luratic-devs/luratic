@@ -1,0 +1,108 @@
+/* Hotfix 2026-10-27: navegación real y proporciones de portada. */
+
+/* Archivo variable no debe deformarse horizontalmente. */
+.home,
+.home * {
+  font-stretch: normal;
+}
+
+.home .brand,
+.home .site-nav,
+.home .menu-toggle {
+  font-stretch: normal;
+}
+
+/* Recupera escala y aire del bloque principal. */
+.home-stage {
+  padding-top: clamp(58px, 6vw, 90px);
+  padding-bottom: clamp(48px, 5vw, 72px);
+}
+
+.home-stage-inner {
+  gap: clamp(32px, 4vw, 56px) clamp(36px, 5vw, 72px);
+}
+
+.home-intro {
+  gap: 22px;
+}
+
+.home-intro h1 {
+  max-width: 13ch;
+  font-size: clamp(46px, 5vw, 70px);
+  font-weight: 800;
+  font-stretch: normal;
+  letter-spacing: -.035em;
+  line-height: 1.02;
+}
+
+.home-intro > p {
+  max-width: 62ch;
+  font-size: clamp(18px, 1.45vw, 20px);
+  line-height: 1.55;
+}
+
+.home-team h2,
+.home-brand,
+.home-tool h3 {
+  font-stretch: normal;
+}
+
+/* El header de la portada usa ya el header global. */
+.home .site-header {
+  background: rgba(241, 242, 246, .96);
+  border-bottom-color: #D9DBE6;
+  backdrop-filter: blur(12px);
+}
+
+.home .header-inner {
+  width: min(1240px, calc(100% - 112px));
+  min-height: 78px;
+  height: auto;
+}
+
+.home .brand {
+  font-size: 26px;
+  letter-spacing: -.025em;
+}
+
+.home .brand img {
+  width: 40px;
+  height: 40px;
+}
+
+.home .site-nav {
+  gap: 22px;
+  font-size: 14px;
+}
+
+/* Filtros: se mantienen como controles internos de la portada. */
+.home-filters button {
+  font-stretch: normal;
+}
+
+@media (max-width: 980px) {
+  .home .header-inner {
+    width: calc(100% - 32px);
+    min-height: 68px;
+  }
+
+  .home .site-nav {
+    gap: 0;
+  }
+}
+
+@media (max-width: 759px) {
+  .home-stage {
+    padding-top: 42px;
+    padding-bottom: 42px;
+  }
+
+  .home-intro h1 {
+    max-width: 11ch;
+    font-size: clamp(40px, 12vw, 54px);
+  }
+
+  .home-intro > p {
+    font-size: 17px;
+  }
+}
