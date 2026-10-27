@@ -1,108 +1,452 @@
-/* Hotfix 2026-10-27: navegación real y proporciones de portada. */
+/* Home 2026: same visual system as the rest of Luratic.
+   Keeps the home structure; aligns typography, spacing, palette and surfaces. */
 
-/* Archivo variable no debe deformarse horizontalmente. */
+.home {
+  --paper: #f7f6f2;
+  --ink: #201c30;
+  --muted: #696574;
+  --purple: #6440dd;
+  --line: #dedce4;
+  --font: Manrope, Arial, sans-serif;
+  --home-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Do not horizontally distort the variable typeface. */
 .home,
 .home * {
   font-stretch: normal;
 }
 
-.home .brand,
-.home .site-nav,
-.home .menu-toggle {
-  font-stretch: normal;
+/* Same content width and gutters as the rest of the site. */
+.home-shell {
+  width: min(1240px, calc(100% - 112px));
+  max-width: none;
+  padding-inline: 0;
 }
 
-/* Recupera escala y aire del bloque principal. */
-.home-stage {
-  padding-top: clamp(58px, 6vw, 90px);
-  padding-bottom: clamp(48px, 5vw, 72px);
-}
-
-.home-stage-inner {
-  gap: clamp(32px, 4vw, 56px) clamp(36px, 5vw, 72px);
-}
-
-.home-intro {
-  gap: 22px;
-}
-
-.home-intro h1 {
-  max-width: 13ch;
-  font-size: clamp(46px, 5vw, 70px);
-  font-weight: 800;
-  font-stretch: normal;
-  letter-spacing: -.035em;
-  line-height: 1.02;
-}
-
-.home-intro > p {
-  max-width: 62ch;
-  font-size: clamp(18px, 1.45vw, 20px);
-  line-height: 1.55;
-}
-
-.home-team h2,
-.home-brand,
-.home-tool h3 {
-  font-stretch: normal;
-}
-
-/* El header de la portada usa ya el header global. */
+/* Header is the global header; only keep the page background coherent. */
 .home .site-header {
-  background: rgba(241, 242, 246, .96);
-  border-bottom-color: #D9DBE6;
-  backdrop-filter: blur(12px);
+  background: var(--paper);
+  border-bottom: 1px solid rgba(32, 28, 48, .1);
+  backdrop-filter: none;
 }
 
 .home .header-inner {
   width: min(1240px, calc(100% - 112px));
-  min-height: 78px;
-  height: auto;
+  min-height: 98px;
+  height: 98px;
 }
 
 .home .brand {
-  font-size: 26px;
-  letter-spacing: -.025em;
+  font-size: 27px;
+  font-weight: 800;
+  letter-spacing: -1.3px;
 }
 
 .home .brand img {
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
 }
 
 .home .site-nav {
-  gap: 22px;
+  gap: 34px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Hero: same typographic voice as the inner pages, with enough room for the live panel. */
+.home-stage {
+  padding: 72px 0 76px;
+  background: var(--paper);
+}
+
+.home-stage-inner {
+  gap: 42px 45px;
+}
+
+.home-intro {
+  flex-basis: 590px;
+  gap: 24px;
+}
+
+.home-byline {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.home-intro h1 {
+  max-width: 13ch;
+  font-size: clamp(52px, 5.25vw, 76px);
+  font-weight: 650;
+  letter-spacing: -.055em;
+  line-height: 1.02;
+}
+
+.home-intro > p {
+  max-width: 54ch;
+  color: var(--muted);
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* Live panel: same cards, borders and neutral surfaces as the rest of the site. */
+.home-visit {
+  flex-basis: 390px;
+  border-color: var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+.home-visit-header {
+  padding: 14px 17px;
+  border-bottom-color: #e6e2eb;
+}
+
+.home-visit-header h2 {
   font-size: 14px;
+  font-weight: 700;
 }
 
-/* Filtros: se mantienen como controles internos de la portada. */
+.home-visit-header p,
+.home-demo-intro,
+.home-visit-human,
+.home-consent-group > span,
+.home-code-toggle {
+  color: var(--muted);
+}
+
+.home-visit-line.is-latest,
+.home-visit-controls {
+  background: #f1eef6;
+}
+
+.home-visit-controls {
+  border-top-color: #e6e2eb;
+}
+
+.home-consent-options {
+  border-color: #c6c0d1;
+  border-radius: 8px;
+}
+
+.home-consent-options button {
+  min-height: 40px;
+  padding-inline: 13px;
+  font-size: 13px;
+}
+
+.home-consent-options button:hover {
+  background: #eae5f4;
+}
+
+.home-consent-options button[aria-pressed="true"] {
+  background: var(--purple);
+  color: #fff;
+}
+
+.home-code-toggle {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.home-code-toggle:hover {
+  color: var(--purple);
+}
+
+/* Toolbar: keep the functionality, but use the site's button language. */
+.home-toolbar {
+  gap: 12px 16px;
+  margin-top: 2px;
+}
+
+.home-filters {
+  gap: 8px;
+}
+
+.home-filters button,
+.home-search input,
+.home-search-toggle {
+  min-height: 44px;
+  border-color: #c6c0d1;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
 .home-filters button {
-  font-stretch: normal;
+  padding-inline: 14px;
 }
 
+.home-filters button:hover,
+.home-search-toggle:hover {
+  background: #eae5f4;
+}
+
+.home-filters button[aria-pressed="true"] {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
+}
+
+.home-filters button[aria-pressed="true"] > span {
+  color: #eee9ff;
+}
+
+.home-search input {
+  background: #fff;
+  font-weight: 500;
+}
+
+.home-catalog-link {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.home-catalog-link:hover {
+  color: var(--purple);
+}
+
+/* Cards: keep five featured tools, but use the palette and proportions of the rest of Luratic. */
+.home-cards-area {
+  gap: 16px;
+}
+
+.home-tool-grid {
+  gap: 16px;
+}
+
+.home-tool {
+  --home-type: #6840cd;
+  --home-tint: #eee7ff;
+  border: 1px solid #e6e2eb;
+  border-radius: 13px;
+  background: #fff;
+  transition: border-color .18s, box-shadow .18s, transform .18s;
+}
+
+.home-tool--extension {
+  --home-type: #2c7b71;
+  --home-tint: #d8f3ed;
+}
+
+.home-tool--template {
+  --home-type: #a14b83;
+  --home-tint: #f5e1ee;
+}
+
+.home-tool:hover {
+  transform: translateY(-3px);
+  border-color: #b6a4e5;
+  box-shadow: 0 10px 20px rgba(63, 41, 87, .04);
+}
+
+.home-tool.is-featured,
+.home-tool:focus-within {
+  border-color: #b6a4e5;
+}
+
+.home-tool-media {
+  height: 108px;
+  border-bottom-color: #e6e2eb;
+}
+
+.home-tool-body {
+  gap: 10px;
+  padding: 20px 20px 22px;
+}
+
+.home-tool-meta {
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.home-tool-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.home-tool h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.035em;
+  line-height: 1.25;
+}
+
+.home-tool-body > p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.home-tool-primary,
+.home-outline-button {
+  min-height: 44px;
+  border: 1px solid #c6c0d1;
+  border-radius: 9px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.home-tool-primary:hover,
+.home-outline-button:hover {
+  border-color: #b6a4e5;
+  background: #eae5f4;
+  color: var(--purple);
+}
+
+.home-tool.is-featured .home-tool-primary {
+  border-color: var(--purple);
+  background: var(--purple);
+  color: #fff;
+}
+
+.home-tool.is-featured .home-tool-primary:hover {
+  border-color: #5031c1;
+  background: #5031c1;
+}
+
+.home-empty {
+  border-color: var(--line);
+  border-radius: 14px;
+  background: #fff;
+}
+
+/* Team follows immediately after tools, but should feel like a normal site section. */
+.home-team {
+  padding: 88px 0 96px;
+  border-top: 1px solid var(--line);
+  background: var(--paper);
+}
+
+.home-team-inner {
+  gap: 48px 72px;
+}
+
+.home-team-copy {
+  gap: 22px;
+}
+
+.home-team h2 {
+  font-size: clamp(38px, 3.8vw, 50px);
+  font-weight: 650;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+
+.home-team-copy p,
+.home-team-copy .home-origin {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.home-team-copy .home-origin {
+  font-weight: 650;
+}
+
+.home-people {
+  border-top-color: var(--line);
+}
+
+.home-person {
+  padding: 22px 0;
+  border-bottom-color: var(--line);
+}
+
+.home-person > img {
+  width: 72px;
+  height: 72px;
+}
+
+.home-person strong {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -.025em;
+}
+
+.home-person span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* Mobile keeps the horizontal resource strip and the same site gutters. */
 @media (max-width: 980px) {
+  .home-shell,
   .home .header-inner {
     width: calc(100% - 32px);
-    min-height: 68px;
   }
 
-  .home .site-nav {
-    gap: 0;
+  .home .header-inner {
+    min-height: 78px;
+    height: auto;
+  }
+
+  .home-stage {
+    padding: 52px 0 58px;
+  }
+
+  .home-stage-inner {
+    gap: 34px;
+  }
+
+  .home-intro h1 {
+    max-width: 12ch;
+    font-size: clamp(46px, 8vw, 66px);
+  }
+
+  .home-team {
+    padding: 64px 0 72px;
   }
 }
 
 @media (max-width: 759px) {
   .home-stage {
-    padding-top: 42px;
-    padding-bottom: 42px;
+    padding: 42px 0 46px;
+  }
+
+  .home-intro {
+    gap: 18px;
   }
 
   .home-intro h1 {
     max-width: 11ch;
-    font-size: clamp(40px, 12vw, 54px);
+    font-size: clamp(40px, 12vw, 52px);
   }
 
   .home-intro > p {
-    font-size: 17px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .home-byline {
+    font-size: 12px;
+  }
+
+  .home-tool-grid {
+    gap: 12px;
+  }
+
+  .home-tool-body {
+    padding: 18px;
+  }
+
+  .home-team {
+    padding: 52px 0 58px;
+  }
+
+  .home-team h2 {
+    font-size: 38px;
   }
 }
