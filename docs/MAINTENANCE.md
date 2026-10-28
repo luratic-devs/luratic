@@ -24,7 +24,9 @@ Una ruta dentro de `static/` se publica sin ese prefijo. Por ejemplo, `static/im
 
 ## Mantener la portada
 
-La portada presenta cinco herramientas en este orden: **GA4 Spy → GA4 Spy · Cheatsheet → Google Analytics UTILS → GA4 Enhanced DebugView → Microsoft Clarity**. El orden del array `tools` en `data/home.json` determina tanto el orden visual como el de lectura y teclado. No depende del campo `weight` del catálogo.
+La portada presenta cinco herramientas en este orden: **GA4 Spy → GA4 Spy · Cheatsheet → Google Analytics UTILS → GA4 Enhanced DebugView → Microsoft Clarity**.
+
+La navegación principal lleva las plantillas a la página autónoma `/plantillas/`; los filtros de la portada siguen siendo controles locales de los cinco destacados. El orden del array `tools` en `data/home.json` determina tanto el orden visual como el de lectura y teclado. No depende del campo `weight` del catálogo.
 
 Cada entrada contiene `slug`, `summary`, `icon` y `screenshot` (`src` y `alt`). El nombre, categoría, URL de la ficha, enlace externo y aviso de actualización se leen de `content/recursos/<slug>.md`; no los dupliques en los datos de portada. El campo `summary` es una descripción corta adaptada a la tarjeta. Las fichas de las webs mantienen el crédito a Brais. La sección del equipo sigue inmediatamente al catálogo destacado. La portada no muestra una sección de conceptos introductorios.
 
