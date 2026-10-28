@@ -1,0 +1,388 @@
+[skipContent]
+other = "Skip to content"
+[homeNavLabel]
+other = "Luratic, home"
+[openNav]
+other = "Open navigation"
+[closeNav]
+other = "Close navigation"
+[mainNav]
+other = "Main navigation"
+[resources]
+other = "Resources"
+[templatesGTM]
+other = "GTM templates"
+[team]
+other = "About us"
+[documentation]
+other = "Documentation"
+[language]
+other = "Language"
+[exploreResources]
+other = "Explore resources"
+[meetTeam]
+other = "Meet the team"
+[codeOnGithub]
+other = "Code on GitHub"
+[learnCreateShare]
+other = "Learn. Build. Share."
+[privacy]
+other = "Privacy"
+[footerNav]
+other = "Footer navigation"
+[homeMetaTitle]
+other = "Tools for people who measure"
+[backHome]
+other = "Home"
+[backResources]
+other = "← All resources"
+[backTeam]
+other = "← About us"
+[backDocs]
+other = "← Documentation"
+[catalogEyebrow]
+other = "Luratic’s toolbox"
+[catalogTitle1]
+other = "Less friction."
+[catalogTitle2]
+other = "More tools."
+[catalogDescription]
+other = "Extensions, templates, web tools and utilities to measure, debug and automate. Find the piece you need."
+[resourceType]
+other = "Resource type"
+[all]
+other = "All"
+[extensions]
+other = "Extensions"
+[templatesShort]
+other = "GTM templates"
+[webTools]
+other = "Web tools"
+[utilities]
+other = "Utilities"
+[searchResources]
+other = "Search resources"
+[searchPlaceholder]
+other = "What do you need?"
+[resourcesExplore]
+other = "resources to explore"
+[resourceExplore]
+other = "resource to explore"
+[createdToUse]
+other = "Built to be used. Shared to be improved."
+[resourceList]
+other = "Resource list"
+[emptyTitle]
+other = "Nothing found here."
+[emptyText]
+other = "Try another name, technology or resource type."
+[viewAllResources]
+other = "View all resources"
+[catalogNoScript]
+other = "You can browse every resource page. Enable JavaScript to use search and filters."
+[stillLearning]
+other = "Still learning"
+[ideaOrBug]
+other = "Have an idea or found a bug?"
+[tellUs]
+other = "Tell us"
+[templatesEyebrow]
+other = "Code ready to adapt"
+[templatesTitle1]
+other = "Templates for"
+[templatesDescription]
+other = "Tag and variable templates built by Luratic to integrate tools, share implementations and avoid starting from scratch."
+[templatesExplore]
+other = "templates to explore"
+[templatesCreated]
+other = "Built to be used. Shared to be improved."
+[openSource]
+other = "Open source"
+[improvementOrBug]
+other = "Have an improvement or found a bug?"
+[viewGithub]
+other = "View GitHub"
+[typeExtension]
+other = "Chrome extension"
+[typeTemplate]
+other = "Google Tag Manager template"
+[typeWeb]
+other = "Web tool"
+[typeUtility]
+other = "Analytics utility"
+[typeExtensionCard]
+other = "Chrome extension"
+[typeTemplateCard]
+other = "Plantilla GTM"
+[typeWebCard]
+other = "Web tool"
+[typeUtilityCard]
+other = "Utility"
+[discontinuedCard]
+other = "GTM template · Discontinued"
+[by]
+other = "By"
+[createdBy]
+other = "Created by"
+[openTool]
+other = "Open tool"
+[openNewTab]
+other = "in a new tab"
+[viewResource]
+other = "View"
+[updateStatus]
+other = "Update status"
+[updateReview]
+other = "Update under review"
+[discontinuedResource]
+other = "Discontinued resource"
+[discontinued]
+other = "Discontinued"
+[inThisPage]
+other = "On this page"
+[credits]
+other = "Credits"
+[historicalReference]
+other = "Historical reference"
+[toolbox]
+other = "Add to your toolbox"
+[preservedCode]
+other = "Preserved code."
+[startHere]
+other = "Start here."
+[addChrome]
+other = "Add to Chrome"
+[viewHistoricalCode]
+other = "View código histórico"
+[viewOnGithub]
+other = "View en GitHub"
+[openTpl]
+other = "Open .tpl file"
+[openResource]
+other = "Open resource"
+[sourceDocs]
+other = "Documentation de origen"
+[privacyPolicy]
+other = "Privacy policy"
+[platform]
+other = "Platform"
+[browser]
+other = "Web browser"
+[seeRepository]
+other = "See repository"
+[license]
+other = "License"
+[templateType]
+other = "Template type"
+[variable]
+other = "Variable"
+[tag]
+other = "Tag"
+[independentProject]
+other = "Independent project."
+[unofficialIntegration]
+other = "Unofficial integration."
+[trademarks]
+other = "Mentioned trademarks belong to their respective owners."
+[keepExploring]
+other = "Keep exploring"
+[alsoUseful]
+other = "You may also find these useful."
+[viewCatalog]
+other = "View catálogo"
+[behindLuratic]
+other = "Behind Luratic"
+[teamTitle1]
+other = "Shared curiosity."
+[teamTitle2]
+other = "From the beginning."
+[teamIntro]
+other = "We share a love for the technical side of analytics, a need to understand how things work and a habit of sharing what we learn."
+[meetTheTeam]
+other = "Meet the team"
+[since2020]
+other = "Since 2020"
+[storyTitle]
+other = "A reason to keep building together."
+[storyP1]
+other = "Luratic was started by Brais Calvo, Txema Sánchez and Alfonso Rodríguez. It was a way to stay connected, keep learning and give something back to the community that had given us so much."
+[storyP2]
+other = "We share Google Tag Manager templates, extensions and utilities born from real questions and needs in our day-to-day work. Some are small. Others take us much further than we expected."
+[storyP3]
+other = "The idea is still the same: if something helps us, it may help you too."
+[listenStory]
+other = "Listen to how it started on La Hora de Datola"
+[seeYouAround]
+other = "See you around"
+[communityCode]
+other = "Community is part of the code too."
+[meetDatola]
+other = "Discover Datola"
+[exploreGithub]
+other = "Explore our GitHub"
+[behindCode]
+other = "Behind the code"
+[meetCareer]
+other = "See my journey"
+[portraitOf]
+other = "Portrait of"
+[opensNewTab]
+other = "se abre in a new tab"
+[pathHere]
+other = "The path so far"
+[careerProjects]
+other = "Experience and projects."
+[sharedKnowledge]
+other = "Shared knowledge"
+[talks]
+other = "Talks and conversations."
+[viewSource]
+other = "View fuente"
+[workAreas]
+other = "Areas of work"
+[moreHere]
+other = "More links"
+[ideasToTools]
+other = "From ideas to tools"
+[codeJourney]
+other = "Part of the journey lives in the code."
+[exploreTheResources]
+other = "Explore the resources"
+[codeContext]
+other = "Code with context"
+[docsIntro]
+other = "Guides and notes explaining how our templates are used. Browse the resource catalog as well to find code and download links."
+[goCatalog]
+other = "Go to the resource catalog"
+[gtmVariable]
+other = "Variable GTM"
+[gtmTag]
+other = "Tag GTM"
+[guide]
+other = "Guide"
+[privacyInfo]
+other = "Privacy information"
+[luraticGuide]
+other = "Guide de Luratic"
+[published]
+other = "Published"
+[resourceBanner]
+other = "Find the code, links and resource information on its page."
+[notFoundEyebrow]
+other = "404 · That data is missing"
+[notFoundTitle1]
+other = "This page"
+[notFoundTitle2]
+other = "got away from us."
+[notFoundText]
+other = "The link may have changed. Try finding what you need in the catalog."
+[demoOf]
+other = "Demo of"
+[enlargeCapture]
+other = "Enlarge screenshot"
+[fullCapture]
+other = "View captura completa ↗"
+[illustrativeExample]
+other = "Illustrative example"
+[demoSteps]
+other = "Demo steps"
+[step]
+other = "Step"
+[playDemo]
+other = "Play demo"
+[play]
+other = "Play"
+[nextDemo]
+other = "Next demo step"
+[next]
+other = "Next"
+[videoAndCaptures]
+other = "Video and screenshots of"
+[playVideo]
+other = "Play vídeo"
+[watchDemo]
+other = "View demostración"
+[publishedLabel]
+other = "Published"
+[watchYoutube]
+other = "View en YouTube"
+[youtubeDisclosure]
+other = "Playing the video loads YouTube."
+[currentCaptures]
+other = "Current screenshots"
+[storeCaptures]
+other = "Chrome Web Store screenshots"
+[storeOldCaptures]
+other = "These screenshots come from the Chrome Web Store and document an earlier version of the extension."
+[extensionCapture]
+other = "Extension screenshot"
+[enlarge]
+other = "Enlarge"
+[source]
+other = "Source"
+[privacyPolicies]
+other = "Privacy policies"
+[homeMadeBy]
+other = "Built by Brais and Txema in Galicia"
+[homeTitle]
+other = "Tools that make web analytics a little easier."
+[homeDescription]
+other = "Web tools, Chrome extensions and Google Tag Manager templates to measure, debug and work better with data. We build them and share them."
+[visitTitle]
+other = "Your visit, live"
+[visitDescription]
+other = "Local demo. It sends no data and changes no permissions."
+[demoIntro]
+other = "When you filter or open a resource, you will see an example event here."
+[analyticsDemo]
+other = "Analytics (demo)"
+[no]
+other = "No"
+[yes]
+other = "Yes"
+[showCode]
+other = "View el código"
+[featuredFilter]
+other = "Filter featured tools"
+[filterAll]
+other = "All"
+[filterWeb]
+other = "Explore GA4"
+[filterExtension]
+other = "Test my tags"
+[filterTemplate]
+other = "GTM templates"
+[featuredSearch]
+other = "Search featured resources"
+[featuredSearchPlaceholder]
+other = "Search by name or by what you need"
+[viewResources]
+other = "View los recursos"
+[featuredTools]
+other = "Featured tools"
+[featuredStatus]
+other = "featured tools"
+[featuredStatusOne]
+other = "featured tool"
+[featuredEmpty]
+other = "No featured tools match those filters."
+[featuredEmptyText]
+other = "Try another term or search the full catalog."
+[resetFeatured]
+other = "View todos los destacados"
+[homeNoScript]
+other = "You can open every tool and browse the catalog. Enable JavaScript to use filters and the event demo."
+[visitTicker]
+other = "Your visit, live · demo local"
+[showVisit]
+other = "View tu visita"
+[teamHomeTitle]
+other = "We are Brais and Txema"
+[teamHomeText]
+other = "We work with GA4 and GTM every day. When something is difficult, we build a tool; if it helps us, we share it. We have been doing that since 2020."
+[homeOrigin]
+other = "Made in Galicia, open to the world."
+[ourStory]
+other = "Our story"
+[career]
+other = "Journey"
