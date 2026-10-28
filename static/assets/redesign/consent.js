@@ -39,6 +39,7 @@
 
   function save(granted, source) {
     var value = granted ? 'granted' : 'denied';
+    var location = source === 'cookies_save_preferences' ? 'modal' : 'banner';
     try {
       window.localStorage.setItem(key, JSON.stringify({
         analytics: value,
@@ -46,9 +47,15 @@
         updated_at: new Date().toISOString()
       }));
     } catch (error) {}
+
     updateConsent(granted);
-    push(source, source === 'cookies_save_preferences' ? 'modal' : 'banner', 'analytics_' + value);
-    hideAll();
+
+    // Let GTM process the consent update before the analytics event.
+    // This matters when the custom_event tag requires analytics_storage=granted.
+    window.setTimeout(function () {
+      push(source, location, 'analytics_' + value);
+      hideAll();
+    }, 0);
   }
 
   function showBanner() {
