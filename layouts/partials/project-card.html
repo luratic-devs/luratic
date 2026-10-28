@@ -1,15 +1,17 @@
 {{ $isWeb := eq .Params.category "web" }}
 {{ $isDiscontinued := eq .Params.status "discontinued" }}
+{{ $isSuperseded := eq .Params.status "superseded" }}
+{{ $templateDetails := index hugo.Data.template_details (.Params.slug | default "") }}
 <article class="resource-card" data-category="{{ .Params.category }}" data-search="{{ printf "%s %s %s" .Title .Description (delimit .Params.tags " ") | lower }}">
   <div class="resource-card-top">
-    <span class="resource-icon accent-{{ .Params.accent }}">{{ partial "icon.html" (.Params.icon | default "code") }}</span>
-    <span class="resource-type">{{ if $isDiscontinued }}{{ i18n "discontinuedCard" }}{{ else if eq .Params.category "extension" }}{{ i18n "typeExtensionCard" }}{{ else if eq .Params.category "template" }}{{ i18n "typeTemplateCard" }}{{ else if $isWeb }}{{ i18n "typeWebCard" }}{{ else }}{{ i18n "typeUtilityCard" }}{{ end }}</span>
+    <span class="resource-icon accent-{{ .Params.accent }}"{{ with $templateDetails }}{{ with .endpoint }} title="{{ . }}"{{ end }}{{ end }}>{{ if and (eq $.Params.category "template") $templateDetails }}{{ with $templateDetails.endpoint }}{{ partial "icon.html" "globe" }}{{ else }}{{ partial "icon.html" ($.Params.icon | default "code") }}{{ end }}{{ else }}{{ partial "icon.html" (.Params.icon | default "code") }}{{ end }}</span>
+    <span class="resource-type">{{ if $isDiscontinued }}{{ i18n "discontinuedCard" }}{{ else if $isSuperseded }}{{ i18n "supersededCard" }}{{ else if eq .Params.category "extension" }}{{ i18n "typeExtensionCard" }}{{ else if eq .Params.category "template" }}{{ i18n "typeTemplateCard" }}{{ else if $isWeb }}{{ i18n "typeWebCard" }}{{ else }}{{ i18n "typeUtilityCard" }}{{ end }}</span>
   </div>
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   <p>{{ .Description }}</p>
   {{ if and $isWeb (in (.Params.contributors | default (slice)) "Brais Calvo") }}<div class="resource-card-author">{{ i18n "by" }} <a href="{{ "/equipo/brais-calvo/" | relLangURL }}">Brais Calvo</a></div>{{ end }}
   <div class="resource-card-bottom">
-    <div class="resource-tags">{{ range first 2 .Params.tags }}<span{{ if or (eq . "Discontinuada") (eq . "Discontinued") }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
+    <div class="resource-tags">{{ range first 2 .Params.tags }}<span{{ if or (eq . "Discontinuada") (eq . "Discontinued") }} class="is-discontinued"{{ else if or (eq . "Sustituida") (eq . "Superseded") }} class="is-superseded"{{ end }}>{{ . }}</span>{{ end }}</div>
     {{ if and $isWeb .Params.installUrl }}
       <a class="resource-card-launch" href="{{ .Params.installUrl }}" target="_blank" rel="noopener" aria-label="{{ i18n "openTool" }} {{ .Title }} {{ i18n "openNewTab" }}">{{ i18n "openTool" }} {{ partial "icon.html" "external" }}</a>
     {{ else }}
