@@ -17,7 +17,6 @@
   var log = root.querySelector('[data-home-log]');
   var lastEvent = root.querySelector('[data-home-last-event]');
   var codeToggle = root.querySelector('[data-home-code]');
-  var consentStatus = root.querySelector('[data-home-consent-status]');
   var filterNames = { all: root.dataset.labelAll, web: root.dataset.labelWeb, extension: root.dataset.labelExtension, template: root.dataset.labelTemplate };
   var category = 'all';
   var showCode = false;
@@ -29,9 +28,8 @@
     return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
   }
 
-  // The consent entries mirror the real Consent Mode state exposed by
-  // consent-default.html / consent.js. The remaining interaction snippets are
-  // local visualizations and never send requests from this console.
+  // The console is a local visualization of page and interaction events.
+  // It never sends requests by itself.
   function token(parent, value, type) {
     var span = document.createElement('span');
     span.className = 'home-code-' + type;
@@ -41,31 +39,15 @@
 
   function codeFor(entry) {
     var code = document.createElement('code');
-    if (entry.consentState) {
-      token(code, 'gtag', 'function');
-      token(code, '(', 'punctuation');
-      token(code, '"consent"', 'string');
-      token(code, ', ', 'punctuation');
-      token(code, JSON.stringify(entry.mode), 'string');
-      token(code, ', { ', 'punctuation');
-      ['analytics_storage', 'ad_storage', 'ad_user_data', 'ad_personalization'].forEach(function (key, index) {
-        if (index) token(code, ', ', 'punctuation');
-        token(code, key, 'key');
-        token(code, ': ', 'punctuation');
-        token(code, JSON.stringify(entry.consentState[key]), 'string');
-      });
-      token(code, ' })', 'punctuation');
-    } else {
-      token(code, 'dataLayer.push', 'function');
-      token(code, '({ ', 'punctuation');
-      Object.keys(entry.data).forEach(function (key, index) {
-        if (index) token(code, ', ', 'punctuation');
-        token(code, key, 'key');
-        token(code, ': ', 'punctuation');
-        token(code, JSON.stringify(entry.data[key]), typeof entry.data[key] === 'string' ? 'string' : 'value');
-      });
-      token(code, ' })', 'punctuation');
-    }
+    token(code, 'dataLayer.push', 'function');
+    token(code, '({ ', 'punctuation');
+    Object.keys(entry.data).forEach(function (key, index) {
+      if (index) token(code, ', ', 'punctuation');
+      token(code, key, 'key');
+      token(code, ': ', 'punctuation');
+      token(code, JSON.stringify(entry.data[key]), typeof entry.data[key] === 'string' ? 'string' : 'value');
+    });
+    token(code, ' })', 'punctuation');
     return code;
   }
 
@@ -106,43 +88,6 @@
     while (log.children.length > 6) log.firstElementChild.remove();
     log.scrollTop = log.scrollHeight;
     lastEvent.textContent = entry.human;
-  }
-
-  function currentConsentState(source) {
-    var state = source || window.__luraticConsentState || {};
-    var analytics = state.analytics_storage;
-
-    if (analytics !== 'granted' && analytics !== 'denied') {
-      try {
-        var saved = JSON.parse(window.localStorage.getItem('luratic_consent_v1') || 'null');
-        analytics = saved && saved.analytics === 'granted' ? 'granted' : 'denied';
-      } catch (error) {
-        analytics = 'denied';
-      }
-    }
-
-    return {
-      analytics_storage: analytics,
-      ad_storage: state.ad_storage || 'denied',
-      ad_user_data: state.ad_user_data || 'denied',
-      ad_personalization: state.ad_personalization || 'denied'
-    };
-  }
-
-  function setConsentStatus(state) {
-    if (!consentStatus) return;
-    consentStatus.textContent = state.analytics_storage;
-    consentStatus.dataset.status = state.analytics_storage;
-  }
-
-  function addConsentLine(mode, source) {
-    var state = currentConsentState(source);
-    setConsentStatus(state);
-    addLine({
-      human: (mode === 'update' ? root.dataset.consentUpdated : root.dataset.consentDefault).replace('%s', state.analytics_storage),
-      consentState: state,
-      mode: mode
-    });
   }
 
   function updateCatalog() {
@@ -274,12 +219,7 @@
     codeToggle.textContent = showCode ? root.dataset.viewWords : root.dataset.showCode;
     renderLog();
   });
-  window.addEventListener('luratic:consent-change', function (event) {
-    addConsentLine('update', event.detail || {});
-  });
-
   updateCatalog();
-  addConsentLine('default', window.__luraticConsentState);
   addLine({
     human: root.dataset.enteredHome,
     data: {
