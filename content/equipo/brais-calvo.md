@@ -139,7 +139,7 @@ En octubre de 2020 cofundó Luratic con Txema Sánchez y Alfonso Rodríguez. Des
 
 Es el creador de [GA4 Spy](https://ga4spy.com/), una herramienta para inspeccionar información públicamente expuesta de configuraciones de GA4 y contenedores publicados de GTM. El proyecto incorpora seguimiento de cambios y utilidades para revisar etiquetas, activadores, variables e integraciones.
 
-También mantiene [GA4 Dimensions & Metrics](https://data.ga4spy.com/), una referencia que permite explorar dimensiones y métricas, consultar sus nombres en la API, sus ámbitos y dónde están disponibles. Ese trabajo de documentación conecta la investigación técnica con consultas habituales de quienes implementan, analizan o construyen informes.
+También mantiene [GA4 Spy · Cheatsheet](https://data.ga4spy.com/), su chuleta de GA4 para explorar dimensiones, métricas, eventos y parámetros, consultar sus nombres técnicos, sus ámbitos y dónde están disponibles. Ese trabajo de documentación conecta la investigación técnica con consultas habituales de quienes implementan, analizan o construyen informes.
 
 ## Experiencia profesional y cooperativa
 
