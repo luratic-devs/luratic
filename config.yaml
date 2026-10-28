@@ -8,13 +8,13 @@ enableGitInfo: false
 disableKinds: [taxonomy, term]
 languages:
   es:
-    languageCode: es-ES
-    languageName: Español
+    locale: es-ES
+    label: Español
     weight: 1
     title: Luratic
   en:
-    languageCode: en
-    languageName: English
+    locale: en
+    label: English
     weight: 2
     title: Luratic
     params:
