@@ -258,7 +258,7 @@ Los mensajes de origen de marca se mantienen en gallego: «Feito en Galicia, abe
 
 ## Consentimiento y analítica (octubre de 2026)
 
-Luratic inicializa Google Consent Mode v2 antes de cargar GTM. Sin una elección guardada, `analytics_storage`, `ad_storage`, `ad_user_data` y `ad_personalization` empiezan en `denied`. El banner permite aceptar o rechazar la categoría Analítica y guarda la elección en `localStorage` bajo `luratic_consent_v1`; publicidad permanece siempre denegada.
+Luratic inicializa Google Consent Mode antes de cargar GTM y gestiona únicamente `analytics_storage`. Sin una elección guardada empieza en `denied`; el banner permite aceptar o rechazar la categoría Analítica y guarda la elección en `localStorage` bajo `luratic_consent_v1`. Cualquier lógica publicitaria debe gestionarse de forma independiente en GTM/CMP y no debe inferirse a partir de esta preferencia analítica.
 
 GA4 y Microsoft Clarity se gestionan con ese estado de consentimiento. Si se desea pasar de Consent Mode avanzado a básico —es decir, que las etiquetas no carguen en absoluto antes de aceptar— hay que revisar también los consent settings y triggers dentro del contenedor GTM.
 

@@ -331,7 +331,7 @@ other = "Web tools, Chrome extensions and Google Tag Manager templates to measur
 [visitTitle]
 other = "Your visit, live"
 [visitDescription]
-other = "Local console. It reflects your real consent state and does not change your preferences."
+other = "Local console for the interactions you see on this page."
 [demoIntro]
 other = "When you filter or open a resource, you will see an example event here."
 [analyticsDemo]

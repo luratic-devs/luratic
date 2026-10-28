@@ -10,21 +10,8 @@
     if (saved && saved.analytics === 'granted') analytics = 'granted';
   } catch (error) {}
 
-  var consentState = {
-    analytics_storage: analytics,
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied'
-  };
-
-  w.__luraticConsentState = {
-    mode: 'default',
-    analytics_storage: consentState.analytics_storage,
-    ad_storage: consentState.ad_storage,
-    ad_user_data: consentState.ad_user_data,
-    ad_personalization: consentState.ad_personalization
-  };
-
-  w.gtag('consent', 'default', consentState);
+  w.gtag('consent', 'default', {
+    analytics_storage: analytics
+  });
 })(window);
 </script>
