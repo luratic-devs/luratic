@@ -1,10 +1,11 @@
+{{ $sitePrivacy := .Site.GetPage "/privacy-site" }}
 <div class="cookie-consent" data-cookie-consent hidden>
   <section class="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-description">
     <div class="cookie-copy">
       <span class="eyebrow">{{ i18n "cookieEyebrow" }}</span>
       <h2 id="cookie-title">{{ i18n "cookieTitle" }}</h2>
       <p id="cookie-description">{{ i18n "cookieDescription" }}</p>
-      <a href="{{ "/privacy-policy/" | relLangURL }}">{{ i18n "cookiePrivacy" }} {{ partial "icon.html" "arrow" }}</a>
+      <a href="{{ with $sitePrivacy }}{{ .RelPermalink }}{{ else }}{{ "/privacy-policy/" | relLangURL }}{{ end }}">{{ i18n "cookiePrivacy" }} {{ partial "icon.html" "arrow" }}</a>
     </div>
     <div class="cookie-actions">
       <button type="button" class="button button-primary" data-cookie-accept>{{ i18n "cookieAccept" }}</button>
