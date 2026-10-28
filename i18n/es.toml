@@ -389,3 +389,42 @@ other = "Trayectoria"
 
 [footerAbout]
 other = "Curiosidade, código e un pouco de sentidiño. Feito en Galicia. Compartido con todo o mundo."
+
+[viewAllResourcesHome]
+other = "Ver los %s recursos"
+[viewAllWebs]
+other = "Ver todas las webs"
+[viewAllExtensions]
+other = "Ver todas las extensiones"
+[viewTemplatesHome]
+other = "Ver las %s plantillas para GTM"
+[searchFullCatalog]
+other = "Buscar en todo el catálogo"
+[filterChosen]
+other = "Has elegido «%s»."
+[searchRecorded]
+other = "Has buscado «%s»."
+[openToolEvent]
+other = "Has pulsado para abrir %s."
+[openDetailEvent]
+other = "Has abierto la ficha de %s."
+[hide]
+other = "Ocultar"
+[viewWords]
+other = "Ver en palabras"
+[consentAccepted]
+other = "En la demo has aceptado la analítica."
+[consentRejected]
+other = "En la demo has rechazado la analítica."
+[consentDefault]
+other = "Consentimiento de ejemplo: denegado."
+[enteredHome]
+other = "Has entrado en la portada."
+[homeCountOne]
+other = "%s herramienta destacada"
+[homeCountMany]
+other = "%s herramientas destacadas"
+[siteCountOne]
+other = "%s recurso para explorar"
+[siteCountMany]
+other = "%s recursos para explorar"
