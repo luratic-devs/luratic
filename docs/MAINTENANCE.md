@@ -254,3 +254,27 @@ Al cambiar de versión de Hugo, modifica el pin en `netlify.toml` y valida el re
 Las compilaciones de Netlify ejecutan tanto el control de privacidad como el de tracking antes de publicar. El comprobador de tracking requiere Node.js 18 o posterior y no utiliza dependencias npm.
 
 Los mensajes de origen de marca se mantienen en gallego: «Feito en Galicia, aberto ao mundo» en portada y «Feito en Galicia. Compartido con todo o mundo» en el pie común, con `lang="gl"`. La interfaz general sigue en español y los documentos de privacidad conservan su idioma original.
+
+
+## Consentimiento y analítica (octubre de 2026)
+
+Luratic inicializa Google Consent Mode v2 antes de cargar GTM. Sin una elección guardada, `analytics_storage`, `ad_storage`, `ad_user_data` y `ad_personalization` empiezan en `denied`. El banner permite aceptar o rechazar la categoría Analítica y guarda la elección en `localStorage` bajo `luratic_consent_v1`; publicidad permanece siempre denegada.
+
+GA4 y Microsoft Clarity se gestionan con ese estado de consentimiento. Si se desea pasar de Consent Mode avanzado a básico —es decir, que las etiquetas no carguen en absoluto antes de aceptar— hay que revisar también los consent settings y triggers dentro del contenedor GTM.
+
+El page view se envía con:
+
+```js
+{
+  event: 'custom_page_view',
+  event_name: 'page_view',
+  page_type: '...',
+  page_category: '...',
+  page_section: '...',
+  language: 'es' // o 'en'
+}
+```
+
+Las interacciones utilizan `custom_event` y nombres estables como `click_menu`, `click_hamburger_menu`, `click_footer`, `click_button`, `click_link` y `click_card`. `link_text` se normaliza en cliente y `link_url` conserva la URL absoluta. El campo `option` se usa solo cuando aporta contexto.
+
+Los eventos del banner usan el mismo evento genérico y los nombres `cookies_banner_impression`, `cookies_accept_all`, `cookies_reject_all`, `cookies_open_settings` y `cookies_save_preferences`.
