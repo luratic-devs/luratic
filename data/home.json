@@ -2,7 +2,7 @@
   "tools": [
     {
       "slug": "ga4-spy",
-      "summary": "Explora la configuración pública de GA4 y sigue sus cambios.",
+      "summary": "Inspecciona GA4 y audita contenedores GTM publicados sin acceso.",
       "icon": "search",
       "screenshot": {
         "src": "home/ga4-spy.jpg",
@@ -11,11 +11,11 @@
     },
     {
       "slug": "ga4-data",
-      "summary": "Consulta dimensiones, métricas y eventos. Prepara tus informes de GA4.",
+      "summary": "Consulta dimensiones, métricas, eventos y parámetros de GA4 y dónde están disponibles.",
       "icon": "table",
       "screenshot": {
         "src": "home/ga4-data.jpg",
-        "alt": "Búsqueda de dimensiones y métricas en GA4 Spy / Data"
+        "alt": "Búsqueda de dimensiones y métricas en GA4 Spy Cheatsheet"
       }
     },
     {
