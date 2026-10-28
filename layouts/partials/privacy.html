@@ -2,7 +2,7 @@
 {{ $resource := "/recursos/ga4-enhanced-debugview/" }}
 {{ $policy := .Content }}
 {{ $isUtils := in .File.Path "google-analytics-utils/privacy-policy" }}
-{{ if and $isUtils (eq .Lang "es") }}
+{{ if $isUtils }}
   {{ $product = "Google Analytics UTILS" }}
   {{ $resource = "/recursos/google-analytics-utils/" }}
   {{ with resources.Get "privacy/google-analytics-utils-original.html" }}
@@ -14,9 +14,6 @@
       {{ $policy = replaceRE `(?is)<footer\b[^>]*>.*?</footer\s*>` "" $policy }}
     {{ end }}
   {{ else }}{{ errorf "Missing original UTILS privacy policy asset" }}{{ end }}
-{{ else if $isUtils }}
-  {{ $product = "Google Analytics UTILS" }}
-  {{ $resource = "/recursos/google-analytics-utils/" }}
 {{ end }}
 <section class="shell privacy-page">
   <a class="breadcrumb" href="{{ "/recursos/" | relLangURL }}">← {{ i18n "resources" }}</a>
