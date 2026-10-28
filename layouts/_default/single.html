@@ -1,8 +1,8 @@
 {{ define "main" }}
-{{ $privacyFiles := slice "privacy-policy.md" "posts/entradas/privacypolicy.md" "google-analytics-utils/privacy-policy.md" }}
+{{ $privacyFiles := slice "privacy-policy.md" "posts/entradas/privacypolicy.md" "google-analytics-utils/privacy-policy.md" "privacy-policy.en.md" "posts/entradas/privacypolicy.en.md" "google-analytics-utils/privacy-policy.en.md" }}
 {{ if in $privacyFiles .File.Path }}
 {{ partial "privacy.html" . }}
 {{ else }}
-<section class="shell legacy-document"><a class="breadcrumb" href="{{ "/posts/" | relURL }}">← Documentación</a><div class="legacy-heading"><span class="eyebrow">{{ if in .RelPermalink "privacy" }}Información de privacidad{{ else }}Guía de Luratic{{ end }}</span><h1>{{ .Title }}</h1>{{ if not .Date.IsZero }}<p class="document-date">Publicado el {{ .Date.Format "02/01/2006" }}</p>{{ end }}</div>{{ with .Params.resourceSlug }}{{ with $.Site.GetPage (printf "/recursos/%s" .) }}<div class="related-resource-banner"><div><strong>{{ .Title }}</strong><p>Encuentra el código, los enlaces y la información del recurso en su ficha.</p></div><a class="button button-outline" href="{{ .RelPermalink }}">Ver recurso {{ partial "icon.html" "arrow" }}</a></div>{{ end }}{{ end }}<article class="prose legacy-prose">{{ .Content }}</article></section>
+<section class="shell legacy-document"><a class="breadcrumb" href="{{ "/posts/" | relLangURL }}">{{ i18n "backDocs" }}</a><div class="legacy-heading"><span class="eyebrow">{{ if in .RelPermalink "privacy" }}{{ i18n "privacyInfo" }}{{ else }}{{ i18n "luraticGuide" }}{{ end }}</span><h1>{{ .Title }}</h1>{{ if not .Date.IsZero }}<p class="document-date">{{ i18n "published" }} {{ .Date.Format "2006-01-02" }}</p>{{ end }}</div>{{ with .Params.resourceSlug }}{{ with $.Site.GetPage (printf "/recursos/%s" .) }}<div class="related-resource-banner"><div><strong>{{ .Title }}</strong><p>{{ i18n "resourceBanner" }}</p></div><a class="button button-outline" href="{{ .RelPermalink }}">{{ i18n "viewResource" }} {{ partial "icon.html" "arrow" }}</a></div>{{ end }}{{ end }}<article class="prose legacy-prose">{{ .Content }}</article></section>
 {{ end }}
 {{ end }}

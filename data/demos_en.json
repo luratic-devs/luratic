@@ -1,0 +1,187 @@
+{
+  "clarity": {
+    "label": "Clarity, from your container",
+    "kind": "Explainer recreation",
+    "note": "Animated example based on the template options. It does not load Clarity or send any information.",
+    "steps": [
+      {
+        "title": "Connect the project",
+        "body": "Add the template to GTM and enter your Clarity Project ID. Choose when the tag should fire.",
+        "short": "Project"
+      },
+      {
+        "title": "Mark what matters",
+        "body": "Send a custom event to locate a specific interaction across sessions, such as a demo request.",
+        "short": "Events"
+      },
+      {
+        "title": "Add context",
+        "body": "Custom tags help you filter sessions using implementation data, such as page type or experiment variant.",
+        "short": "Context"
+      },
+      {
+        "title": "Connect consent",
+        "body": "The template communicates analytics_storage and ad_storage states to Clarity through Consent V2 and listens for updates. Your CMP manages the user’s choice.",
+        "short": "Consent V2"
+      }
+    ]
+  },
+  "utils": {
+    "label": "Google Analytics UTILS in action",
+    "video": {
+      "id": "qMIQ7GOX9Bc",
+      "url": "https://www.youtube.com/watch?v=qMIQ7GOX9Bc",
+      "title": "Google Analytics Utils by Luratic",
+      "poster": "/images/demos/store/google-analytics-utils-video-poster.jpg",
+      "duration": "0:53",
+      "published": "2022",
+      "note": "Original recording from 2022. It shows an earlier version; UTILS 0.7.1 is now available in the Chrome Web Store."
+    },
+    "gallery": [
+      {
+        "image": "/images/demos/google-analytics-utils-off-20261027.png",
+        "title": "The current panel",
+        "alt": "Google Analytics UTILS panel with every utility disabled",
+        "width": 794,
+        "height": 1066,
+        "source": "Screenshot provided by Luratic · October 2026",
+        "group": "current"
+      },
+      {
+        "image": "/images/demos/google-analytics-utils-debug-on-20261027.png",
+        "title": "Debug Mode enabled",
+        "alt": "UTILS panel with GA4 - Activate Debug Mode enabled in turquoise",
+        "width": 794,
+        "height": 1066,
+        "source": "Screenshot provided by Luratic · October 2026",
+        "group": "current"
+      },
+      {
+        "image": "/images/demos/store/google-analytics-utils-screenshot-1.jpg",
+        "title": "Previous version panel",
+        "alt": "Chrome Web Store screenshot: older UTILS panel with Universal Analytics controls",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/google-analytics-utils/dmhoedahbmlaipacpamhefgjoiebamjm",
+        "group": "store"
+      },
+      {
+        "image": "/images/demos/store/google-analytics-utils-screenshot-2.jpg",
+        "title": "ID, injection and domains",
+        "alt": "Chrome Web Store screenshot: Change Measurement ID, Inject Container and domain filter enabled",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/google-analytics-utils/dmhoedahbmlaipacpamhefgjoiebamjm",
+        "group": "store"
+      },
+      {
+        "image": "/images/demos/store/google-analytics-utils-screenshot-3.jpg",
+        "title": "More Info and related tools",
+        "alt": "Chrome Web Store screenshot: More Info section with links to GA4 Data, GA4 Spy and Enhanced DebugView",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/google-analytics-utils/dmhoedahbmlaipacpamhefgjoiebamjm",
+        "group": "store"
+      }
+    ]
+  },
+  "debugview": {
+    "label": "GA4 Enhanced DebugView in action",
+    "video": {
+      "id": "c5vXeaEXqhc",
+      "url": "https://www.youtube.com/watch?v=c5vXeaEXqhc",
+      "title": "GA4 Enhanced DebugView by Luratic",
+      "poster": "/images/demos/store/ga4-enhanced-debugview-video-poster.jpg",
+      "duration": "1:47",
+      "published": "2022",
+      "note": "Original recording from 2022. From a DebugView event to its parameters, properties and items in the Chrome console."
+    },
+    "gallery": [
+      {
+        "image": "/images/demos/ga4-enhanced-debugview-console-20261027.png",
+        "title": "Current console output",
+        "alt": "GA4 Enhanced DebugView with a view_item event and Parameters, User Properties and Items groups in the Chrome console",
+        "width": 1498,
+        "height": 2048,
+        "source": "Screenshot provided by Luratic · October 2026",
+        "group": "current"
+      },
+      {
+        "image": "/images/demos/store/ga4-enhanced-debugview-screenshot-1.png",
+        "title": "One event and all its parameters",
+        "alt": "Chrome Web Store screenshot: view_item_list event in GA4 with its parameters and items in the console",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/ga4-enhanced-debugview-by/hgkkhcgpdigijpbclngegpckcabpjjej",
+        "group": "store"
+      },
+      {
+        "image": "/images/demos/store/ga4-enhanced-debugview-screenshot-2.png",
+        "title": "Firebase events",
+        "alt": "Chrome Web Store screenshot: Firebase screen_view event and its parameters in the console",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/ga4-enhanced-debugview-by/hgkkhcgpdigijpbclngegpckcabpjjej",
+        "group": "store"
+      },
+      {
+        "image": "/images/demos/store/ga4-enhanced-debugview-screenshot-3.png",
+        "title": "User snapshot in GA4",
+        "alt": "Chrome Web Store screenshot: view_promotion event in a GA4 user snapshot next to the console",
+        "width": 1280,
+        "height": 800,
+        "source": "https://chromewebstore.google.com/detail/ga4-enhanced-debugview-by/hgkkhcgpdigijpbclngegpckcabpjjej",
+        "group": "store"
+      }
+    ]
+  },
+  "spy": {
+    "label": "From an identifier to its configuration",
+    "kind": "Real screenshots · public example",
+    "note": "ga4spy.com interface captured on October 27, 2026. It uses the tool’s own public “try with sample data” example.",
+    "steps": [
+      {
+        "title": "Start with an ID or URL",
+        "body": "Choose Web and enter a Measurement ID or URL. You can also explore the tool with its public sample.",
+        "short": "Search",
+        "image": "/images/demos/ga4-spy-start-20261027.jpg",
+        "alt": "GA4 Spy interface: Web tab, Measurement ID or URL field and sample-data link."
+      },
+      {
+        "title": "Review what is configured",
+        "body": "The result organizes events, Google tag settings and other observable options. This example expands the key-event list; these are configuration values, not property results or user data.",
+        "short": "Inspect",
+        "image": "/images/demos/ga4-spy-events-20261027.jpg",
+        "alt": "GA4 Spy sample result with configuration sections and the key-event list expanded."
+      }
+    ]
+  },
+  "data": {
+    "label": "Find the field. Build the report.",
+    "kind": "Real screenshots · usage example",
+    "note": "data.ga4spy.com interface captured on October 27, 2026. The builder shows an illustrative ID; no GA4 report was opened or created.",
+    "steps": [
+      {
+        "title": "Search by name or identifier",
+        "body": "A search such as “session source” groups related fields. Filter by dimensions, metrics, categories and availability across GA4 surfaces.",
+        "short": "Search",
+        "image": "/images/demos/ga4-data-search-20261027.jpg",
+        "alt": "GA4 Spy Cheatsheet search results for session source, organized by category."
+      },
+      {
+        "title": "Check the scope",
+        "body": "The sessionSourceMedium entry shows its API name, session scope, explanation and capabilities. That context helps you choose the right field.",
+        "short": "Understand",
+        "image": "/images/demos/ga4-data-field-20261027.jpg",
+        "alt": "sessionSourceMedium details with description, Session scope and available capabilities."
+      },
+      {
+        "title": "Build a report link",
+        "body": "Report Builder combines dimensions, metrics and filters into a GA4 URL. The report opens in your own session and requires the corresponding permissions.",
+        "short": "Build",
+        "image": "/images/demos/ga4-data-builder-20261027.jpg",
+        "alt": "Report Builder with sessionSourceMedium and sessions selected and a GA4 URL ready."
+      }
+    ]
+  }
+}

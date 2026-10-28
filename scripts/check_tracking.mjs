@@ -8,7 +8,10 @@ import vm from 'node:vm';
 const GTM_URL = 'https://analytics.luratic.com/gtm.js?id=GTM-5D7RV9H';
 const MARKERS = /analytics\.luratic\.com\/gtm\.js|lu_page_view|GTM-5D7RV9H/i;
 // This route remains untracked after moving its original static HTML into Hugo.
-const NO_TRACKING_POLICY = 'google-analytics-utils/privacy-policy/index.html';
+const NO_TRACKING_POLICIES = new Set([
+  'google-analytics-utils/privacy-policy/index.html',
+  'en/google-analytics-utils/privacy-policy/index.html',
+]);
 const USAGE = 'Uso: node scripts/check_tracking.mjs --public public (--production | --preview)';
 
 function attributes(text) {
@@ -124,7 +127,7 @@ function main() {
     const alias = meta.some((attrs) => attrs['http-equiv']?.toLowerCase() === 'refresh');
     const templated = /<html\b[^>]*\blang\s*=/i.test(html)
       || meta.some((attrs) => attrs.name?.toLowerCase() === 'generator' && /hugo/i.test(attrs.content || ''));
-    const noTracking = name === NO_TRACKING_POLICY;
+    const noTracking = NO_TRACKING_POLICIES.has(name);
     if (!noTracking && (alias || !templated)) { skipped++; continue; }
     checked++;
     if (noTracking) withoutTracking++;
@@ -137,7 +140,7 @@ function main() {
     }
   }
   if (!checked) errors.push('no se encontraron páginas de Hugo que comprobar');
-  if (!withoutTracking) errors.push('falta la política de UTILS cuya ausencia de GTM debe verificarse');
+  if (withoutTracking !== NO_TRACKING_POLICIES.size) errors.push(`se esperaban ${NO_TRACKING_POLICIES.size} políticas de UTILS sin GTM; detectadas: ${withoutTracking}`);
   if (errors.length) {
     for (const error of errors.slice(0, 20)) console.error(`ERROR ${error}`);
     if (errors.length > 20) console.error(`... y ${errors.length - 20} errores más.`);
@@ -145,8 +148,8 @@ function main() {
     return 1;
   }
   const result = values.production
-    ? `${checked - withoutTracking} páginas de producción con GTM y lu_page_view en head; ${withoutTracking} política de UTILS sin GTM`
-    : `${checked} páginas de preview sin GTM ni lu_page_view (incluida la política de UTILS)`;
+    ? `${checked - withoutTracking} páginas de producción con GTM y lu_page_view en head; ${withoutTracking} políticas de UTILS sin GTM`
+    : `${checked} páginas de preview sin GTM ni lu_page_view (incluidas las políticas de UTILS)`;
   console.log(`OK: ${result}; ${skipped} aliases/HTML estáticos excluidos. Sin peticiones de red.`);
   return 0;
 }

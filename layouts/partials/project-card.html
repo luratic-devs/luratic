@@ -3,17 +3,17 @@
 <article class="resource-card" data-category="{{ .Params.category }}" data-search="{{ printf "%s %s %s" .Title .Description (delimit .Params.tags " ") | lower }}">
   <div class="resource-card-top">
     <span class="resource-icon accent-{{ .Params.accent }}">{{ partial "icon.html" (.Params.icon | default "code") }}</span>
-    <span class="resource-type">{{ if $isDiscontinued }}Plantilla GTM · Discontinuada{{ else if eq .Params.category "extension" }}Extensión Chrome{{ else if eq .Params.category "template" }}Plantilla GTM{{ else if $isWeb }}Herramienta web{{ else }}Utilidad{{ end }}</span>
+    <span class="resource-type">{{ if $isDiscontinued }}{{ i18n "discontinuedCard" }}{{ else if eq .Params.category "extension" }}{{ i18n "typeExtensionCard" }}{{ else if eq .Params.category "template" }}{{ i18n "typeTemplateCard" }}{{ else if $isWeb }}{{ i18n "typeWebCard" }}{{ else }}{{ i18n "typeUtilityCard" }}{{ end }}</span>
   </div>
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
   <p>{{ .Description }}</p>
-  {{ if and $isWeb (in (.Params.contributors | default (slice)) "Brais Calvo") }}<div class="resource-card-author">Por <a href="{{ "/equipo/brais-calvo/" | relURL }}">Brais Calvo</a></div>{{ end }}
+  {{ if and $isWeb (in (.Params.contributors | default (slice)) "Brais Calvo") }}<div class="resource-card-author">{{ i18n "by" }} <a href="{{ "/equipo/brais-calvo/" | relLangURL }}">Brais Calvo</a></div>{{ end }}
   <div class="resource-card-bottom">
-    <div class="resource-tags">{{ range first 2 .Params.tags }}<span{{ if eq . "Discontinuada" }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
+    <div class="resource-tags">{{ range first 2 .Params.tags }}<span{{ if or (eq . "Discontinuada") (eq . "Discontinued") }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
     {{ if and $isWeb .Params.installUrl }}
-      <a class="resource-card-launch" href="{{ .Params.installUrl }}" target="_blank" rel="noopener" aria-label="Abrir {{ .Title }} en otra pestaña">Abrir herramienta {{ partial "icon.html" "external" }}</a>
+      <a class="resource-card-launch" href="{{ .Params.installUrl }}" target="_blank" rel="noopener" aria-label="{{ i18n "openTool" }} {{ .Title }} {{ i18n "openNewTab" }}">{{ i18n "openTool" }} {{ partial "icon.html" "external" }}</a>
     {{ else }}
-      <a class="round-arrow" href="{{ .RelPermalink }}" aria-label="Ver {{ .Title }}">{{ partial "icon.html" "arrow" }}</a>
+      <a class="round-arrow" href="{{ .RelPermalink }}" aria-label="{{ i18n "viewResource" }} {{ .Title }}">{{ partial "icon.html" "arrow" }}</a>
     {{ end }}
   </div>
 </article>

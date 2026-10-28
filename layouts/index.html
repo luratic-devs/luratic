@@ -2,56 +2,86 @@
 {{ $resources := where .Site.RegularPages "Section" "recursos" }}
 {{ $templates := where $resources "Params.category" "template" }}
 {{ $people := (where .Site.RegularPages "Section" "equipo").ByWeight }}
-<section class="home-stage" id="recursos" aria-labelledby="titulo-home" data-home-catalog data-catalog-url="{{ "/recursos/" | relURL }}" data-template-url="{{ "/plantillas/" | relURL }}" data-resource-count="{{ len $resources }}" data-template-count="{{ len $templates }}">
+{{ $homeData := hugo.Data.home }}
+{{ if eq .Lang "en" }}{{ $homeData = hugo.Data.home_en }}{{ end }}
+<section class="home-stage" id="recursos" aria-labelledby="titulo-home" data-home-catalog
+  data-catalog-url="{{ "/recursos/" | relLangURL }}"
+  data-template-url="{{ "/plantillas/" | relLangURL }}"
+  data-resource-count="{{ len $resources }}"
+  data-template-count="{{ len $templates }}"
+  data-locale="{{ .Site.Language.LanguageCode }}"
+  data-label-all="{{ i18n "filterAll" }}"
+  data-label-web="{{ i18n "filterWeb" }}"
+  data-label-extension="{{ i18n "filterExtension" }}"
+  data-label-template="{{ i18n "filterTemplate" }}"
+  data-count-one="{{ i18n "homeCountOne" }}"
+  data-count-many="{{ i18n "homeCountMany" }}"
+  data-view-all="{{ printf (i18n "viewAllResourcesHome") (len $resources) }}"
+  data-view-web="{{ i18n "viewAllWebs" }}"
+  data-view-extension="{{ i18n "viewAllExtensions" }}"
+  data-view-template="{{ printf (i18n "viewTemplatesHome") (len $templates) }}"
+  data-search-catalog="{{ i18n "searchFullCatalog" }}"
+  data-filter-chosen="{{ i18n "filterChosen" }}"
+  data-search-recorded="{{ i18n "searchRecorded" }}"
+  data-open-tool-event="{{ i18n "openToolEvent" }}"
+  data-open-detail-event="{{ i18n "openDetailEvent" }}"
+  data-hide="{{ i18n "hide" }}"
+  data-show-visit="{{ i18n "showVisit" }}"
+  data-view-words="{{ i18n "viewWords" }}"
+  data-show-code="{{ i18n "showCode" }}"
+  data-consent-accepted="{{ i18n "consentAccepted" }}"
+  data-consent-rejected="{{ i18n "consentRejected" }}"
+  data-consent-default="{{ i18n "consentDefault" }}"
+  data-entered-home="{{ i18n "enteredHome" }}">
   <div class="home-shell home-stage-inner">
     <div class="home-intro">
-      <div class="home-byline"><span class="home-avatars" aria-hidden="true">{{ range $people }}<img src="{{ .Params.photo | relURL }}" alt="" width="36" height="36">{{ end }}</span><span lang="gl">Feito por Brais e Txema, en Galicia</span></div>
-      <h1 id="titulo-home">Herramientas para que la analítica web sea un poco más fácil<span>.</span></h1>
-      <p>Webs, extensiones de Chrome y plantillas de Google Tag Manager para medir, depurar y trabajar mejor con los datos. Las hacemos y las compartimos.</p>
+      <div class="home-byline"><span class="home-avatars" aria-hidden="true">{{ range $people }}<img src="{{ .Params.photo | relURL }}" alt="" width="36" height="36">{{ end }}</span><span>{{ i18n "homeMadeBy" }}</span></div>
+      <h1 id="titulo-home">{{ i18n "homeTitle" }}<span aria-hidden="true"></span></h1>
+      <p>{{ i18n "homeDescription" }}</p>
     </div>
     <aside class="home-visit" id="home-visit" aria-labelledby="home-visit-title" data-home-visit>
-      <div class="home-visit-header"><h2 id="home-visit-title">Tu visita, en directo</h2><p>Demo local. No envía datos ni cambia tus permisos.</p></div>
-      <div class="home-visit-log" data-home-log role="log" aria-live="polite" aria-relevant="additions"><p class="home-demo-intro">Al filtrar o abrir un recurso verás aquí un ejemplo del evento.</p></div>
+      <div class="home-visit-header"><h2 id="home-visit-title">{{ i18n "visitTitle" }}</h2><p>{{ i18n "visitDescription" }}</p></div>
+      <div class="home-visit-log" data-home-log role="log" aria-live="polite" aria-relevant="additions"><p class="home-demo-intro">{{ i18n "demoIntro" }}</p></div>
       <div class="home-visit-controls">
-        <div class="home-consent-group"><span id="home-consent-label">Analítica (demo)</span><div class="home-consent-options" role="group" aria-labelledby="home-consent-label"><button type="button" data-home-consent="denied" aria-pressed="true">No</button><button type="button" data-home-consent="granted" aria-pressed="false">Sí</button></div></div>
-        <button class="home-code-toggle" type="button" data-home-code aria-pressed="false">Ver el código</button>
+        <div class="home-consent-group"><span id="home-consent-label">{{ i18n "analyticsDemo" }}</span><div class="home-consent-options" role="group" aria-labelledby="home-consent-label"><button type="button" data-home-consent="denied" aria-pressed="true">{{ i18n "no" }}</button><button type="button" data-home-consent="granted" aria-pressed="false">{{ i18n "yes" }}</button></div></div>
+        <button class="home-code-toggle" type="button" data-home-code aria-pressed="false">{{ i18n "showCode" }}</button>
       </div>
     </aside>
     <div class="home-toolbar">
-      <div class="home-filters" role="group" aria-label="Filtrar herramientas destacadas">
-        <button type="button" data-home-filter="all" aria-pressed="true">Todo <span>{{ len hugo.Data.home.tools }}</span></button>
-        <button type="button" data-home-filter="web" aria-pressed="false">Consultar GA4</button>
-        <button type="button" data-home-filter="extension" aria-pressed="false">Probar mis etiquetas</button>
-        <button type="button" data-home-filter="template" aria-pressed="false">Plantillas para GTM</button>
+      <div class="home-filters" role="group" aria-label="{{ i18n "featuredFilter" }}">
+        <button type="button" data-home-filter="all" aria-pressed="true">{{ i18n "filterAll" }} <span>{{ len $homeData.tools }}</span></button>
+        <button type="button" data-home-filter="web" aria-pressed="false">{{ i18n "filterWeb" }}</button>
+        <button type="button" data-home-filter="extension" aria-pressed="false">{{ i18n "filterExtension" }}</button>
+        <button type="button" data-home-filter="template" aria-pressed="false">{{ i18n "filterTemplate" }}</button>
       </div>
-      <button class="home-search-toggle" type="button" data-home-search-toggle aria-label="Buscar un recurso" aria-controls="home-search-wrap" aria-expanded="false">{{ partial "icon.html" "search" }}</button>
-      <div class="home-search" id="home-search-wrap">{{ partial "icon.html" "search" }}<label class="sr-only" for="home-search">Buscar entre los recursos destacados</label><input id="home-search" data-home-search type="search" placeholder="Busca por nombre o por lo que necesitas" autocomplete="off"></div>
-      <a class="home-catalog-link home-catalog-desktop" href="{{ "/recursos/" | relURL }}" data-home-catalog-link>Ver los {{ len $resources }} recursos</a>
+      <button class="home-search-toggle" type="button" data-home-search-toggle aria-label="{{ i18n "searchResources" }}" aria-controls="home-search-wrap" aria-expanded="false">{{ partial "icon.html" "search" }}</button>
+      <div class="home-search" id="home-search-wrap">{{ partial "icon.html" "search" }}<label class="sr-only" for="home-search">{{ i18n "featuredSearch" }}</label><input id="home-search" data-home-search type="search" placeholder="{{ i18n "featuredSearchPlaceholder" }}" autocomplete="off"></div>
+      <a class="home-catalog-link home-catalog-desktop" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (len $resources) }}</a>
     </div>
     <div class="home-cards-area">
-      <h2 class="sr-only">Herramientas destacadas</h2>
-      <p class="sr-only" data-home-result-status role="status">{{ len hugo.Data.home.tools }} herramientas destacadas</p>
-      <div class="home-tool-grid" data-home-grid tabindex="0" role="region" aria-label="Herramientas destacadas; desliza para recorrerlas en móvil">
-        {{ range $index, $entry := hugo.Data.home.tools }}
+      <h2 class="sr-only">{{ i18n "featuredTools" }}</h2>
+      <p class="sr-only" data-home-result-status role="status">{{ printf (i18n "homeCountMany") (len $homeData.tools) }}</p>
+      <div class="home-tool-grid" data-home-grid tabindex="0" role="region" aria-label="{{ i18n "featuredTools" }}">
+        {{ range $index, $entry := $homeData.tools }}
           {{ with $.Site.GetPage (printf "/recursos/%s" $entry.slug) }}{{ partial "home-tool.html" (dict "page" . "entry" $entry "featured" (eq $index 0)) }}{{ end }}
         {{ end }}
       </div>
-      <div class="home-empty" data-home-empty hidden><h3>Nada con esos filtros entre los destacados.</h3><p>Prueba con otra palabra o busca en el catálogo completo.</p><button type="button" class="home-outline-button" data-home-reset>Ver todos los destacados</button></div>
-      <a class="home-catalog-link home-catalog-mobile" href="{{ "/recursos/" | relURL }}" data-home-catalog-link>Ver los {{ len $resources }} recursos</a>
-      <noscript><p>Puedes abrir todas las herramientas y consultar el catálogo. Activa JavaScript para usar los filtros y la demo de eventos.</p></noscript>
+      <div class="home-empty" data-home-empty hidden><h3>{{ i18n "featuredEmpty" }}</h3><p>{{ i18n "featuredEmptyText" }}</p><button type="button" class="home-outline-button" data-home-reset>{{ i18n "resetFeatured" }}</button></div>
+      <a class="home-catalog-link home-catalog-mobile" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (len $resources) }}</a>
+      <noscript><p>{{ i18n "homeNoScript" }}</p></noscript>
     </div>
-    <div class="home-visit-ticker"><span class="home-ticker-dot" aria-hidden="true"></span><span data-home-last-event>Tu visita, en directo · demo local</span><button type="button" data-home-panel-toggle aria-controls="home-visit" aria-expanded="false">Ver tu visita</button></div>
+    <div class="home-visit-ticker"><span class="home-ticker-dot" aria-hidden="true"></span><span data-home-last-event>{{ i18n "visitTicker" }}</span><button type="button" data-home-panel-toggle aria-controls="home-visit" aria-expanded="false">{{ i18n "showVisit" }}</button></div>
   </div>
 </section>
 <section class="home-team" id="equipo" aria-labelledby="titulo-equipo">
   <div class="home-shell home-team-inner">
     <div class="home-team-copy">
-      <h2 id="titulo-equipo">Somos Brais y Txema</h2>
-      <p>Trabajamos con GA4 y GTM cada día. Cuando algo nos cuesta, hacemos una herramienta; si nos sirve, la compartimos. Así desde 2020.</p>
-      <p class="home-origin" lang="gl">Feito en Galicia, aberto ao mundo.</p>
-      <a class="home-outline-button" href="{{ "/equipo/" | relURL }}">Nuestra historia</a>
+      <h2 id="titulo-equipo">{{ i18n "teamHomeTitle" }}</h2>
+      <p>{{ i18n "teamHomeText" }}</p>
+      <p class="home-origin">{{ i18n "homeOrigin" }}</p>
+      <a class="home-outline-button" href="{{ "/equipo/" | relLangURL }}">{{ i18n "ourStory" }}</a>
     </div>
-    <ul class="home-people">{{ range $people }}<li class="home-person"><img src="{{ .Params.photo | relURL }}" alt="" width="80" height="80" loading="lazy"><div><strong>{{ .Params.displayName }}</strong><span>{{ .Params.role }}</span></div><a class="home-outline-button" href="{{ .RelPermalink }}" aria-label="Trayectoria de {{ .Params.displayName }}">Trayectoria</a></li>{{ end }}</ul>
+    <ul class="home-people">{{ range $people }}<li class="home-person"><img src="{{ .Params.photo | relURL }}" alt="" width="80" height="80" loading="lazy"><div><strong>{{ .Params.displayName }}</strong><span>{{ .Params.role }}</span></div><a class="home-outline-button" href="{{ .RelPermalink }}" aria-label="{{ i18n "career" }} {{ .Params.displayName }}">{{ i18n "career" }}</a></li>{{ end }}</ul>
   </div>
 </section>
 {{ end }}

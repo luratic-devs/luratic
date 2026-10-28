@@ -1,0 +1,67 @@
+{
+  "tools": [
+    {
+      "slug": "ga4-spy",
+      "summary": "Inspect GA4 and audit published GTM containers without access.",
+      "icon": "search",
+      "screenshot": {
+        "src": "home/ga4-spy.jpg",
+        "alt": "Event configuration in GA4 Spy"
+      }
+    },
+    {
+      "slug": "ga4-data",
+      "summary": "Browse GA4 dimensions, metrics, events and parameters and see where they are available.",
+      "icon": "table",
+      "screenshot": {
+        "src": "home/ga4-data.jpg",
+        "alt": "Dimensions and metrics search in GA4 Spy Cheatsheet"
+      }
+    },
+    {
+      "slug": "google-analytics-utils",
+      "summary": "Enable Debug Mode and control your GA4, GTM and Google tag tests.",
+      "icon": "toggle",
+      "screenshot": {
+        "src": "home/google-analytics-utils.png",
+        "alt": "Google Analytics UTILS popup with Debug Mode enabled"
+      }
+    },
+    {
+      "slug": "ga4-enhanced-debugview",
+      "summary": "Review event parameters, properties and items directly in the console.",
+      "icon": "terminal",
+      "screenshot": {
+        "src": "home/ga4-enhanced-debugview.png",
+        "alt": "GA4 Enhanced DebugView events and parameters in the Chrome console"
+      }
+    },
+    {
+      "slug": "microsoft-clarity",
+      "summary": "Connect Clarity with GTM and add context to your sessions.",
+      "icon": "tag",
+      "screenshot": {
+        "src": "home/microsoft-clarity.png",
+        "alt": "Microsoft Clarity template configuration in Google Tag Manager"
+      }
+    }
+  ],
+  "concepts": [
+    {
+      "name": "Google Analytics 4",
+      "description": "Google’s tool for measuring what visitors do on your website or app."
+    },
+    {
+      "name": "Google Tag Manager",
+      "description": "A tag manager for adding and controlling measurement tags without changing site code every time."
+    },
+    {
+      "name": "dataLayer",
+      "description": "The data your site sends to Tag Manager: which page was viewed, what was clicked or what was purchased."
+    },
+    {
+      "name": "GTM template",
+      "description": "A reusable component for configuring tags or variables in Tag Manager."
+    }
+  ]
+}

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="es">
+<html lang="{{ .Lang }}">
 <head>
   {{ partial "head.html" . }}
-  {{ if and (not .Params.noTracking) (eq hugo.Environment "production") (eq (strings.TrimSuffix "/" .Site.BaseURL) .Site.Params.productionURL) }}{{ partial "gtm.html" . }}{{ end }}
+  {{ if and (not .Params.noTracking) (eq hugo.Environment "production") (strings.HasPrefix .Site.BaseURL .Site.Params.productionURL) }}{{ partial "gtm.html" . }}{{ end }}
 </head>
 <body class="{{ if .IsHome }}home{{ else }}inner-page{{ end }}">
-  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido">{{ i18n "skipContent" }}</a>
   {{ partial "header.html" . }}
   <main id="contenido">{{ block "main" . }}{{ end }}</main>
   {{ partial "footer.html" . }}
