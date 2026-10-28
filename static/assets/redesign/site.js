@@ -6,14 +6,14 @@
   function closeMenu() {
     if (!toggle || !nav) return;
     toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir navegación');
+    toggle.setAttribute('aria-label', toggle.dataset.openLabel || 'Open navigation');
     nav.classList.remove('is-open');
   }
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
       var open = toggle.getAttribute('aria-expanded') !== 'true';
       toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Cerrar navegación' : 'Abrir navegación');
+      toggle.setAttribute('aria-label', open ? (toggle.dataset.closeLabel || 'Close navigation') : (toggle.dataset.openLabel || 'Open navigation'));
       nav.classList.toggle('is-open', open);
     });
     nav.addEventListener('click', function (event) { if (event.target.closest('a')) closeMenu(); });
@@ -42,7 +42,7 @@
         if (match) count++;
       });
       filters.forEach(function (button) { var on = button.dataset.filter === category; button.classList.toggle('is-active', on); button.setAttribute('aria-pressed', String(on)); });
-      counter.textContent = count + (count === 1 ? ' recurso para explorar' : ' recursos para explorar');
+      counter.textContent = (count === 1 ? catalog.dataset.countOne : catalog.dataset.countMany).replace('%s', count);
       empty.hidden = count !== 0;
       if (syncURL) {
         var url = new URL(window.location.href);
