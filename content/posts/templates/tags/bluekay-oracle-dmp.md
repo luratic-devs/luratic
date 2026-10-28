@@ -27,6 +27,8 @@
   "resourceSlug": "oracle-bluekai-dmp"
 }
 
+**Estado: discontinuada.** Oracle retiró Oracle Advertising, incluido su DMP, el 30 de septiembre de 2024. Conservamos esta documentación únicamente como referencia histórica; no se recomienda para nuevas implementaciones.
+
 En este artículo explicamos como añadir y configurar el píxel [Oracle Bluekay DMP](https://www.oracle.com/es/data-cloud/products/data-management-platform/) a través de GTM usando nuestro template para [Google Tag Manager](https://tagmanager.google.com/). 
 
 ##   Configuración
