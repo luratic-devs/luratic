@@ -7,12 +7,13 @@
   "docsUrl": "https://www.luratic.com/posts/templates/tags/ligatus/",
   "sourceUrl": "https://github.com/luratic/Ligatus/blob/master/template.tpl",
   "tags": [
+    "Sustituida",
     "GTM",
     "Publicidad",
     "Ligatus"
   ],
   "featured": false,
-  "status": "published",
+  "status": "superseded",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez y Brais Calvo.",
@@ -29,7 +30,9 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/ligatus/"
+  "legacyDocs": "/posts/templates/tags/ligatus/",
+  "replacementNotice": "Ligatus fue adquirida por Outbrain y la oferta actual asociada a esa plataforma se presenta hoy como Outbrain Direct Response dentro de Teads. Conservamos esta plantilla del endpoint histórico de Ligatus como referencia; para nuevas implementaciones recomendamos revisar la solución actual.",
+  "replacementUrl": "https://www.outbrain.com/ligatus/"
 }
 
 ## Qué puedes hacer
