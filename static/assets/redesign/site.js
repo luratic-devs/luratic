@@ -32,6 +32,8 @@
 
   function pushInteraction(eventName, element, option) {
     window.dataLayer = window.dataLayer || [];
+    window.__luraticTrackingEvents = window.__luraticTrackingEvents || [];
+
     var payload = {
       event: 'custom_event',
       event_name: eventName,
@@ -39,7 +41,10 @@
       link_url: trackingURL(element)
     };
     if (option) payload.option = option;
+
+    window.__luraticTrackingEvents.push(payload);
     window.dataLayer.push(payload);
+    window.dispatchEvent(new CustomEvent('luratic:tracking-event', { detail: payload }));
   }
 
   document.addEventListener('click', function (event) {
