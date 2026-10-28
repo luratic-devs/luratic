@@ -188,7 +188,7 @@ Recomendación: conservarlo como laboratorio o trabajo histórico con una advert
 
 ## 5. Plantillas cuyo servicio ha sido retirado
 
-Estas tres plantillas son candidatas a salir del catálogo de herramientas vigentes y conservarse como trabajos históricos, con su URL, autoría y enlace al código. Las tres plantillas se han marcado como discontinuadas en el catálogo y su documentación histórica. Sus repositorios conservan el código y un aviso de discontinuación.
+Estas tres plantillas son candidatas a salir del catálogo de herramientas vigentes y conservarse como trabajos históricos, con su URL, autoría y enlace al código. Las tres plantillas se han marcado como discontinuadas en el catálogo y su documentación histórica. Sus repositorios conservan el código como referencia.
 
 | Recurso | Evidencia primaria | Recomendación |
 | --- | --- | --- |
