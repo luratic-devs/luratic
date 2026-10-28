@@ -1,0 +1,388 @@
+[skipContent]
+other = "Saltar al contenido"
+[homeNavLabel]
+other = "Luratic, inicio"
+[openNav]
+other = "Abrir navegación"
+[closeNav]
+other = "Cerrar navegación"
+[mainNav]
+other = "Navegación principal"
+[resources]
+other = "Recursos"
+[templatesGTM]
+other = "Plantillas para GTM"
+[team]
+other = "Quiénes somos"
+[documentation]
+other = "Documentación"
+[language]
+other = "Idioma"
+[exploreResources]
+other = "Explorar recursos"
+[meetTeam]
+other = "Conocer al equipo"
+[codeOnGithub]
+other = "Código en GitHub"
+[learnCreateShare]
+other = "Aprender. Crear. Compartir."
+[privacy]
+other = "Privacidad"
+[footerNav]
+other = "Pie de página"
+[homeMetaTitle]
+other = "Herramientas para quienes miden"
+[backHome]
+other = "Inicio"
+[backResources]
+other = "← Todos los recursos"
+[backTeam]
+other = "← Quiénes somos"
+[backDocs]
+other = "← Documentación"
+[catalogEyebrow]
+other = "La caja de herramientas de Luratic"
+[catalogTitle1]
+other = "Menos vueltas."
+[catalogTitle2]
+other = "Más recursos."
+[catalogDescription]
+other = "Extensiones, plantillas, herramientas web y utilidades para medir, depurar y automatizar. Encuentra la pieza que te falta."
+[resourceType]
+other = "Tipo de recurso"
+[all]
+other = "Todos"
+[extensions]
+other = "Extensiones"
+[templatesShort]
+other = "Plantillas GTM"
+[webTools]
+other = "Herramientas web"
+[utilities]
+other = "Utilidades"
+[searchResources]
+other = "Buscar recursos"
+[searchPlaceholder]
+other = "¿Qué necesitas?"
+[resourcesExplore]
+other = "recursos para explorar"
+[resourceExplore]
+other = "recurso para explorar"
+[createdToUse]
+other = "Creados para usarlos. Compartidos para mejorarlos."
+[resourceList]
+other = "Listado de recursos"
+[emptyTitle]
+other = "Por aquí no lo encontramos."
+[emptyText]
+other = "Prueba otro nombre, tecnología o tipo de recurso."
+[viewAllResources]
+other = "Ver todos los recursos"
+[catalogNoScript]
+other = "Puedes explorar todas las fichas. Activa JavaScript para utilizar la búsqueda y los filtros."
+[stillLearning]
+other = "Seguimos aprendiendo"
+[ideaOrBug]
+other = "¿Tienes una idea o has encontrado un fallo?"
+[tellUs]
+other = "Cuéntanos"
+[templatesEyebrow]
+other = "Código listo para adaptar"
+[templatesTitle1]
+other = "Plantillas para"
+[templatesDescription]
+other = "Plantillas de etiqueta y variable creadas por Luratic para integrar herramientas, compartir implementaciones y evitar empezar de cero."
+[templatesExplore]
+other = "plantillas para explorar"
+[templatesCreated]
+other = "Creadas para usarlas. Compartidas para mejorarlas."
+[openSource]
+other = "Código abierto"
+[improvementOrBug]
+other = "¿Tienes una mejora o has encontrado un fallo?"
+[viewGithub]
+other = "Ver GitHub"
+[typeExtension]
+other = "Extensión para Chrome"
+[typeTemplate]
+other = "Plantilla de Google Tag Manager"
+[typeWeb]
+other = "Herramienta web"
+[typeUtility]
+other = "Utilidad de analítica"
+[typeExtensionCard]
+other = "Extensión Chrome"
+[typeTemplateCard]
+other = "Plantilla GTM"
+[typeWebCard]
+other = "Herramienta web"
+[typeUtilityCard]
+other = "Utilidad"
+[discontinuedCard]
+other = "Plantilla GTM · Discontinuada"
+[by]
+other = "Por"
+[createdBy]
+other = "Creada por"
+[openTool]
+other = "Abrir herramienta"
+[openNewTab]
+other = "en otra pestaña"
+[viewResource]
+other = "Ver"
+[updateStatus]
+other = "Estado de la actualización"
+[updateReview]
+other = "Actualización en revisión"
+[discontinuedResource]
+other = "Recurso discontinuado"
+[discontinued]
+other = "Discontinuada"
+[inThisPage]
+other = "En esta ficha"
+[credits]
+other = "Créditos"
+[historicalReference]
+other = "Referencia histórica"
+[toolbox]
+other = "A tu caja de herramientas"
+[preservedCode]
+other = "Código conservado."
+[startHere]
+other = "Empieza por aquí."
+[addChrome]
+other = "Añadir a Chrome"
+[viewHistoricalCode]
+other = "Ver código histórico"
+[viewOnGithub]
+other = "Ver en GitHub"
+[openTpl]
+other = "Abrir archivo .tpl"
+[openResource]
+other = "Abrir recurso"
+[sourceDocs]
+other = "Documentación de origen"
+[privacyPolicy]
+other = "Política de privacidad"
+[platform]
+other = "Plataforma"
+[browser]
+other = "Navegador web"
+[seeRepository]
+other = "Consulta el repositorio"
+[license]
+other = "Licencia"
+[templateType]
+other = "Tipo de plantilla"
+[variable]
+other = "Variable"
+[tag]
+other = "Etiqueta"
+[independentProject]
+other = "Proyecto independiente."
+[unofficialIntegration]
+other = "Integración no oficial."
+[trademarks]
+other = "Las marcas mencionadas pertenecen a sus respectivos titulares."
+[keepExploring]
+other = "Sigue explorando"
+[alsoUseful]
+other = "También te puede servir."
+[viewCatalog]
+other = "Ver catálogo"
+[behindLuratic]
+other = "Detrás de Luratic"
+[teamTitle1]
+other = "Curiosidad compartida."
+[teamTitle2]
+other = "Desde el principio."
+[teamIntro]
+other = "Nos une la parte técnica de la analítica, las ganas de entender las cosas y la costumbre de compartir lo que aprendemos."
+[meetTheTeam]
+other = "Conoce al equipo"
+[since2020]
+other = "Desde 2020"
+[storyTitle]
+other = "Una excusa para seguir juntos."
+[storyP1]
+other = "Luratic nació de la mano de Brais Calvo, Txema Sánchez y Alfonso Rodríguez. Una forma de mantenernos unidos, seguir aprendiendo y devolver a la comunidad parte de todo lo que nos había dado."
+[storyP2]
+other = "Compartimos plantillas de Google Tag Manager, extensiones y utilidades que nacen de preguntas y necesidades reales de nuestro trabajo. Algunas son pequeñas. Otras nos llevan más lejos de lo que esperábamos."
+[storyP3]
+other = "La idea sigue siendo la misma: si algo nos ayuda, probablemente también pueda ayudarte a ti."
+[listenStory]
+other = "Escucha cómo empezó en La Hora de Datola"
+[seeYouAround]
+other = "Nos vemos por aquí"
+[communityCode]
+other = "La comunidad también es parte del código."
+[meetDatola]
+other = "Conoce Datola"
+[exploreGithub]
+other = "Explora nuestro GitHub"
+[behindCode]
+other = "Detrás del código"
+[meetCareer]
+other = "Conoce mi trayectoria"
+[portraitOf]
+other = "Retrato de"
+[opensNewTab]
+other = "se abre en otra pestaña"
+[pathHere]
+other = "El camino hasta aquí"
+[careerProjects]
+other = "Trayectoria y proyectos."
+[sharedKnowledge]
+other = "Conocimiento compartido"
+[talks]
+other = "Charlas y conversaciones."
+[viewSource]
+other = "Ver fuente"
+[workAreas]
+other = "Áreas de trabajo"
+[moreHere]
+other = "Más por aquí"
+[ideasToTools]
+other = "De las ideas a las herramientas"
+[codeJourney]
+other = "Parte del camino está en el código."
+[exploreTheResources]
+other = "Explorar los recursos"
+[codeContext]
+other = "Código con contexto"
+[docsIntro]
+other = "Guías y notas para entender cómo se utilizan nuestras plantillas. Explora también las fichas del catálogo para encontrar sus enlaces de código y descarga."
+[goCatalog]
+other = "Ir al catálogo de recursos"
+[gtmVariable]
+other = "Variable GTM"
+[gtmTag]
+other = "Etiqueta GTM"
+[guide]
+other = "Guía"
+[privacyInfo]
+other = "Información de privacidad"
+[luraticGuide]
+other = "Guía de Luratic"
+[published]
+other = "Publicado el"
+[resourceBanner]
+other = "Encuentra el código, los enlaces y la información del recurso en su ficha."
+[notFoundEyebrow]
+other = "404 · Nos falta ese dato"
+[notFoundTitle1]
+other = "Esta página"
+[notFoundTitle2]
+other = "se nos escapa."
+[notFoundText]
+other = "Puede que el enlace haya cambiado. Prueba a buscar lo que necesitas en el catálogo."
+[demoOf]
+other = "Demostración de"
+[enlargeCapture]
+other = "Ampliar captura"
+[fullCapture]
+other = "Ver captura completa ↗"
+[illustrativeExample]
+other = "Ejemplo ilustrativo"
+[demoSteps]
+other = "Pasos de la demostración"
+[step]
+other = "Paso"
+[playDemo]
+other = "Reproducir demostración"
+[play]
+other = "Reproducir"
+[nextDemo]
+other = "Siguiente paso de la demostración"
+[next]
+other = "Siguiente"
+[videoAndCaptures]
+other = "Vídeo y capturas de"
+[playVideo]
+other = "Reproducir vídeo"
+[watchDemo]
+other = "Ver demostración"
+[publishedLabel]
+other = "Publicado"
+[watchYoutube]
+other = "Ver en YouTube"
+[youtubeDisclosure]
+other = "Al reproducir se carga YouTube."
+[currentCaptures]
+other = "Capturas actuales"
+[storeCaptures]
+other = "Capturas de Chrome Web Store"
+[storeOldCaptures]
+other = "Estas capturas proceden de Chrome Web Store y documentan una versión anterior de la extensión."
+[extensionCapture]
+other = "Captura de la extensión"
+[enlarge]
+other = "Ampliar"
+[source]
+other = "Fuente"
+[privacyPolicies]
+other = "Políticas de privacidad"
+[homeMadeBy]
+other = "Feito por Brais e Txema, en Galicia"
+[homeTitle]
+other = "Herramientas para que la analítica web sea un poco más fácil."
+[homeDescription]
+other = "Webs, extensiones de Chrome y plantillas de Google Tag Manager para medir, depurar y trabajar mejor con los datos. Las hacemos y las compartimos."
+[visitTitle]
+other = "Tu visita, en directo"
+[visitDescription]
+other = "Demo local. No envía datos ni cambia tus permisos."
+[demoIntro]
+other = "Al filtrar o abrir un recurso verás aquí un ejemplo del evento."
+[analyticsDemo]
+other = "Analítica (demo)"
+[no]
+other = "No"
+[yes]
+other = "Sí"
+[showCode]
+other = "Ver el código"
+[featuredFilter]
+other = "Filtrar herramientas destacadas"
+[filterAll]
+other = "Todo"
+[filterWeb]
+other = "Consultar GA4"
+[filterExtension]
+other = "Probar mis etiquetas"
+[filterTemplate]
+other = "Plantillas para GTM"
+[featuredSearch]
+other = "Buscar entre los recursos destacados"
+[featuredSearchPlaceholder]
+other = "Busca por nombre o por lo que necesitas"
+[viewResources]
+other = "Ver los recursos"
+[featuredTools]
+other = "Herramientas destacadas"
+[featuredStatus]
+other = "herramientas destacadas"
+[featuredStatusOne]
+other = "herramienta destacada"
+[featuredEmpty]
+other = "Nada con esos filtros entre los destacados."
+[featuredEmptyText]
+other = "Prueba con otra palabra o busca en el catálogo completo."
+[resetFeatured]
+other = "Ver todos los destacados"
+[homeNoScript]
+other = "Puedes abrir todas las herramientas y consultar el catálogo. Activa JavaScript para usar los filtros y la demo de eventos."
+[visitTicker]
+other = "Tu visita, en directo · demo local"
+[showVisit]
+other = "Ver tu visita"
+[teamHomeTitle]
+other = "Somos Brais y Txema"
+[teamHomeText]
+other = "Trabajamos con GA4 y GTM cada día. Cuando algo nos cuesta, hacemos una herramienta; si nos sirve, la compartimos. Así desde 2020."
+[homeOrigin]
+other = "Feito en Galicia, aberto ao mundo."
+[ourStory]
+other = "Nuestra historia"
+[career]
+other = "Trayectoria"
