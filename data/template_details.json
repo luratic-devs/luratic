@@ -191,7 +191,8 @@
       "Prioritize sessions",
       "Upgrade reason"
     ],
-    "officialDocs": "https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-api"
+    "officialDocs": "https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-api",
+    "screenshot": "home/microsoft-clarity.png"
   },
   "outbrain-enhanced": {
     "endpoint": "https://amplify.outbrain.com/cp/obtp.js",
