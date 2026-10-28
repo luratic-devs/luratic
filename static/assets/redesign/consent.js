@@ -15,6 +15,51 @@
     catch (error) { return null; }
   }
 
+  function setPageBlocked(blocked) {
+    document.documentElement.classList.toggle('cookie-consent-open', blocked);
+    document.body.classList.toggle('cookie-consent-open', blocked);
+
+    Array.from(document.body.children).forEach(function (element) {
+      if (element === root || element.tagName === 'SCRIPT') return;
+      if (blocked) {
+        if (!element.hasAttribute('data-consent-was-inert')) {
+          element.setAttribute('data-consent-was-inert', element.inert ? 'true' : 'false');
+        }
+        element.inert = true;
+      } else if (element.hasAttribute('data-consent-was-inert')) {
+        element.inert = element.getAttribute('data-consent-was-inert') === 'true';
+        element.removeAttribute('data-consent-was-inert');
+      }
+    });
+  }
+
+  function activeDialog() {
+    return settings.hidden ? banner : settings;
+  }
+
+  function focusFirst() {
+    var element = activeDialog().querySelector('button, a[href], input, [tabindex]:not([tabindex="-1"])');
+    if (element) element.focus();
+  }
+
+  function trapFocus(event) {
+    if (event.key !== 'Tab' || root.hidden) return;
+    var dialog = activeDialog();
+    var focusable = Array.from(dialog.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), [tabindex]:not([tabindex="-1"])'))
+      .filter(function (element) { return element.offsetParent !== null; });
+    if (!focusable.length) return;
+
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  }
+
   function push(name, location, option) {
     window.dataLayer = window.dataLayer || [];
     var payload = {
@@ -26,37 +71,13 @@
     window.dataLayer.push(payload);
   }
 
-  function updateConsent(granted, source) {
+  function updateConsent(granted) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
 
-    var state = {
-      analytics_storage: granted ? 'granted' : 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied'
-    };
-
-    window.gtag('consent', 'update', state);
-
-    window.__luraticConsentState = {
-      mode: 'update',
-      analytics_storage: state.analytics_storage,
-      ad_storage: state.ad_storage,
-      ad_user_data: state.ad_user_data,
-      ad_personalization: state.ad_personalization
-    };
-
-    window.dispatchEvent(new CustomEvent('luratic:consent-change', {
-      detail: {
-        mode: 'update',
-        source: source || 'unknown',
-        analytics_storage: state.analytics_storage,
-        ad_storage: state.ad_storage,
-        ad_user_data: state.ad_user_data,
-        ad_personalization: state.ad_personalization
-      }
-    }));
+    window.gtag('consent', 'update', {
+      analytics_storage: granted ? 'granted' : 'denied'
+    });
   }
 
   function save(granted, source) {
@@ -70,7 +91,7 @@
       }));
     } catch (error) {}
 
-    updateConsent(granted, source);
+    updateConsent(granted);
 
     // Let GTM process the consent update before the analytics event.
     // This matters when the custom_event tag requires analytics_storage=granted.
@@ -84,7 +105,9 @@
     root.hidden = false;
     banner.hidden = false;
     settings.hidden = true;
+    setPageBlocked(true);
     push('cookies_banner_impression', 'banner');
+    window.setTimeout(focusFirst, 0);
   }
 
   function openSettings(location) {
@@ -94,22 +117,28 @@
     banner.hidden = true;
     settings.hidden = false;
     analytics.checked = !!(saved && saved.analytics === 'granted');
+    setPageBlocked(true);
     push('cookies_open_settings', location || 'banner');
-    var focusable = settings.querySelector('input,button');
-    if (focusable) focusable.focus();
+    window.setTimeout(focusFirst, 0);
   }
 
   function closeSettings() {
     settings.hidden = true;
-    if (getSaved()) root.hidden = true;
-    else banner.hidden = false;
-    if (lastFocus && lastFocus.focus) lastFocus.focus();
+    if (getSaved()) {
+      root.hidden = true;
+      setPageBlocked(false);
+      if (lastFocus && lastFocus.focus) lastFocus.focus();
+    } else {
+      banner.hidden = false;
+      window.setTimeout(focusFirst, 0);
+    }
   }
 
   function hideAll() {
     root.hidden = true;
     banner.hidden = false;
     settings.hidden = true;
+    setPageBlocked(false);
   }
 
   root.querySelector('[data-cookie-accept]').addEventListener('click', function () { save(true, 'cookies_accept_all'); });
@@ -127,6 +156,7 @@
     if (event.target === settings) closeSettings();
   });
   document.addEventListener('keydown', function (event) {
+    trapFocus(event);
     if (event.key === 'Escape' && !settings.hidden) closeSettings();
   });
 
