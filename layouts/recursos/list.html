@@ -1,26 +1,46 @@
 {{ define "main" }}
+{{ $all := .RegularPages }}
+{{ $resources := where $all "Params.category" "ne" "template" }}
+{{ $templates := where $all "Params.category" "template" }}
+{{ $primaryTitles := slice "GA4 Spy" "GA4 Spy · Cheatsheet" "Google Analytics UTILS" "GA4 Enhanced DebugView" }}
+
 <section class="page-intro shell">
   <a class="breadcrumb" href="{{ "/" | relLangURL }}">{{ i18n "backHome" }} <span>/</span></a>
   <div class="eyebrow">{{ i18n "catalogEyebrow" }}</div>
   <h1>{{ i18n "catalogTitle1" }}<br><span>{{ i18n "catalogTitle2" }}</span></h1>
   <p>{{ i18n "catalogDescription" }}</p>
 </section>
-<section class="catalog-section shell" data-catalog data-count-one="{{ i18n "siteCountOne" }}" data-count-many="{{ i18n "siteCountMany" }}">
-  <div class="catalog-toolbar">
-    <div class="filter-buttons" role="group" aria-label="{{ i18n "resourceType" }}">
-      <button data-filter="all" class="is-active" aria-pressed="true">{{ i18n "all" }} <span>{{ len .RegularPages }}</span></button>
-      <button data-filter="extension" aria-pressed="false">{{ i18n "extensions" }} <span>{{ len (where .RegularPages "Params.category" "extension") }}</span></button>
-      <button data-filter="template" aria-pressed="false">{{ i18n "templatesShort" }} <span>{{ len (where .RegularPages "Params.category" "template") }}</span></button>
-      <button data-filter="web" aria-pressed="false">{{ i18n "webTools" }} <span>{{ len (where .RegularPages "Params.category" "web") }}</span></button>
-      <button data-filter="utility" aria-pressed="false">{{ i18n "utilities" }} <span>{{ len (where .RegularPages "Params.category" "utility") }}</span></button>
-    </div>
-    <div class="catalog-search">{{ partial "icon.html" "search" }}<label class="sr-only" for="resource-search">{{ i18n "searchResources" }}</label><input id="resource-search" type="search" placeholder="{{ i18n "searchPlaceholder" }}" autocomplete="off"><kbd aria-hidden="true">/</kbd></div>
+
+<section class="primary-resources shell" aria-labelledby="primary-resources-title">
+  <div class="section-heading">
+    <div><span class="eyebrow">{{ i18n "featuredTools" }}</span><h2 id="primary-resources-title">{{ i18n "primaryResourcesTitle" }}</h2></div>
+    <p>{{ i18n "primaryResourcesText" }}</p>
   </div>
-  <div class="catalog-meta"><p aria-live="polite" data-result-count>{{ printf (i18n "siteCountMany") (printf "%d" (len .RegularPages)) }}</p><span>{{ i18n "createdToUse" }}</span></div>
-  <h2 class="sr-only">{{ i18n "resourceList" }}</h2>
-  <div class="catalog-grid">{{ range .RegularPages.ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
-  <div class="empty-state" data-empty-state hidden>{{ partial "icon.html" "search" }}<h2>{{ i18n "emptyTitle" }}</h2><p>{{ i18n "emptyText" }}</p><button class="button button-primary" data-clear-filters>{{ i18n "viewAllResources" }} {{ partial "icon.html" "arrow" }}</button></div>
-  <noscript><p class="notice">{{ i18n "catalogNoScript" }}</p></noscript>
+  <div class="primary-resource-grid">
+    {{ range $title := $primaryTitles }}
+      {{ range where $resources "Title" $title }}{{ partial "project-card.html" . }}{{ end }}
+    {{ end }}
+  </div>
 </section>
+
+<section class="catalog-section shell secondary-resources" aria-labelledby="secondary-resources-title">
+  <div class="catalog-meta">
+    <p>{{ len $resources }} {{ i18n "resourcesExplore" }}</p>
+    <a class="text-link" href="{{ "/plantillas/" | relLangURL }}">{{ printf (i18n "viewGtmTemplates") (printf "%d" (len $templates)) }} {{ partial "icon.html" "arrow" }}</a>
+  </div>
+  <h2 id="secondary-resources-title" class="secondary-resources-title">{{ i18n "moreResourcesTitle" }}</h2>
+  <p class="secondary-resources-copy">{{ i18n "moreResourcesText" }}</p>
+  <div class="catalog-grid">
+    {{ range $resources.ByWeight }}
+      {{ if not (in $primaryTitles .Title) }}{{ partial "project-card.html" . }}{{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<section class="shell template-catalog-cta">
+  <div><span class="eyebrow">{{ i18n "templatesGTM" }}</span><h2>{{ i18n "templateCatalogTitle" }}</h2><p>{{ i18n "templateCatalogText" }}</p></div>
+  <a class="button button-primary" href="{{ "/plantillas/" | relLangURL }}">{{ printf (i18n "viewGtmTemplates") (printf "%d" (len $templates)) }} {{ partial "icon.html" "arrow" }}</a>
+</section>
+
 <section class="shell small-cta"><div><span class="eyebrow">{{ i18n "stillLearning" }}</span><h2>{{ i18n "ideaOrBug" }}</h2></div><a class="button button-outline" href="mailto:{{ .Site.Params.email }}">{{ i18n "tellUs" }} {{ partial "icon.html" "arrow" }}</a></section>
 {{ end }}
