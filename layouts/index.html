@@ -30,8 +30,6 @@
   data-show-visit="{{ i18n "showVisit" }}"
   data-view-words="{{ i18n "viewWords" }}"
   data-show-code="{{ i18n "showCode" }}"
-  data-consent-default="{{ i18n "consentDefault" }}"
-  data-consent-updated="{{ i18n "consentUpdated" }}"
   data-entered-home="{{ i18n "enteredHome" }}">
   <div class="home-shell home-stage-inner">
     <div class="home-intro">
@@ -43,7 +41,6 @@
       <div class="home-visit-header"><h2 id="home-visit-title">{{ i18n "visitTitle" }}</h2><p>{{ i18n "visitDescription" }}</p></div>
       <div class="home-visit-log" data-home-log role="log" aria-live="polite" aria-relevant="additions"><p class="home-demo-intro">{{ i18n "demoIntro" }}</p></div>
       <div class="home-visit-controls">
-        <div class="home-consent-group"><span id="home-consent-label">{{ i18n "analyticsDemo" }}</span><strong class="home-consent-status" data-home-consent-status>denied</strong><button type="button" class="home-consent-settings" data-cookie-manage>{{ i18n "manageCookies" }}</button></div>
         <button class="home-code-toggle" type="button" data-home-code aria-pressed="false">{{ i18n "showCode" }}</button>
       </div>
     </aside>
