@@ -278,3 +278,6 @@ El page view se envía con:
 Las interacciones utilizan `custom_event` y nombres estables como `click_menu`, `click_hamburger_menu`, `click_footer`, `click_button`, `click_link` y `click_card`. `link_text` se normaliza en cliente y `link_url` conserva la URL absoluta. El campo `option` se usa solo cuando aporta contexto.
 
 Los eventos del banner usan el mismo evento genérico y los nombres `cookies_banner_impression`, `cookies_accept_all`, `cookies_reject_all`, `cookies_open_settings` y `cookies_save_preferences`.
+
+
+La política general de la web vive en `content/privacy-site.md` y su traducción inglesa en `content/privacy-site.en.md`. Las políticas históricas de las extensiones conservan sus URLs y fingerprints originales y no deben reutilizarse como política general de luratic.com.
