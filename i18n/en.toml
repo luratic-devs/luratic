@@ -335,7 +335,7 @@ other = "Local demo. It sends no data and changes no permissions."
 [demoIntro]
 other = "When you filter or open a resource, you will see an example event here."
 [analyticsDemo]
-other = "Analytics (demo)"
+other = "analytics_storage"
 [no]
 other = "No"
 [yes]
@@ -412,11 +412,13 @@ other = "Hide"
 [viewWords]
 other = "View as text"
 [consentAccepted]
-other = "You accepted analytics in the demo."
+other = "Analytics accepted."
 [consentRejected]
-other = "You rejected analytics in the demo."
+other = "Analytics rejected."
 [consentDefault]
-other = "Example consent: denied."
+other = "Initial Consent Mode: analytics_storage=%s."
+[consentUpdated]
+other = "Consent Mode updated: analytics_storage=%s."
 [enteredHome]
 other = "You entered the homepage."
 [homeCountOne]
