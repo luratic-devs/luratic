@@ -466,3 +466,12 @@ other = "Tools for measuring and debugging"
 other = "This section highlights Luratic web tools, extensions and utilities. Google Tag Manager templates have their own catalog."
 [viewGtmTemplates]
 other = "Explore all %s GTM templates"
+
+[moreResourcesTitle]
+other = "More tools and utilities"
+[moreResourcesText]
+other = "Complementary resources that remain useful without mixing the whole template archive into this page."
+[templateCatalogTitle]
+other = "Templates, in their own place."
+[templateCatalogText]
+other = "The Google Tag Manager catalog brings integrations, status and technical documentation together without burying the main tools."
