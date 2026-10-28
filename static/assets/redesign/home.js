@@ -18,7 +18,7 @@
   var lastEvent = root.querySelector('[data-home-last-event]');
   var codeToggle = root.querySelector('[data-home-code]');
   var consentButtons = Array.from(root.querySelectorAll('[data-home-consent]'));
-  var filterNames = { all: 'Todo', web: 'Consultar GA4', extension: 'Probar mis etiquetas', template: 'Plantillas para GTM' };
+  var filterNames = { all: root.dataset.labelAll, web: root.dataset.labelWeb, extension: root.dataset.labelExtension, template: root.dataset.labelTemplate };
   var category = 'all';
   var showCode = false;
   var demoConsent = 'denied';
@@ -72,7 +72,7 @@
     row.className = 'home-visit-line';
     var time = document.createElement('time');
     time.dateTime = entry.time.toISOString();
-    time.textContent = entry.time.toLocaleTimeString('es-ES', { hour12: false });
+    time.textContent = entry.time.toLocaleTimeString(root.dataset.locale || undefined, { hour12: false });
     row.appendChild(time);
     if (showCode) {
       row.appendChild(codeFor(entry));
@@ -120,19 +120,19 @@
     filters.forEach(function (button) { button.setAttribute('aria-pressed', String(button.dataset.homeFilter === category)); });
     empty.hidden = count !== 0;
     grid.hidden = count === 0;
-    status.textContent = count + (count === 1 ? ' herramienta destacada' : ' herramientas destacadas');
+    status.textContent = (count === 1 ? root.dataset.countOne : root.dataset.countMany).replace('%s', count);
     var url = new URL(category === 'template' && !query ? root.dataset.templateUrl : root.dataset.catalogUrl, window.location.href);
     if (category !== 'all' && !(category === 'template' && !query)) url.searchParams.set('tipo', category);
     if (query) url.searchParams.set('q', search.value.trim());
     var labels = {
-      all: 'Ver los ' + root.dataset.resourceCount + ' recursos',
-      web: 'Ver todas las webs',
-      extension: 'Ver todas las extensiones',
-      template: 'Ver las ' + root.dataset.templateCount + ' plantillas para GTM'
+      all: root.dataset.viewAll,
+      web: root.dataset.viewWeb,
+      extension: root.dataset.viewExtension,
+      template: root.dataset.viewTemplate
     };
     catalogLinks.forEach(function (link) {
       link.href = url.pathname + url.search;
-      link.textContent = query ? 'Buscar en todo el catálogo' : labels[category];
+      link.textContent = query ? root.dataset.searchCatalog : labels[category];
     });
     grid.scrollLeft = 0;
   }
@@ -142,7 +142,7 @@
     var changed = category !== value;
     category = value;
     updateCatalog();
-    if (changed) addLine({ human: 'Has elegido «' + filterNames[value] + '».', data: { event: 'catalog_filter', filter: value } });
+    if (changed) addLine({ human: root.dataset.filterChosen.replace('%s', filterNames[value]), data: { event: 'catalog_filter', filter: value } });
   }
 
   filters.forEach(function (button) {
@@ -155,7 +155,7 @@
     if (!value) { lastSearch = ''; return; }
     if (value === lastSearch) return;
     lastSearch = value;
-    addLine({ human: 'Has buscado «' + value + '».', data: { event: 'search', search_term: value } });
+    addLine({ human: root.dataset.searchRecorded.replace('%s', value), data: { event: 'search', search_term: value } });
   }
   search.addEventListener('input', function () {
     updateCatalog();
@@ -216,7 +216,7 @@
       cards.forEach(function (item) { item.classList.toggle('is-featured', item === card); });
       var opening = link.dataset.homeAction === 'open';
       addLine({
-        human: (opening ? 'Has pulsado para abrir ' : 'Has abierto la ficha de ') + card.dataset.homeTitle + '.',
+        human: (opening ? root.dataset.openToolEvent : root.dataset.openDetailEvent).replace('%s', card.dataset.homeTitle),
         data: { event: opening ? 'click' : 'select_content', content_type: 'tool', content_id: card.dataset.homeTool, outbound: link.target === '_blank' }
       });
       // Let the browser follow the real resource or installation URL.
@@ -227,12 +227,12 @@
     var open = !panel.classList.contains('is-open');
     panel.classList.toggle('is-open', open);
     panelToggle.setAttribute('aria-expanded', String(open));
-    panelToggle.textContent = open ? 'Ocultar' : 'Ver tu visita';
+    panelToggle.textContent = open ? root.dataset.hide : root.dataset.showVisit;
   });
   codeToggle.addEventListener('click', function () {
     showCode = !showCode;
     codeToggle.setAttribute('aria-pressed', String(showCode));
-    codeToggle.textContent = showCode ? 'Ver en palabras' : 'Ver el código';
+    codeToggle.textContent = showCode ? root.dataset.viewWords : root.dataset.showCode;
     renderLog();
   });
   consentButtons.forEach(function (button) {
@@ -241,11 +241,11 @@
       if (value === demoConsent) return;
       demoConsent = value;
       consentButtons.forEach(function (item) { item.setAttribute('aria-pressed', String(item.dataset.homeConsent === value)); });
-      addLine({ human: value === 'granted' ? 'En la demo has aceptado la analítica.' : 'En la demo has rechazado la analítica.', consent: value, mode: 'update' });
+      addLine({ human: value === 'granted' ? root.dataset.consentAccepted : root.dataset.consentRejected, consent: value, mode: 'update' });
     });
   });
 
   updateCatalog();
-  addLine({ human: 'Consentimiento de ejemplo: denegado.', consent: 'denied', mode: 'default' });
-  addLine({ human: 'Has entrado en la portada.', data: { event: 'page_view', page_path: '/' } });
+  addLine({ human: root.dataset.consentDefault, consent: 'denied', mode: 'default' });
+  addLine({ human: root.dataset.enteredHome, data: { event: 'page_view', page_path: window.location.pathname } });
 })();
