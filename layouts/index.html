@@ -10,11 +10,6 @@
   data-resource-count="{{ len $resources }}"
   data-template-count="{{ len $templates }}"
   data-locale="{{ .Site.Language.Locale }}"
-  data-language="{{ .Lang }}"
-  data-label-all="{{ i18n "filterAll" }}"
-  data-label-web="{{ i18n "filterWeb" }}"
-  data-label-extension="{{ i18n "filterExtension" }}"
-  data-label-template="{{ i18n "filterTemplate" }}"
   data-count-one="{{ i18n "homeCountOne" }}"
   data-count-many="{{ i18n "homeCountMany" }}"
   data-view-all="{{ printf (i18n "viewAllResourcesHome") (printf "%d" (len $resources)) }}"
@@ -22,15 +17,11 @@
   data-view-extension="{{ i18n "viewAllExtensions" }}"
   data-view-template="{{ printf (i18n "viewTemplatesHome") (printf "%d" (len $templates)) }}"
   data-search-catalog="{{ i18n "searchFullCatalog" }}"
-  data-filter-chosen="{{ i18n "filterChosen" }}"
-  data-search-recorded="{{ i18n "searchRecorded" }}"
-  data-open-tool-event="{{ i18n "openToolEvent" }}"
-  data-open-detail-event="{{ i18n "openDetailEvent" }}"
   data-hide="{{ i18n "hide" }}"
   data-show-visit="{{ i18n "showVisit" }}"
   data-view-words="{{ i18n "viewWords" }}"
   data-show-code="{{ i18n "showCode" }}"
-  data-entered-home="{{ i18n "enteredHome" }}">
+>
   <div class="home-shell home-stage-inner">
     <div class="home-intro">
       <div class="home-byline"><span class="home-avatars" aria-hidden="true">{{ range $people }}<img src="{{ .Params.photo | relURL }}" alt="" width="36" height="36">{{ end }}</span><span>{{ i18n "homeMadeBy" }}</span></div>
