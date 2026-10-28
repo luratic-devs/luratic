@@ -17,12 +17,9 @@
   var log = root.querySelector('[data-home-log]');
   var lastEvent = root.querySelector('[data-home-last-event]');
   var codeToggle = root.querySelector('[data-home-code]');
-  var filterNames = { all: root.dataset.labelAll, web: root.dataset.labelWeb, extension: root.dataset.labelExtension, template: root.dataset.labelTemplate };
   var category = 'all';
   var showCode = false;
   var entries = [];
-  var searchTimer;
-  var lastSearch = '';
 
   function normalize(value) {
     return value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').trim();
@@ -90,6 +87,26 @@
     lastEvent.textContent = entry.human;
   }
 
+  function isConsoleEvent(payload) {
+    return payload &&
+      (payload.event === 'custom_page_view' ||
+       (payload.event === 'custom_event' && !String(payload.event_name || '').startsWith('cookies_')));
+  }
+
+  function humanFor(payload) {
+    var label = payload.event_name || payload.event || '';
+    if (payload.link_text) label += ' · ' + payload.link_text;
+    return label;
+  }
+
+  function showTrackingPayload(payload) {
+    if (!isConsoleEvent(payload)) return;
+    addLine({
+      human: humanFor(payload),
+      data: Object.assign({}, payload)
+    });
+  }
+
   function updateCatalog() {
     var query = normalize(search.value);
     var words = query.split(/\s+/).filter(Boolean);
@@ -122,37 +139,20 @@
   }
 
   function selectFilter(value) {
-    if (!Object.prototype.hasOwnProperty.call(filterNames, value)) return;
-    var changed = category !== value;
+    if (!['all', 'web', 'extension', 'template'].includes(value)) return;
     category = value;
     updateCatalog();
-    if (changed) addLine({ human: root.dataset.filterChosen.replace('%s', filterNames[value]), data: { event: 'catalog_filter', filter: value } });
   }
 
   filters.forEach(function (button) {
     button.addEventListener('click', function () { selectFilter(button.dataset.homeFilter); });
   });
 
-  function recordSearch() {
-    clearTimeout(searchTimer);
-    var value = search.value.trim().slice(0, 120);
-    if (!value) { lastSearch = ''; return; }
-    if (value === lastSearch) return;
-    lastSearch = value;
-    addLine({ human: root.dataset.searchRecorded.replace('%s', value), data: { event: 'search', search_term: value } });
-  }
-  search.addEventListener('input', function () {
-    updateCatalog();
-    clearTimeout(searchTimer);
-    searchTimer = setTimeout(recordSearch, 450);
-  });
+  search.addEventListener('input', updateCatalog);
   search.addEventListener('keydown', function (event) {
-    if (event.key === 'Enter') recordSearch();
     if (event.key === 'Escape') {
       if (search.value) {
         search.value = '';
-        clearTimeout(searchTimer);
-        lastSearch = '';
         updateCatalog();
       } else {
         searchWrap.classList.remove('is-open');
@@ -168,15 +168,11 @@
     if (open) search.focus();
     else {
       search.value = '';
-      clearTimeout(searchTimer);
-      lastSearch = '';
       updateCatalog();
     }
   });
   root.querySelector('[data-home-reset]').addEventListener('click', function () {
     search.value = '';
-    clearTimeout(searchTimer);
-    lastSearch = '';
     selectFilter('all');
     filters[0].focus();
   });
@@ -186,8 +182,6 @@
       if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || event.button !== 0) return;
       event.preventDefault();
       search.value = '';
-      clearTimeout(searchTimer);
-      lastSearch = '';
       selectFilter(link.dataset.homeNavFilter);
       root.scrollIntoView({ block: 'start', behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
     });
@@ -198,12 +192,7 @@
       var link = event.target.closest('a[data-home-action]');
       if (!link) return;
       cards.forEach(function (item) { item.classList.toggle('is-featured', item === card); });
-      var opening = link.dataset.homeAction === 'open';
-      addLine({
-        human: (opening ? root.dataset.openToolEvent : root.dataset.openDetailEvent).replace('%s', card.dataset.homeTitle),
-        data: { event: opening ? 'click' : 'select_content', content_type: 'tool', content_id: card.dataset.homeTool, outbound: link.target === '_blank' }
-      });
-      // Let the browser follow the real resource or installation URL.
+      // site.js emits the real custom_event payload for this interaction.
     });
   });
 
@@ -220,15 +209,9 @@
     renderLog();
   });
   updateCatalog();
-  addLine({
-    human: root.dataset.enteredHome,
-    data: {
-      event: 'custom_page_view',
-      event_name: 'page_view',
-      page_type: 'home',
-      page_category: 'home',
-      page_section: 'home',
-      language: root.dataset.language
-    }
+
+  (window.__luraticTrackingEvents || []).forEach(showTrackingPayload);
+  window.addEventListener('luratic:tracking-event', function (event) {
+    showTrackingPayload(event.detail);
   });
 })();
