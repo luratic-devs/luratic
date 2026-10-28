@@ -6,7 +6,7 @@ import { parseArgs } from 'node:util';
 import vm from 'node:vm';
 
 const GTM_URL = 'https://analytics.luratic.com/gtm.js?id=GTM-5D7RV9H';
-const MARKERS = /analytics\.luratic\.com\/gtm\.js|lu_page_view|GTM-5D7RV9H/i;
+const MARKERS = /analytics\.luratic\.com\/gtm\.js|custom_page_view|GTM-5D7RV9H/i;
 // This route remains untracked after moving its original static HTML into Hugo.
 const NO_TRACKING_POLICIES = new Set([
   'google-analytics-utils/privacy-policy/index.html',
@@ -84,18 +84,15 @@ function checkProduction(html, filename) {
   }
   if (!inHead(gtmLoads[0].position)) throw new Error('la carga de GTM está fuera de <head>');
   if (!Array.isArray(sandbox.dataLayer)) throw new Error('dataLayer no es una lista');
-  const events = sandbox.dataLayer.filter((event) => event?.event === 'lu_page_view');
-  if (events.length !== 1) throw new Error(`se esperaba un evento lu_page_view; detectados: ${events.length}`);
+  const events = sandbox.dataLayer.filter((event) => event?.event === 'custom_page_view');
+  if (events.length !== 1) throw new Error(`se esperaba un evento custom_page_view; detectados: ${events.length}`);
   const event = events[0];
-  for (const field of ['page', 'context']) {
-    if (!event[field] || typeof event[field] !== 'object' || Array.isArray(event[field])) {
-      throw new Error(`lu_page_view no contiene un objeto ${field}`);
+  if (event.event_name !== 'page_view') throw new Error('custom_page_view debe usar event_name=page_view');
+  for (const field of ['page_type', 'page_category', 'page_section', 'language']) {
+    if (typeof event[field] !== 'string' || !event[field]) {
+      throw new Error(`custom_page_view no contiene un valor válido para ${field}`);
     }
   }
-  if (typeof event.page.title !== 'string' || typeof event.page.permalink !== 'string') {
-    throw new Error('faltan page.title o page.permalink en lu_page_view');
-  }
-  if (event.context.environment !== 'production') throw new Error('context.environment no es production');
 }
 
 function main() {
@@ -148,8 +145,8 @@ function main() {
     return 1;
   }
   const result = values.production
-    ? `${checked - withoutTracking} páginas de producción con GTM y lu_page_view en head; ${withoutTracking} políticas de UTILS sin GTM`
-    : `${checked} páginas de preview sin GTM ni lu_page_view (incluidas las políticas de UTILS)`;
+    ? `${checked - withoutTracking} páginas de producción con GTM y custom_page_view en head; ${withoutTracking} políticas de UTILS sin GTM`
+    : `${checked} páginas de preview sin GTM ni custom_page_view (incluidas las políticas de UTILS)`;
   console.log(`OK: ${result}; ${skipped} aliases/HTML estáticos excluidos. Sin peticiones de red.`);
   return 0;
 }
