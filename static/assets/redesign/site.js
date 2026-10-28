@@ -1,6 +1,80 @@
 (function () {
   'use strict';
   document.documentElement.classList.add('js');
+
+  function normalizeTrackingText(value) {
+    return String(value || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/&/g, ' and ')
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_+|_+$/g, '')
+      .slice(0, 120);
+  }
+
+  function trackingText(element) {
+    return normalizeTrackingText(
+      element.getAttribute('aria-label') ||
+      element.textContent ||
+      element.getAttribute('title') ||
+      element.getAttribute('href') ||
+      ''
+    );
+  }
+
+  function trackingURL(element) {
+    var href = element.getAttribute && element.getAttribute('href');
+    if (!href) return window.location.href;
+    try { return new URL(href, window.location.href).href; }
+    catch (error) { return href; }
+  }
+
+  function pushInteraction(eventName, element, option) {
+    window.dataLayer = window.dataLayer || [];
+    var payload = {
+      event: 'custom_event',
+      event_name: eventName,
+      link_text: trackingText(element),
+      link_url: trackingURL(element)
+    };
+    if (option) payload.option = option;
+    window.dataLayer.push(payload);
+  }
+
+  document.addEventListener('click', function (event) {
+    var element = event.target.closest('a,button');
+    if (!element || element.closest('[data-cookie-consent]') || element.hasAttribute('data-cookie-manage')) return;
+
+    var name = 'click_button';
+    var option = '';
+
+    if (element.classList.contains('menu-toggle')) {
+      name = 'click_hamburger_menu';
+      option = element.getAttribute('aria-expanded') === 'true' ? 'open' : 'close';
+    } else if (element.closest('.site-nav')) {
+      name = 'click_menu';
+      option = element.closest('.language-switcher') ? 'language_switcher' : 'main_navigation';
+    } else if (element.closest('footer')) {
+      name = 'click_footer';
+      option = 'footer';
+    } else if (element.closest('.resource-card')) {
+      name = 'click_card';
+      option = 'resource_card';
+    } else if (element.closest('.home-tool')) {
+      name = 'click_card';
+      option = 'home_tool';
+    } else if (element.closest('.person-card')) {
+      name = 'click_card';
+      option = 'person_card';
+    } else if (element.tagName === 'A') {
+      name = 'click_link';
+      option = 'content_link';
+    }
+
+    pushInteraction(name, element, option);
+  });
+
   var toggle = document.querySelector('.menu-toggle');
   var nav = document.getElementById('site-nav');
   function closeMenu() {
