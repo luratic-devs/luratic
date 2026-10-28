@@ -1,72 +1,54 @@
 {{/* baseof.html limits this partial to the production environment and domain. */}}
+{{ $pageType := "page" }}
+{{ $pageCategory := "other" }}
+{{ $pageSection := (.Section | default "other") }}
+
+{{ if .IsHome }}
+  {{ $pageType = "home" }}
+  {{ $pageCategory = "home" }}
+  {{ $pageSection = "home" }}
+{{ else if eq .Section "recursos" }}
+  {{ $pageType = "resource_detail" }}
+  {{ $pageCategory = "resources" }}
+  {{ $pageSection = (.Params.category | default "resource") }}
+{{ else if eq .Section "plantillas" }}
+  {{ $pageType = "listing" }}
+  {{ $pageCategory = "resources" }}
+  {{ $pageSection = "templates" }}
+{{ else if eq .Section "equipo" }}
+  {{ if .IsSection }}{{ $pageType = "listing" }}{{ else }}{{ $pageType = "profile" }}{{ end }}
+  {{ $pageCategory = "about" }}
+  {{ $pageSection = "team" }}
+{{ else if eq .Section "posts" }}
+  {{ if .IsSection }}{{ $pageType = "listing" }}{{ else }}{{ $pageType = "documentation" }}{{ end }}
+  {{ $pageCategory = "documentation" }}
+  {{ $pageSection = "documentation" }}
+{{ end }}
+
+{{ if in .RelPermalink "privacy-policy" }}
+  {{ $pageType = "legal" }}
+  {{ $pageCategory = "privacy" }}
+  {{ $pageSection = "privacy" }}
+{{ end }}
+
+{{ $event := dict
+  "event" "custom_page_view"
+  "event_name" "page_view"
+  "page_type" $pageType
+  "page_category" $pageCategory
+  "page_section" $pageSection
+  "language" .Lang
+}}
+
 {{ if .Site.Params.gtm_id }}
 <link href="https://analytics.luratic.com" rel="preconnect" crossorigin>
 <link rel="dns-prefetch" href="https://analytics.luratic.com">
 {{ end }}
 
-{{ if eq .Site.Params.gtm_datalayer "basic" }}
-  {{ $id := "" }}
-  {{ with .File }}{{ $id = .UniqueID }}{{ end }}
-  {{ $type2 := "post" }}
-  {{ if .IsHome }}
-    {{ $type2 = "home" }}
-  {{ else if eq .Kind "taxonomy" }}
-    {{ $type2 = "tag" }}
-  {{ else if eq .Type "page" }}
-    {{ $type2 = "page" }}
-  {{ end }}
-  {{ $page := dict
-    "publish_date" (.PublishDate.Format "2006-01-02")
-    "modified_date" (.Lastmod.Format "2006-01-02")
-    "kind" .Kind
-    "id" $id
-    "title" .LinkTitle
-    "permalink" .Permalink
-    "type" .Type
-    "translated" (printf "%t" .IsTranslated)
-    "type2" $type2
-    "language" .Language.Name
-    "description" .Description
-    "keywords" .Keywords
-  }}
-  {{ if not .ExpiryDate.IsZero }}
-    {{ $page = merge $page (dict "pageExpiryDate" (.ExpiryDate.Format "2006-01-02")) }}
-  {{ end }}
-  {{ if eq .Kind "page" }}
-    {{ $readingSeconds := math.Round (mul (div (countwords .Content) 220.0) 60) }}
-    {{ $page = merge $page (dict
-      "reading_time_minutes" .ReadingTime
-      "reading_time_seconds" $readingSeconds
-      "word_count" .WordCount
-      "fuzzy_word_count" .FuzzyWordCount
-    ) }}
-  {{ end }}
-  {{ with .Params.author }}
-    {{ if reflect.IsMap . }}
-      {{ with .name }}{{ $page = merge $page (dict "author" .) }}{{ end }}
-    {{ else }}
-      {{ $page = merge $page (dict "author" (printf "%v" .)) }}
-    {{ end }}
-  {{ end }}
-  {{ with .Params.categories }}
-    {{ $page = merge $page (dict "category" (printf "%v" (index . 0))) }}
-  {{ end }}
-  {{ with .Params.tags }}
-    {{ $page = merge $page (dict "tags" (delimit . "|")) }}
-  {{ end }}
-  {{ $context := dict
-    "build" hugo.BuildDate
-    "commit" hugo.CommitHash
-    "version" (printf "%v" hugo.Version)
-    "environment" hugo.Environment
-  }}
-  {{ $event := dict "event" "lu_page_view" "page" $page "context" $context }}
-  {{/* A Go object in JavaScript context is serialized and escaped by html/template. */}}
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({{ $event }});
-  </script>
-{{ end }}
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({{ $event }});
+</script>
 
 {{ with .Site.Params.gtm_id }}
 <script>
