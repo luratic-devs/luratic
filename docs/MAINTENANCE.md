@@ -24,7 +24,7 @@ Una ruta dentro de `static/` se publica sin ese prefijo. Por ejemplo, `static/im
 
 ## Mantener la portada
 
-La portada presenta cinco herramientas en este orden: **GA4 Spy → GA4 Spy / Data → Google Analytics UTILS → GA4 Enhanced DebugView → Microsoft Clarity**. El orden del array `tools` en `data/home.json` determina tanto el orden visual como el de lectura y teclado. No depende del campo `weight` del catálogo.
+La portada presenta cinco herramientas en este orden: **GA4 Spy → GA4 Spy · Cheatsheet → Google Analytics UTILS → GA4 Enhanced DebugView → Microsoft Clarity**. El orden del array `tools` en `data/home.json` determina tanto el orden visual como el de lectura y teclado. No depende del campo `weight` del catálogo.
 
 Cada entrada contiene `slug`, `summary`, `icon` y `screenshot` (`src` y `alt`). El nombre, categoría, URL de la ficha, enlace externo y aviso de actualización se leen de `content/recursos/<slug>.md`; no los dupliques en los datos de portada. El campo `summary` es una descripción corta adaptada a la tarjeta. Las fichas de las webs mantienen el crédito a Brais. La sección del equipo sigue inmediatamente al catálogo destacado. La portada no muestra una sección de conceptos introductorios.
 
@@ -142,7 +142,7 @@ El componente de las extensiones vive en `layouts/partials/extension-media.html`
 
 La recreación de Clarity vive en `layouts/partials/demos/clarity.html` y se identifica como ilustrativa. Sus controles y los recorridos de las webs permanecen en `static/assets/redesign/demos.js`; se pausan fuera de pantalla y comienzan detenidos con la preferencia de movimiento reducido. No ejecutan las herramientas ni inyectan etiquetas.
 
-La ficha de UTILS describe la actualización 0.7.1, pendiente de aprobación según la información facilitada durante la renovación. Las capturas actuales documentan su interfaz; no equivalen a haber probado el nuevo paquete. El vídeo oficial es de 2022 y está etiquetado como una versión anterior. Antes de retirar el aviso de revisión, verificar la versión publicada en tienda y contrastar las funciones con el paquete aprobado. DebugView se presenta con su salida actual en la consola de Chrome.
+La ficha de UTILS describe la actualización 0.7.1, publicada en Chrome Web Store. Las capturas actuales documentan su interfaz y el vídeo oficial de 2022 sigue etiquetado como una versión anterior. DebugView se presenta con su salida actual en la consola de Chrome.
 
 En los perfiles, `bio` es la presentación breve junto a la foto; el cuerpo Markdown desarrolla capacidades, forma de trabajar y contexto. `talks` contiene `title`, `event`, `date`, `role`, `description` opcional y `url`. Mantén las fechas como texto cuando solo se conozca un intervalo. Distingue una ponencia, una conversación, una tarea de organización y la asistencia a un evento.
 
