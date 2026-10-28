@@ -2,6 +2,7 @@
 <html lang="{{ .Lang }}">
 <head>
   {{ partial "head.html" . }}
+  {{ partial "consent-default.html" . }}
   {{ if and (not .Params.noTracking) (eq hugo.Environment "production") (strings.HasPrefix .Site.BaseURL .Site.Params.productionURL) }}{{ partial "gtm.html" . }}{{ end }}
 </head>
 <body class="{{ if .IsHome }}home{{ else }}inner-page{{ end }}">
@@ -9,7 +10,9 @@
   {{ partial "header.html" . }}
   <main id="contenido">{{ block "main" . }}{{ end }}</main>
   {{ partial "footer.html" . }}
+  {{ partial "cookie-consent.html" . }}
   <script src="{{ "assets/redesign/site.js" | relURL }}" defer></script>
+  <script src="{{ "assets/redesign/consent.js" | relURL }}" defer></script>
   {{ if .IsHome }}<script src="{{ "assets/redesign/home.js" | relURL }}" defer></script>{{ end }}
   {{ if .Params.demo }}<script src="{{ "assets/redesign/demos.js" | relURL }}" defer></script>{{ end }}
   {{ if in (slice "utils" "debugview") .Params.demo }}<script src="{{ "assets/redesign/extension-media.js" | relURL }}" defer></script>{{ end }}
