@@ -203,3 +203,22 @@
     font-size: 12px;
   }
 }
+
+
+.resource-discontinued-notice {
+  border-color: #d8b7b7;
+  border-left-color: #a74444;
+  background: #f8eded;
+}
+.resource-discontinued-notice .eyebrow { color: #8e2f2f; }
+.resource-discontinued-notice p { color: #6d4040; }
+.tag-list .is-discontinued,
+.resource-tags .is-discontinued {
+  background: #f4dddd;
+  color: #8e2f2f;
+  border-color: #dfbaba;
+  font-weight: 750;
+}
+.resource-card:has(.resource-tags .is-discontinued) {
+  border-color: #dfcaca;
+}

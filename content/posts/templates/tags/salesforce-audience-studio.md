@@ -26,6 +26,8 @@
   "resourceSlug": "salesforce-audience-studio"
 }
 
+**Estado: discontinuada.** Salesforce retiró Audience Studio el 1 de febrero de 2024. Conservamos esta documentación únicamente como referencia histórica; no se recomienda para nuevas implementaciones.
+
 Plantilla para Salesforce Audience Studio que expone Data ID, Namespace ID, ruta y opciones de consentimiento. También incluye configuración adicional, función de callback y registro en consola. El repositorio conserva el archivo de la integración y su licencia.
 
 ## Recursos

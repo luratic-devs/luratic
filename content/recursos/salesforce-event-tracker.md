@@ -1,18 +1,19 @@
 {
   "slug": "salesforce-event-tracker",
   "category": "template",
-  "description": "Configura el píxel de Salesforce para medir audiencias procedentes de emails.",
+  "description": "Integración histórica del píxel de Salesforce/Krux para GTM, vinculada al antiguo entorno de Audience Studio.",
   "repo": "https://github.com/luratic/SalesForce",
   "installUrl": "https://raw.githubusercontent.com/luratic/SalesForce/master/template.tpl",
   "docsUrl": "https://www.luratic.com/posts/templates/tags/salesforce-event-tracker/",
   "sourceUrl": "https://github.com/luratic/SalesForce/blob/master/template.tpl",
   "tags": [
+    "Discontinuada",
     "GTM",
     "Salesforce",
     "Email"
   ],
   "featured": false,
-  "status": "published",
+  "status": "discontinued",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez y Brais Calvo.",
@@ -29,13 +30,14 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/salesforce-event-tracker/"
+  "legacyDocs": "/posts/templates/tags/salesforce-event-tracker/",
+  "discontinuedNotice": "Esta plantilla utiliza el antiguo endpoint de Krux/Audience Studio. Tras la retirada de Audience Studio, la conservamos como referencia histórica y no se recomienda para nuevas implementaciones."
 }
 
 ## Qué puedes hacer
 
 Plantilla de GTM destinada al píxel de Salesforce para medir audiencias provenientes de campañas de email. La etiqueta expone los campos Event ID y Event Type para definir la información enviada. El archivo del repositorio permite consultar su implementación y permisos.
 
-## Código y configuración
+## Código histórico
 
-El repositorio incluye el archivo de la plantilla. Consulta su documentación y revisa la configuración y los permisos antes de incorporarla a tu contenedor de Google Tag Manager.
+El repositorio conserva el archivo de la plantilla, su configuración y su licencia como referencia histórica. No la utilices para una implementación nueva.

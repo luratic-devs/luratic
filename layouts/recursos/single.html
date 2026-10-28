@@ -1,5 +1,6 @@
 {{ define "main" }}
 {{ $isWeb := eq .Params.category "web" }}
+{{ $isDiscontinued := eq .Params.status "discontinued" }}
 {{ $hasBrais := in (.Params.contributors | default (slice)) "Brais Calvo" }}
 {{ $hasTOC := ge (len (findRE "<h2" .Content)) 4 }}
 <div class="shell resource-detail">
@@ -10,7 +11,7 @@
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
       {{ if and $isWeb $hasBrais }}<p class="resource-author">Creada por <a href="{{ "/equipo/brais-calvo/" | relURL }}">Brais Calvo</a>.</p>{{ end }}
-      <div class="tag-list">{{ range .Params.tags }}<span>{{ . }}</span>{{ end }}</div>
+      <div class="tag-list">{{ range .Params.tags }}<span{{ if eq . "Discontinuada" }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
     </div>
     <div class="detail-symbol accent-{{ .Params.accent }}">{{ partial "icon.html" (.Params.icon | default "code") }}</div>
   </div>
@@ -18,6 +19,13 @@
   {{ with .Params.releaseNotice }}
     <aside class="resource-release-notice" role="note" aria-label="Estado de la actualización">
       <span class="eyebrow">Actualización en revisión</span>
+      <p>{{ . }}</p>
+    </aside>
+  {{ end }}
+
+  {{ with .Params.discontinuedNotice }}
+    <aside class="resource-release-notice resource-discontinued-notice" role="note" aria-label="Recurso discontinuado">
+      <span class="eyebrow">Discontinuada</span>
       <p>{{ . }}</p>
     </aside>
   {{ end }}
@@ -44,15 +52,15 @@
     </article>
 
     <aside class="resource-sidebar">
-      <span class="eyebrow">A tu caja de herramientas</span>
-      <h2>Empieza por aquí.</h2>
+      <span class="eyebrow">{{ if $isDiscontinued }}Referencia histórica{{ else }}A tu caja de herramientas{{ end }}</span>
+      <h2>{{ if $isDiscontinued }}Código conservado.{{ else }}Empieza por aquí.{{ end }}</h2>
       {{ if $isWeb }}
         {{ with .Params.installUrl }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">Abrir herramienta {{ partial "icon.html" "external" }}</a>{{ end }}
       {{ else if eq .Params.category "extension" }}
         <a class="button button-primary" href="{{ .Params.installUrl }}" target="_blank" rel="noopener">Añadir a Chrome {{ partial "icon.html" "external" }}</a>
       {{ else }}
-        {{ with .Params.repo }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">Ver en GitHub {{ partial "icon.html" "external" }}</a>{{ end }}
-        {{ with .Params.installUrl }}<a class="button button-outline" href="{{ . }}" target="_blank" rel="noopener">{{ if eq $.Params.category "template" }}Abrir archivo .tpl{{ else }}Abrir recurso{{ end }} {{ partial "icon.html" "download" }}</a>{{ end }}
+        {{ with .Params.repo }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">{{ if $isDiscontinued }}Ver código histórico{{ else }}Ver en GitHub{{ end }} {{ partial "icon.html" "external" }}</a>{{ end }}
+        {{ if not $isDiscontinued }}{{ with .Params.installUrl }}<a class="button button-outline" href="{{ . }}" target="_blank" rel="noopener">{{ if eq $.Params.category "template" }}Abrir archivo .tpl{{ else }}Abrir recurso{{ end }} {{ partial "icon.html" "download" }}</a>{{ end }}{{ end }}
       {{ end }}
       {{ with .Params.docsUrl }}<a class="sidebar-link" href="{{ . }}" target="_blank" rel="noopener">Documentación de origen {{ partial "icon.html" "external" }}</a>{{ end }}
       {{ with .Params.privacyUrl }}<a class="sidebar-link" href="{{ . | relURL }}">Política de privacidad {{ partial "icon.html" "arrow" }}</a>{{ end }}
