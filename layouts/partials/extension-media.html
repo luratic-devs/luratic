@@ -3,63 +3,40 @@
 {{ with .media }}
 {{ $media := . }}
 {{ $gallery := .gallery | default (slice) }}
-<section class="extension-media{{ if $compact }} extension-media--compact{{ end }}" data-extension-media aria-label="{{ .label | default (printf "Vídeo y capturas de %s" $page.Title) }}">
+<section class="extension-media{{ if $compact }} extension-media--compact{{ end }}" data-extension-media aria-label="{{ .label | default (printf "%s %s" (i18n "videoAndCaptures") $page.Title) }}">
   {{ with .video }}
   {{ $title := .title | default $page.Title }}
   <div class="media-player">
-    <a class="media-video-launch" data-video-id="{{ .id }}" data-video-title="{{ $title }}" href="{{ .url }}" target="_blank" rel="noopener" aria-label="Reproducir vídeo: {{ $title }}">
+    <a class="media-video-launch" data-video-id="{{ .id }}" data-video-title="{{ $title }}" href="{{ .url }}" target="_blank" rel="noopener" aria-label="{{ i18n "playVideo" }}: {{ $title }}">
       {{ with .poster }}<img class="media-video-poster" src="{{ . | relURL }}" alt="" loading="lazy" decoding="async">{{ end }}
       <span class="media-video-shade" aria-hidden="true"></span>
-      <span class="media-play-control">
-        <span class="media-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.7c0-.8.9-1.3 1.6-.9l10 6.3a1.1 1.1 0 0 1 0 1.8l-10 6.3c-.7.4-1.6-.1-1.6-.9Z"/></svg></span>
-        <span class="media-play-label">Ver demostración</span>
-      </span>
+      <span class="media-play-control"><span class="media-play-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.7c0-.8.9-1.3 1.6-.9l10 6.3a1.1 1.1 0 0 1 0 1.8l-10 6.3c-.7.4-1.6-.1-1.6-.9Z"/></svg></span><span class="media-play-label">{{ i18n "watchDemo" }}</span></span>
     </a>
   </div>
-  {{/* Keep provenance outside the player: it remains available after the
-       click-to-load iframe replaces the launch link, and without JavaScript. */}}
   <div class="media-video-caption">
     <div class="media-video-copy">
       {{ if not $compact }}{{ with $media.label }}<span class="media-label">{{ . }}</span>{{ end }}{{ end }}
       {{ if $compact }}<p class="media-video-title">{{ $title }}</p>{{ else }}<h2 class="media-video-title">{{ $title }}</h2>{{ end }}
-      {{ if or .duration .published }}<div class="media-video-facts">{{ with .duration }}<span>{{ . }}</span>{{ end }}{{ with .published }}<span>Publicado {{ . }}</span>{{ end }}</div>{{ end }}
+      {{ if or .duration .published }}<div class="media-video-facts">{{ with .duration }}<span>{{ . }}</span>{{ end }}{{ with .published }}<span>{{ i18n "publishedLabel" }} {{ . }}</span>{{ end }}</div>{{ end }}
     </div>
-    <div class="media-video-links">
-      <a class="media-video-source" href="{{ .url }}" target="_blank" rel="noopener">Ver en YouTube {{ partial "icon.html" "external" }}</a>
-      <p class="media-video-disclosure">Al reproducir se carga YouTube.</p>
-    </div>
+    <div class="media-video-links"><a class="media-video-source" href="{{ .url }}" target="_blank" rel="noopener">{{ i18n "watchYoutube" }} {{ partial "icon.html" "external" }}</a><p class="media-video-disclosure">{{ i18n "youtubeDisclosure" }}</p></div>
   </div>
   {{ with .note }}<p class="media-note">{{ . }}</p>{{ end }}
   {{ end }}
 
   {{ if not $compact }}
-  {{ range $group := slice (dict "key" "current" "title" "Capturas actuales") (dict "key" "store" "title" "Capturas de Chrome Web Store") }}
+  {{ range $group := slice (dict "key" "current" "title" (i18n "currentCaptures")) (dict "key" "store" "title" (i18n "storeCaptures")) }}
   {{ $items := where $gallery "group" $group.key }}
   {{ with $items }}
     {{ if eq $group.key "store" }}
-    <details class="media-store-gallery">
-      <summary><span>{{ $group.title }}</span><span class="media-gallery-count" aria-hidden="true">{{ len . }}</span></summary>
-      <p class="media-gallery-note">Estas capturas proceden de Chrome Web Store y documentan una versión anterior de la extensión.</p>
+    <details class="media-store-gallery"><summary><span>{{ $group.title }}</span><span class="media-gallery-count" aria-hidden="true">{{ len . }}</span></summary><p class="media-gallery-note">{{ i18n "storeOldCaptures" }}</p>
     {{ else }}
-    <div class="media-current-gallery">
-      <div class="media-gallery-heading"><h3>{{ $group.title }}</h3><span class="media-gallery-count" aria-hidden="true">{{ len . }}</span></div>
+    <div class="media-current-gallery"><div class="media-gallery-heading"><h3>{{ $group.title }}</h3><span class="media-gallery-count" aria-hidden="true">{{ len . }}</span></div>
     {{ end }}
       <div class="media-gallery-grid">
         {{ range . }}
-        {{ $title := .title | default .alt | default "Captura de la extensión" }}
-        <figure class="media-capture">
-          <a class="media-image-link" data-media-image href="{{ .image | relURL }}" data-media-title="{{ $title }}" target="_blank" rel="noopener" aria-label="Ampliar captura: {{ $title }}">
-            <img src="{{ .image | relURL }}" alt="{{ .alt | default $title }}"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }} loading="lazy" decoding="async">
-            <span class="media-image-action">Ampliar {{ partial "icon.html" "external" }}</span>
-          </a>
-          <figcaption>
-            <strong>{{ $title }}</strong>
-            {{ with .source }}
-              {{ if or (strings.HasPrefix . "https://") (strings.HasPrefix . "http://") }}<a class="media-capture-source" href="{{ . }}" target="_blank" rel="noopener">Fuente{{ if eq $group.key "store" }}: Chrome Web Store{{ end }} {{ partial "icon.html" "external" }}</a>
-              {{ else }}<span class="media-capture-source">Fuente: {{ . }}</span>{{ end }}
-            {{ end }}
-          </figcaption>
-        </figure>
+        {{ $title := .title | default .alt | default (i18n "extensionCapture") }}
+        <figure class="media-capture"><a class="media-image-link" data-media-image href="{{ .image | relURL }}" data-media-title="{{ $title }}" target="_blank" rel="noopener" aria-label="{{ i18n "enlargeCapture" }}: {{ $title }}"><img src="{{ .image | relURL }}" alt="{{ .alt | default $title }}"{{ with .width }} width="{{ . }}"{{ end }}{{ with .height }} height="{{ . }}"{{ end }} loading="lazy" decoding="async"><span class="media-image-action">{{ i18n "enlarge" }} {{ partial "icon.html" "external" }}</span></a><figcaption><strong>{{ $title }}</strong>{{ with .source }}{{ if or (strings.HasPrefix . "https://") (strings.HasPrefix . "http://") }}<a class="media-capture-source" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "source" }}{{ if eq $group.key "store" }}: Chrome Web Store{{ end }} {{ partial "icon.html" "external" }}</a>{{ else }}<span class="media-capture-source">{{ i18n "source" }}: {{ . }}</span>{{ end }}{{ end }}</figcaption></figure>
         {{ end }}
       </div>
     {{ if eq $group.key "store" }}</details>{{ else }}</div>{{ end }}
