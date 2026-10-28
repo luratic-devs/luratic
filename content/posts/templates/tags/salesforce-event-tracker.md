@@ -26,6 +26,8 @@
   "resourceSlug": "salesforce-event-tracker"
 }
 
+**Estado: discontinuada.** Esta integración pertenece al antiguo entorno Krux/Audience Studio. Conservamos esta documentación únicamente como referencia histórica; no se recomienda para nuevas implementaciones.
+
 Plantilla de GTM destinada al píxel de Salesforce para medir audiencias provenientes de campañas de email. La etiqueta expone los campos Event ID y Event Type para definir la información enviada. El archivo del repositorio permite consultar su implementación y permisos.
 
 ## Recursos
