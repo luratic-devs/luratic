@@ -26,15 +26,37 @@
     window.dataLayer.push(payload);
   }
 
-  function updateConsent(granted) {
+  function updateConsent(granted, source) {
     window.dataLayer = window.dataLayer || [];
     window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
-    window.gtag('consent', 'update', {
+
+    var state = {
       analytics_storage: granted ? 'granted' : 'denied',
       ad_storage: 'denied',
       ad_user_data: 'denied',
       ad_personalization: 'denied'
-    });
+    };
+
+    window.gtag('consent', 'update', state);
+
+    window.__luraticConsentState = {
+      mode: 'update',
+      analytics_storage: state.analytics_storage,
+      ad_storage: state.ad_storage,
+      ad_user_data: state.ad_user_data,
+      ad_personalization: state.ad_personalization
+    };
+
+    window.dispatchEvent(new CustomEvent('luratic:consent-change', {
+      detail: {
+        mode: 'update',
+        source: source || 'unknown',
+        analytics_storage: state.analytics_storage,
+        ad_storage: state.ad_storage,
+        ad_user_data: state.ad_user_data,
+        ad_personalization: state.ad_personalization
+      }
+    }));
   }
 
   function save(granted, source) {
@@ -48,7 +70,7 @@
       }));
     } catch (error) {}
 
-    updateConsent(granted);
+    updateConsent(granted, source);
 
     // Let GTM process the consent update before the analytics event.
     // This matters when the custom_event tag requires analytics_storage=granted.
