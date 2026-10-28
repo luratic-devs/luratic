@@ -1,0 +1,8 @@
+{{ define "main" }}
+<section class="shell legacy-document site-privacy-page">
+  <a class="breadcrumb" href="{{ "/" | relLangURL }}">{{ i18n "backHome" }} <span>/</span></a>
+  <div class="legacy-heading"><span class="eyebrow">{{ i18n "privacyInfo" }}</span><h1>{{ .Title }}</h1></div>
+  <article class="prose legacy-prose">{{ .Content }}</article>
+  <button type="button" class="button button-primary site-privacy-settings" data-cookie-manage>{{ i18n "manageCookies" }}</button>
+</section>
+{{ end }}
