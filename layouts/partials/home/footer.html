@@ -1,9 +1,10 @@
+{{ $sitePrivacy := .Site.GetPage "/privacy-site" }}
 <footer class="home-footer">
   <div class="home-shell">
     <div class="home-footer-top">
       <div class="home-footer-about"><a class="home-footer-brand" href="{{ "/" | relLangURL }}"><span>Luratic<span class="brand-dot">.</span></span></a><p>{{ i18n "footerAbout" }}</p></div>
       <nav class="home-footer-links" aria-label="{{ i18n "footerNav" }}"><a href="{{ "/recursos/" | relLangURL }}">{{ i18n "resources" }}</a><a href="{{ "/plantillas/" | relLangURL }}">{{ i18n "templatesGTM" }}</a><a href="{{ "/equipo/" | relLangURL }}">{{ i18n "team" }}</a><a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ i18n "codeOnGithub" }}</a><a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a></nav>
     </div>
-    <div class="home-footer-bottom"><span>© {{ now.Year }} Luratic</span><div><a href="{{ "/privacy-policy/" | relLangURL }}">{{ i18n "privacy" }}</a><button type="button" class="footer-cookie-manage" data-cookie-manage>{{ i18n "manageCookies" }}</button><a href="{{ "/posts/" | relLangURL }}">{{ i18n "documentation" }}</a></div></div>
+    <div class="home-footer-bottom"><span>© {{ now.Year }} Luratic</span><div><a href="{{ with $sitePrivacy }}{{ .RelPermalink }}{{ else }}{{ "/privacy-policy/" | relLangURL }}{{ end }}">{{ i18n "privacy" }}</a><button type="button" class="footer-cookie-manage" data-cookie-manage>{{ i18n "manageCookies" }}</button><a href="{{ "/posts/" | relLangURL }}">{{ i18n "documentation" }}</a></div></div>
   </div>
 </footer>
