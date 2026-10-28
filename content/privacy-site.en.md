@@ -19,9 +19,9 @@ Both services are loaded through Google Tag Manager. The website initializes **G
 
 ## Your choice
 
-On a first visit, analytics storage starts with `analytics_storage: denied`. Advertising-related states (`ad_storage`, `ad_user_data` and `ad_personalization`) remain `denied`.
+On a first visit, analytics storage starts with `analytics_storage: denied`.
 
-You can accept or reject analytics storage from the privacy notice and change your choice at any time through **Cookie settings** in the footer.
+You can accept or reject analytics storage from the privacy notice and change your choice at any time through **Cookie settings** in the footer. Luratic does not use this panel to manage advertising categories.
 
 When you reject, Consent Mode keeps analytics storage denied. Compatible services may perform limited or cookieless measurement according to their behaviour and configuration.
 
