@@ -388,3 +388,42 @@ other = "Our story"
 other = "Journey"
 [footerAbout]
 other = "Curiosity, code and a little common sense. Made in Galicia. Shared with the world."
+
+[viewAllResourcesHome]
+other = "View all %s resources"
+[viewAllWebs]
+other = "View all web tools"
+[viewAllExtensions]
+other = "View all extensions"
+[viewTemplatesHome]
+other = "View all %s GTM templates"
+[searchFullCatalog]
+other = "Search the full catalog"
+[filterChosen]
+other = "You selected “%s”."
+[searchRecorded]
+other = "You searched for “%s”."
+[openToolEvent]
+other = "You clicked to open %s."
+[openDetailEvent]
+other = "You opened the page for %s."
+[hide]
+other = "Hide"
+[viewWords]
+other = "View as text"
+[consentAccepted]
+other = "You accepted analytics in the demo."
+[consentRejected]
+other = "You rejected analytics in the demo."
+[consentDefault]
+other = "Example consent: denied."
+[enteredHome]
+other = "You entered the homepage."
+[homeCountOne]
+other = "%s featured tool"
+[homeCountMany]
+other = "%s featured tools"
+[siteCountOne]
+other = "%s resource to explore"
+[siteCountMany]
+other = "%s resources to explore"
