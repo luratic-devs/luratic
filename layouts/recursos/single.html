@@ -4,28 +4,28 @@
 {{ $hasBrais := in (.Params.contributors | default (slice)) "Brais Calvo" }}
 {{ $hasTOC := ge (len (findRE "<h2" .Content)) 4 }}
 <div class="shell resource-detail">
-  <a class="breadcrumb" href="{{ "/recursos/" | relURL }}">← Todos los recursos</a>
+  <a class="breadcrumb" href="{{ "/recursos/" | relLangURL }}">{{ i18n "backResources" }}</a>
   <div class="detail-heading">
     <div>
-      <span class="eyebrow">{{ if eq .Params.category "extension" }}Extensión para Chrome{{ else if eq .Params.category "template" }}Plantilla de Google Tag Manager{{ else if $isWeb }}Herramienta web{{ else }}Utilidad de analítica{{ end }}</span>
+      <span class="eyebrow">{{ if eq .Params.category "extension" }}{{ i18n "typeExtension" }}{{ else if eq .Params.category "template" }}{{ i18n "typeTemplate" }}{{ else if $isWeb }}{{ i18n "typeWeb" }}{{ else }}{{ i18n "typeUtility" }}{{ end }}</span>
       <h1>{{ .Title }}</h1>
       <p>{{ .Description }}</p>
-      {{ if and $isWeb $hasBrais }}<p class="resource-author">Creada por <a href="{{ "/equipo/brais-calvo/" | relURL }}">Brais Calvo</a>.</p>{{ end }}
-      <div class="tag-list">{{ range .Params.tags }}<span{{ if eq . "Discontinuada" }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
+      {{ if and $isWeb $hasBrais }}<p class="resource-author">{{ i18n "createdBy" }} <a href="{{ "/equipo/brais-calvo/" | relLangURL }}">Brais Calvo</a>.</p>{{ end }}
+      <div class="tag-list">{{ range .Params.tags }}<span{{ if or (eq . "Discontinuada") (eq . "Discontinued") }} class="is-discontinued"{{ end }}>{{ . }}</span>{{ end }}</div>
     </div>
     <div class="detail-symbol accent-{{ .Params.accent }}">{{ partial "icon.html" (.Params.icon | default "code") }}</div>
   </div>
 
   {{ with .Params.releaseNotice }}
-    <aside class="resource-release-notice" role="note" aria-label="Estado de la actualización">
-      <span class="eyebrow">Actualización en revisión</span>
+    <aside class="resource-release-notice" role="note" aria-label="{{ i18n "updateStatus" }}">
+      <span class="eyebrow">{{ i18n "updateReview" }}</span>
       <p>{{ . }}</p>
     </aside>
   {{ end }}
 
   {{ with .Params.discontinuedNotice }}
-    <aside class="resource-release-notice resource-discontinued-notice" role="note" aria-label="Recurso discontinuado">
-      <span class="eyebrow">Discontinuada</span>
+    <aside class="resource-release-notice resource-discontinued-notice" role="note" aria-label="{{ i18n "discontinuedResource" }}">
+      <span class="eyebrow">{{ i18n "discontinued" }}</span>
       <p>{{ . }}</p>
     </aside>
   {{ end }}
@@ -38,38 +38,38 @@
     <article class="prose">
       {{ if $hasTOC }}
         <details class="resource-toc" open>
-          <summary>En esta ficha</summary>
+          <summary>{{ i18n "inThisPage" }}</summary>
           {{ .TableOfContents }}
         </details>
       {{ end }}
       {{ .Content }}
       {{ with .Params.attribution }}
         <div class="credits">
-          <h2>Créditos</h2>
-          {{ if and $isWeb $hasBrais }}<p>Creada por <a href="{{ "/equipo/brais-calvo/" | relURL }}">Brais Calvo</a>.</p>{{ else }}<p>{{ . }}</p>{{ end }}
+          <h2>{{ i18n "credits" }}</h2>
+          {{ if and $isWeb $hasBrais }}<p>{{ i18n "createdBy" }} <a href="{{ "/equipo/brais-calvo/" | relLangURL }}">Brais Calvo</a>.</p>{{ else }}<p>{{ . }}</p>{{ end }}
         </div>
       {{ end }}
     </article>
 
     <aside class="resource-sidebar">
-      <span class="eyebrow">{{ if $isDiscontinued }}Referencia histórica{{ else }}A tu caja de herramientas{{ end }}</span>
-      <h2>{{ if $isDiscontinued }}Código conservado.{{ else }}Empieza por aquí.{{ end }}</h2>
+      <span class="eyebrow">{{ if $isDiscontinued }}{{ i18n "historicalReference" }}{{ else }}{{ i18n "toolbox" }}{{ end }}</span>
+      <h2>{{ if $isDiscontinued }}{{ i18n "preservedCode" }}{{ else }}{{ i18n "startHere" }}{{ end }}</h2>
       {{ if $isWeb }}
-        {{ with .Params.installUrl }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">Abrir herramienta {{ partial "icon.html" "external" }}</a>{{ end }}
+        {{ with .Params.installUrl }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "openTool" }} {{ partial "icon.html" "external" }}</a>{{ end }}
       {{ else if eq .Params.category "extension" }}
-        <a class="button button-primary" href="{{ .Params.installUrl }}" target="_blank" rel="noopener">Añadir a Chrome {{ partial "icon.html" "external" }}</a>
+        <a class="button button-primary" href="{{ .Params.installUrl }}" target="_blank" rel="noopener">{{ i18n "addChrome" }} {{ partial "icon.html" "external" }}</a>
       {{ else }}
-        {{ with .Params.repo }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">{{ if $isDiscontinued }}Ver código histórico{{ else }}Ver en GitHub{{ end }} {{ partial "icon.html" "external" }}</a>{{ end }}
-        {{ if not $isDiscontinued }}{{ with .Params.installUrl }}<a class="button button-outline" href="{{ . }}" target="_blank" rel="noopener">{{ if eq $.Params.category "template" }}Abrir archivo .tpl{{ else }}Abrir recurso{{ end }} {{ partial "icon.html" "download" }}</a>{{ end }}{{ end }}
+        {{ with .Params.repo }}<a class="button button-primary" href="{{ . }}" target="_blank" rel="noopener">{{ if $isDiscontinued }}{{ i18n "viewHistoricalCode" }}{{ else }}{{ i18n "viewOnGithub" }}{{ end }} {{ partial "icon.html" "external" }}</a>{{ end }}
+        {{ if not $isDiscontinued }}{{ with .Params.installUrl }}<a class="button button-outline" href="{{ . }}" target="_blank" rel="noopener">{{ if eq $.Params.category "template" }}{{ i18n "openTpl" }}{{ else }}{{ i18n "openResource" }}{{ end }} {{ partial "icon.html" "download" }}</a>{{ end }}{{ end }}
       {{ end }}
-      {{ with .Params.docsUrl }}<a class="sidebar-link" href="{{ . }}" target="_blank" rel="noopener">Documentación de origen {{ partial "icon.html" "external" }}</a>{{ end }}
-      {{ with .Params.privacyUrl }}<a class="sidebar-link" href="{{ . | relURL }}">Política de privacidad {{ partial "icon.html" "arrow" }}</a>{{ end }}
+      {{ with .Params.docsUrl }}<a class="sidebar-link" href="{{ . }}" target="_blank" rel="noopener">{{ i18n "sourceDocs" }} {{ partial "icon.html" "external" }}</a>{{ end }}
+      {{ with .Params.privacyUrl }}<a class="sidebar-link" href="{{ . | relLangURL }}">{{ i18n "privacyPolicy" }} {{ partial "icon.html" "arrow" }}</a>{{ end }}
       <dl>
-        <div><dt>Plataforma</dt><dd>{{ if eq .Params.category "extension" }}Google Chrome{{ else if eq .Params.category "template" }}Google Tag Manager{{ else if $isWeb }}Navegador web{{ else }}Consulta el repositorio{{ end }}</dd></div>
-        {{ with .Params.license }}<div><dt>Licencia</dt><dd>{{ . }}</dd></div>{{ end }}
-        {{ with .Params.templateType }}<div><dt>Tipo de plantilla</dt><dd>{{ if eq . "variable" }}Variable{{ else }}Etiqueta{{ end }}</dd></div>{{ end }}
+        <div><dt>{{ i18n "platform" }}</dt><dd>{{ if eq .Params.category "extension" }}Google Chrome{{ else if eq .Params.category "template" }}Google Tag Manager{{ else if $isWeb }}{{ i18n "browser" }}{{ else }}{{ i18n "seeRepository" }}{{ end }}</dd></div>
+        {{ with .Params.license }}<div><dt>{{ i18n "license" }}</dt><dd>{{ . }}</dd></div>{{ end }}
+        {{ with .Params.templateType }}<div><dt>{{ i18n "templateType" }}</dt><dd>{{ if eq . "variable" }}{{ i18n "variable" }}{{ else }}{{ i18n "tag" }}{{ end }}</dd></div>{{ end }}
       </dl>
-      {{ if .Params.unofficial }}<p class="sidebar-footnote">{{ if $isWeb }}Proyecto independiente.{{ else }}Integración no oficial.{{ end }} Las marcas mencionadas pertenecen a sus respectivos titulares.</p>{{ end }}
+      {{ if .Params.unofficial }}<p class="sidebar-footnote">{{ if $isWeb }}{{ i18n "independentProject" }}{{ else }}{{ i18n "unofficialIntegration" }}{{ end }} {{ i18n "trademarks" }}</p>{{ end }}
     </aside>
   </div>
 </div>
@@ -77,7 +77,7 @@
 {{ $related := where (where .Site.RegularPages "Section" "recursos") "Params.category" .Params.category }}
 <section class="section related-section">
   <div class="shell">
-    <div class="section-heading"><div><span class="eyebrow">Sigue explorando</span><h2>También te puede servir.</h2></div><a class="text-link" href="{{ "/recursos/" | relURL }}">Ver catálogo {{ partial "icon.html" "arrow" }}</a></div>
+    <div class="section-heading"><div><span class="eyebrow">{{ i18n "keepExploring" }}</span><h2>{{ i18n "alsoUseful" }}</h2></div><a class="text-link" href="{{ "/recursos/" | relLangURL }}">{{ i18n "viewCatalog" }} {{ partial "icon.html" "arrow" }}</a></div>
     <div class="related-grid">{{ range first 3 (where $related "RelPermalink" "ne" .RelPermalink).ByWeight }}{{ partial "project-card.html" . }}{{ end }}</div>
   </div>
 </section>
