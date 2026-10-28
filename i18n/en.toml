@@ -113,7 +113,7 @@ other = "Analytics utility"
 [typeExtensionCard]
 other = "Chrome extension"
 [typeTemplateCard]
-other = "Plantilla GTM"
+other = "GTM template"
 [typeWebCard]
 other = "Web tool"
 [typeUtilityCard]
@@ -153,15 +153,15 @@ other = "Start here."
 [addChrome]
 other = "Add to Chrome"
 [viewHistoricalCode]
-other = "View código histórico"
+other = "View historical code"
 [viewOnGithub]
-other = "View en GitHub"
+other = "View on GitHub"
 [openTpl]
 other = "Open .tpl file"
 [openResource]
 other = "Open resource"
 [sourceDocs]
-other = "Documentation de origen"
+other = "Source documentation"
 [privacyPolicy]
 other = "Privacy policy"
 [platform]
@@ -189,7 +189,7 @@ other = "Keep exploring"
 [alsoUseful]
 other = "You may also find these useful."
 [viewCatalog]
-other = "View catálogo"
+other = "View catalog"
 [behindLuratic]
 other = "Behind Luratic"
 [teamTitle1]
@@ -227,7 +227,7 @@ other = "See my journey"
 [portraitOf]
 other = "Portrait of"
 [opensNewTab]
-other = "se abre in a new tab"
+other = "opens in a new tab"
 [pathHere]
 other = "The path so far"
 [careerProjects]
@@ -237,7 +237,7 @@ other = "Shared knowledge"
 [talks]
 other = "Talks and conversations."
 [viewSource]
-other = "View fuente"
+other = "View source"
 [workAreas]
 other = "Areas of work"
 [moreHere]
@@ -255,15 +255,15 @@ other = "Guides and notes explaining how our templates are used. Browse the reso
 [goCatalog]
 other = "Go to the resource catalog"
 [gtmVariable]
-other = "Variable GTM"
+other = "GTM variable"
 [gtmTag]
-other = "Tag GTM"
+other = "GTM tag"
 [guide]
 other = "Guide"
 [privacyInfo]
 other = "Privacy information"
 [luraticGuide]
-other = "Guide de Luratic"
+other = "Luratic guide"
 [published]
 other = "Published"
 [resourceBanner]
@@ -281,7 +281,7 @@ other = "Demo of"
 [enlargeCapture]
 other = "Enlarge screenshot"
 [fullCapture]
-other = "View captura completa ↗"
+other = "View full screenshot ↗"
 [illustrativeExample]
 other = "Illustrative example"
 [demoSteps]
@@ -299,13 +299,13 @@ other = "Next"
 [videoAndCaptures]
 other = "Video and screenshots of"
 [playVideo]
-other = "Play vídeo"
+other = "Play video"
 [watchDemo]
-other = "View demostración"
+other = "Watch demo"
 [publishedLabel]
 other = "Published"
 [watchYoutube]
-other = "View en YouTube"
+other = "Watch on YouTube"
 [youtubeDisclosure]
 other = "Playing the video loads YouTube."
 [currentCaptures]
@@ -341,7 +341,7 @@ other = "No"
 [yes]
 other = "Yes"
 [showCode]
-other = "View el código"
+other = "View code"
 [featuredFilter]
 other = "Filter featured tools"
 [filterAll]
@@ -357,7 +357,7 @@ other = "Search featured resources"
 [featuredSearchPlaceholder]
 other = "Search by name or by what you need"
 [viewResources]
-other = "View los recursos"
+other = "View resources"
 [featuredTools]
 other = "Featured tools"
 [featuredStatus]
@@ -369,13 +369,13 @@ other = "No featured tools match those filters."
 [featuredEmptyText]
 other = "Try another term or search the full catalog."
 [resetFeatured]
-other = "View todos los destacados"
+other = "View all featured tools"
 [homeNoScript]
 other = "You can open every tool and browse the catalog. Enable JavaScript to use filters and the event demo."
 [visitTicker]
-other = "Your visit, live · demo local"
+other = "Your visit, live · local demo"
 [showVisit]
-other = "View tu visita"
+other = "View your visit"
 [teamHomeTitle]
 other = "We are Brais and Txema"
 [teamHomeText]
@@ -386,3 +386,5 @@ other = "Made in Galicia, open to the world."
 other = "Our story"
 [career]
 other = "Journey"
+[footerAbout]
+other = "Curiosity, code and a little common sense. Made in Galicia. Shared with the world."
