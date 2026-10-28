@@ -16,10 +16,10 @@
   data-label-template="{{ i18n "filterTemplate" }}"
   data-count-one="{{ i18n "homeCountOne" }}"
   data-count-many="{{ i18n "homeCountMany" }}"
-  data-view-all="{{ printf (i18n "viewAllResourcesHome") (len $resources) }}"
+  data-view-all="{{ printf (i18n "viewAllResourcesHome") (printf "%d" (len $resources)) }}"
   data-view-web="{{ i18n "viewAllWebs" }}"
   data-view-extension="{{ i18n "viewAllExtensions" }}"
-  data-view-template="{{ printf (i18n "viewTemplatesHome") (len $templates) }}"
+  data-view-template="{{ printf (i18n "viewTemplatesHome") (printf "%d" (len $templates)) }}"
   data-search-catalog="{{ i18n "searchFullCatalog" }}"
   data-filter-chosen="{{ i18n "filterChosen" }}"
   data-search-recorded="{{ i18n "searchRecorded" }}"
@@ -56,18 +56,18 @@
       </div>
       <button class="home-search-toggle" type="button" data-home-search-toggle aria-label="{{ i18n "searchResources" }}" aria-controls="home-search-wrap" aria-expanded="false">{{ partial "icon.html" "search" }}</button>
       <div class="home-search" id="home-search-wrap">{{ partial "icon.html" "search" }}<label class="sr-only" for="home-search">{{ i18n "featuredSearch" }}</label><input id="home-search" data-home-search type="search" placeholder="{{ i18n "featuredSearchPlaceholder" }}" autocomplete="off"></div>
-      <a class="home-catalog-link home-catalog-desktop" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (len $resources) }}</a>
+      <a class="home-catalog-link home-catalog-desktop" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (printf "%d" (len $resources)) }}</a>
     </div>
     <div class="home-cards-area">
       <h2 class="sr-only">{{ i18n "featuredTools" }}</h2>
-      <p class="sr-only" data-home-result-status role="status">{{ printf (i18n "homeCountMany") (len $homeData.tools) }}</p>
+      <p class="sr-only" data-home-result-status role="status">{{ printf (i18n "homeCountMany") (printf "%d" (len $homeData.tools)) }}</p>
       <div class="home-tool-grid" data-home-grid tabindex="0" role="region" aria-label="{{ i18n "featuredTools" }}">
         {{ range $index, $entry := $homeData.tools }}
           {{ with $.Site.GetPage (printf "/recursos/%s" $entry.slug) }}{{ partial "home-tool.html" (dict "page" . "entry" $entry "featured" (eq $index 0)) }}{{ end }}
         {{ end }}
       </div>
       <div class="home-empty" data-home-empty hidden><h3>{{ i18n "featuredEmpty" }}</h3><p>{{ i18n "featuredEmptyText" }}</p><button type="button" class="home-outline-button" data-home-reset>{{ i18n "resetFeatured" }}</button></div>
-      <a class="home-catalog-link home-catalog-mobile" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (len $resources) }}</a>
+      <a class="home-catalog-link home-catalog-mobile" href="{{ "/recursos/" | relLangURL }}" data-home-catalog-link>{{ printf (i18n "viewAllResourcesHome") (printf "%d" (len $resources)) }}</a>
       <noscript><p>{{ i18n "homeNoScript" }}</p></noscript>
     </div>
     <div class="home-visit-ticker"><span class="home-ticker-dot" aria-hidden="true"></span><span data-home-last-event>{{ i18n "visitTicker" }}</span><button type="button" data-home-panel-toggle aria-controls="home-visit" aria-expanded="false">{{ i18n "showVisit" }}</button></div>
