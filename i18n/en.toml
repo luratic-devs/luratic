@@ -475,3 +475,24 @@ other = "Complementary resources that remain useful without mixing the whole tem
 other = "Templates, in their own place."
 [templateCatalogText]
 other = "The Google Tag Manager catalog brings integrations, status and technical documentation together without burying the main tools."
+
+[supersededCard]
+other = "GTM template · Superseded"
+[supersededResource]
+other = "Superseded template"
+[superseded]
+other = "Superseded"
+[replacement]
+other = "View official alternative"
+[templateTechnical]
+other = "Template technical sheet"
+[templateEndpoint]
+other = "Endpoint"
+[templateFields]
+other = "Configurable fields"
+[officialDocumentation]
+other = "Official documentation"
+[templateScreenshot]
+other = "Template screenshot in GTM"
+[templateScreenshotPending]
+other = "Waiting for a real Google Tag Manager screenshot."
