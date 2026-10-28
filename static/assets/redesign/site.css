@@ -17,3 +17,14 @@
 
 .language-switcher{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:8px;padding:3px}.language-switcher a{display:grid;place-items:center;min-width:32px;height:30px;padding:0 7px;border-radius:5px;font-size:10px;font-weight:800;letter-spacing:.06em;color:var(--muted)}.language-switcher a:hover{color:var(--purple);background:var(--lavender)}.language-switcher a[aria-current="page"]{background:var(--ink);color:#fff}.site-nav>.language-switcher{margin-left:4px}
 @media(max-width:900px){.site-nav>.language-switcher{margin:10px 0 6px;width:max-content}.language-switcher a{min-width:40px;height:36px;font-size:11px}}
+
+/* Resource hierarchy: keep core tools visible and move the GTM archive to its own catalog. */
+.primary-resources{padding-bottom:74px}.primary-resources .section-heading{align-items:flex-start}.primary-resources .section-heading>p{max-width:480px}.primary-resource-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.primary-resource-grid .resource-card{min-height:300px;padding:30px}.primary-resource-grid .resource-card h3{font-size:27px}.primary-resource-grid .resource-card>p{font-size:13px;line-height:1.85}.secondary-resources{border-top:1px solid var(--line);padding-top:38px}.secondary-resources-title{font-size:32px;margin-bottom:8px}.secondary-resources-copy{max-width:610px;font-size:13px;line-height:1.8;margin-bottom:28px}.template-catalog-cta{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-bottom:64px;padding:34px 36px;border:1px solid #d8d1e1;border-radius:18px;background:#efebf6}.template-catalog-cta>div{max-width:680px}.template-catalog-cta .eyebrow{margin-bottom:10px}.template-catalog-cta h2{font-size:29px;margin-bottom:10px}.template-catalog-cta p{font-size:13px;line-height:1.75}.template-catalog-cta .button{flex-shrink:0}
+
+/* Team cards use the same crop so one source photo cannot look circular while the other looks square. */
+.person-photo{align-items:center;padding:22px}.person-photo img{width:min(100%,210px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;object-position:50% 45%}
+
+.footer-legal{display:flex;align-items:center;gap:18px}
+
+@media(max-width:900px){.primary-resource-grid{grid-template-columns:1fr}.template-catalog-cta{align-items:flex-start;flex-direction:column}.template-catalog-cta .button{width:100%}}
+@media(max-width:650px){.primary-resources{padding-bottom:54px}.primary-resource-grid .resource-card{min-height:260px;padding:25px}.secondary-resources-title{font-size:28px}.template-catalog-cta{padding:27px 23px}.person-card{grid-template-columns:38% 1fr}.person-photo{padding:14px}.footer-legal{flex-wrap:wrap;justify-content:flex-end}}
