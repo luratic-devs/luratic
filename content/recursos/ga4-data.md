@@ -1,7 +1,7 @@
 {
   "slug": "ga4-data",
   "category": "web",
-  "description": "Consulta dimensiones, métricas, eventos y límites de GA4, y prepara enlaces de informes, comparaciones y dashboards.",
+  "description": "Chuleta de GA4 para consultar dimensiones, métricas, eventos y parámetros, seguir sus cambios y comprobar dónde están disponibles.",
   "repo": "",
   "installUrl": "https://data.ga4spy.com/",
   "docsUrl": "https://data.ga4spy.com/docs/shadow-api",
@@ -19,7 +19,7 @@
   "contributors": [
     "Brais Calvo"
   ],
-  "title": "GA4 Spy / Data",
+  "title": "GA4 Spy · Cheatsheet",
   "weight": 5,
   "sources": [
     "https://data.ga4spy.com/",
@@ -37,11 +37,11 @@
   "demo": "data"
 }
 
-## Una referencia de GA4 para pasar de la duda al informe
+## La chuleta de GA4
 
-**GA4 Spy / Data**, presentada en la web como **ga4spy/data**, reúne una referencia consultable de dimensiones, métricas, eventos y parámetros de Google Analytics 4. Creada por Brais Calvo, añade herramientas para preparar informes, comparaciones y dashboards mediante enlaces que se abren en GA4.
+**GA4 Spy · Cheatsheet** es la chuleta de GA4 que mantiene Brais Calvo. Reúne en una referencia consultable las **dimensiones, métricas, eventos y parámetros** que Google va publicando para Analytics, junto con sus nombres técnicos, ámbito y disponibilidad en distintas superficies.
 
-Te ayuda cuando reconoces el nombre de un campo en un informe, pero necesitas encontrar su equivalente técnico, entender su ámbito o comprobar dónde está disponible. También sirve para preparar una propuesta de análisis antes de configurarla en la propiedad.
+El proyecto se actualiza a medida que aparecen nuevas dimensiones, métricas o parámetros y conserva un changelog para seguir incorporaciones, cambios y retiradas. Además de la referencia, incluye utilidades para preparar informes, comparaciones y dashboards mediante enlaces que se abren en tu propia sesión de GA4.
 
 ## Encuentra el campo adecuado
 
