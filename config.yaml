@@ -2,9 +2,23 @@ baseURL: https://www.luratic.com/
 title: Luratic
 locale: es-ES
 defaultContentLanguage: es
+defaultContentLanguageInSubdir: false
 enableRobotsTXT: true
 enableGitInfo: false
 disableKinds: [taxonomy, term]
+languages:
+  es:
+    languageCode: es-ES
+    languageName: Español
+    weight: 1
+    title: Luratic
+  en:
+    languageCode: en
+    languageName: English
+    weight: 2
+    title: Luratic
+    params:
+      description: Tools for people who measure. Chrome extensions, Google Tag Manager templates and digital analytics utilities, built and shared from Galicia.
 params:
   description: Herramientas para quienes miden. Extensiones para Chrome, plantillas de Google Tag Manager y utilidades de analítica digital, hechas y compartidas desde Galicia.
   email: info@luratic.com
