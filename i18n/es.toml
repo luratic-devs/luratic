@@ -476,3 +476,24 @@ other = "Recursos complementarios que siguen siendo útiles sin mezclar aquí to
 other = "Las plantillas, en su sitio."
 [templateCatalogText]
 other = "El catálogo de Google Tag Manager reúne las integraciones, su estado y la documentación técnica sin eclipsar las herramientas principales."
+
+[supersededCard]
+other = "Plantilla GTM · Sustituida"
+[supersededResource]
+other = "Plantilla sustituida"
+[superseded]
+other = "Sustituida"
+[replacement]
+other = "Ver alternativa oficial"
+[templateTechnical]
+other = "Ficha técnica de la plantilla"
+[templateEndpoint]
+other = "Endpoint"
+[templateFields]
+other = "Campos configurables"
+[officialDocumentation]
+other = "Documentación oficial"
+[templateScreenshot]
+other = "Captura de la plantilla en GTM"
+[templateScreenshotPending]
+other = "Pendiente de una captura real de Google Tag Manager."
