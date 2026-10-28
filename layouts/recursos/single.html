@@ -79,10 +79,12 @@
           </div>
           {{ end }}
           {{ with $templateDetails.screenshot }}
+          {{ with resources.Get . }}
           <figure class="template-tech-screenshot">
             <figcaption>{{ i18n "templateScreenshot" }}</figcaption>
-            <img src="{{ . | relURL }}" alt="{{ i18n "templateScreenshot" }} · {{ $.Title }}" loading="lazy">
+            <img src="{{ .RelPermalink }}" alt="{{ i18n "templateScreenshot" }} · {{ $.Title }}" loading="lazy" width="{{ .Width }}" height="{{ .Height }}">
           </figure>
+          {{ end }}
           {{ end }}
         </div>
       </section>
