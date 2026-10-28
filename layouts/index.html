@@ -36,7 +36,7 @@
   <div class="home-shell home-stage-inner">
     <div class="home-intro">
       <div class="home-byline"><span class="home-avatars" aria-hidden="true">{{ range $people }}<img src="{{ .Params.photo | relURL }}" alt="" width="36" height="36">{{ end }}</span><span>{{ i18n "homeMadeBy" }}</span></div>
-      <h1 id="titulo-home">{{ i18n "homeTitle" }}<span aria-hidden="true"></span></h1>
+      {{ $homeTitle := i18n "homeTitle" }}<h1 id="titulo-home">{{ strings.TrimSuffix "." $homeTitle }}<span aria-hidden="true">.</span></h1>
       <p>{{ i18n "homeDescription" }}</p>
     </div>
     <aside class="home-visit" id="home-visit" aria-labelledby="home-visit-title" data-home-visit>
