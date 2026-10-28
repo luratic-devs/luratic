@@ -450,3 +450,11 @@
     font-size: 38px;
   }
 }
+
+
+/* Mobile: five featured tools do not need a second horizontal navigation layer. */
+@media (max-width: 759px) {
+  .home-toolbar {
+    display: none;
+  }
+}
