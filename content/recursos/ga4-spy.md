@@ -1,7 +1,7 @@
 {
   "slug": "ga4-spy",
   "category": "web",
-  "description": "Explora la configuración pública de GA4, GTM y Firebase, compara cambios y sigue su evolución desde una sola herramienta.",
+  "description": "Inspecciona IDs de GA4 y audita contenedores GTM publicados sin acceso: configuración, etiquetas, activadores, variables, plantillas, endpoints y cambios.",
   "repo": "",
   "installUrl": "https://ga4spy.com/",
   "docsUrl": "https://ga4spy.com/docs/api",
@@ -36,13 +36,15 @@
   "demo": "spy"
 }
 
-## Entiende qué configuración está publicada
+## Inspecciona GA4 y audita contenedores GTM publicados
 
-GA4 Spy reúne la inspección de **Google Analytics 4, Google Tag Manager y Firebase** en una aplicación web. Puedes partir de una URL, de un identificador de medición o de un contenedor para explorar la configuración pública que recibe el navegador o la aplicación.
+GA4 Spy reúne la inspección de **Google Analytics 4, Google Tag Manager y Firebase** en una aplicación web. Puedes partir de una URL, de un Measurement ID, de un contenedor GTM o de un App ID para revisar la configuración pública que sirve Google sin entrar en la cuenta del proyecto.
 
-Creada por Brais Calvo, ayuda a responder preguntas concretas durante una revisión: qué identificadores carga una web, qué etiquetas contiene un GTM publicado, qué ajustes de medición aparecen en una configuración y qué ha cambiado entre dos versiones observadas.
+En GA4 permite consultar y monitorizar cambios en decenas de ajustes de la configuración: eventos creados y modificados, conversiones, Consent Mode, cross-domain, exclusiones de referencia, Enhanced Measurement o Google tag, entre otros.
 
-La consulta trabaja con configuración pública. No requiere entrar en la cuenta de Analytics o Tag Manager del sitio analizado para leer esa información y no proporciona acceso a sus informes privados de tráfico, usuarios o conversiones.
+En un **contenedor GTM publicado** va bastante más allá de localizar el ID: reconstruye etiquetas, activadores y variables, identifica Custom Templates de la galería, detecta providers y endpoints en Custom HTML, encuentra elementos sin uso y permite monitorizar cambios entre versiones.
+
+La consulta trabaja con información pública y no requiere login ni acceso a Analytics o Tag Manager. Tampoco proporciona acceso a informes privados de tráfico, usuarios o conversiones.
 
 ## Tres formas de investigar
 
@@ -82,4 +84,4 @@ La detección desde una URL también tiene límites: un sitio puede bloquear la 
 
 La [documentación de la API](https://ga4spy.com/docs/api) describe operaciones para inspección, capturas, diferencias y gestión de alertas. También existe [documentación de MCP](https://ga4spy.com/docs/mcp). Consulta sus requisitos de autenticación, plan y disponibilidad antes de diseñar una integración: que una función esté documentada no implica acceso abierto para cualquier cuenta.
 
-GA4 Spy es un proyecto independiente. Para consultar definiciones de campos o preparar informes, puedes continuar en [GA4 Spy / Data](/recursos/ga4-data/).
+GA4 Spy es un proyecto independiente. Para consultar definiciones de campos o preparar informes, puedes continuar en [GA4 Spy · Cheatsheet](/recursos/ga4-data/).
