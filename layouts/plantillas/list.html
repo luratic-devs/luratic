@@ -1,23 +1,23 @@
 {{ define "main" }}
 {{ $templates := where .Site.RegularPages "Params.category" "template" }}
 <section class="page-intro shell">
-  <a class="breadcrumb" href="{{ "/" | relURL }}">Inicio <span>/</span></a>
-  <div class="eyebrow">Código listo para adaptar</div>
-  <h1>Plantillas para<br><span>Google Tag Manager.</span></h1>
-  <p>Plantillas de etiqueta y variable creadas por Luratic para integrar herramientas, compartir implementaciones y evitar empezar de cero.</p>
+  <a class="breadcrumb" href="{{ "/" | relLangURL }}">{{ i18n "backHome" }} <span>/</span></a>
+  <div class="eyebrow">{{ i18n "templatesEyebrow" }}</div>
+  <h1>{{ i18n "templatesTitle1" }}<br><span>Google Tag Manager.</span></h1>
+  <p>{{ i18n "templatesDescription" }}</p>
 </section>
 <section class="catalog-section shell">
   <div class="catalog-meta">
-    <p>{{ len $templates }} plantillas para explorar</p>
-    <span>Creadas para usarlas. Compartidas para mejorarlas.</span>
+    <p>{{ len $templates }} {{ i18n "templatesExplore" }}</p>
+    <span>{{ i18n "templatesCreated" }}</span>
   </div>
-  <h2 class="sr-only">Plantillas para Google Tag Manager</h2>
+  <h2 class="sr-only">{{ i18n "templatesGTM" }}</h2>
   <div class="catalog-grid">
     {{ range $templates.ByWeight }}{{ partial "project-card.html" . }}{{ end }}
   </div>
 </section>
 <section class="shell small-cta">
-  <div><span class="eyebrow">Código abierto</span><h2>¿Tienes una mejora o has encontrado un fallo?</h2></div>
-  <a class="button button-outline" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">Ver GitHub {{ partial "icon.html" "external" }}</a>
+  <div><span class="eyebrow">{{ i18n "openSource" }}</span><h2>{{ i18n "improvementOrBug" }}</h2></div>
+  <a class="button button-outline" href="{{ .Site.Params.github }}" target="_blank" rel="noopener">{{ i18n "viewGithub" }} {{ partial "icon.html" "external" }}</a>
 </section>
 {{ end }}
