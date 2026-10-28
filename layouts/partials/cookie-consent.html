@@ -1,0 +1,37 @@
+<div class="cookie-consent" data-cookie-consent hidden>
+  <section class="cookie-banner" role="dialog" aria-modal="false" aria-labelledby="cookie-title" aria-describedby="cookie-description">
+    <div class="cookie-copy">
+      <span class="eyebrow">{{ i18n "cookieEyebrow" }}</span>
+      <h2 id="cookie-title">{{ i18n "cookieTitle" }}</h2>
+      <p id="cookie-description">{{ i18n "cookieDescription" }}</p>
+      <a href="{{ "/privacy-policy/" | relLangURL }}">{{ i18n "cookiePrivacy" }} {{ partial "icon.html" "arrow" }}</a>
+    </div>
+    <div class="cookie-actions">
+      <button type="button" class="button button-primary" data-cookie-accept>{{ i18n "cookieAccept" }}</button>
+      <button type="button" class="button button-outline" data-cookie-reject>{{ i18n "cookieReject" }}</button>
+      <button type="button" class="cookie-settings-link" data-cookie-open>{{ i18n "cookieSettings" }}</button>
+    </div>
+  </section>
+
+  <section class="cookie-settings" data-cookie-settings hidden role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+    <div class="cookie-settings-card">
+      <div class="cookie-settings-heading">
+        <div><span class="eyebrow">{{ i18n "cookieEyebrow" }}</span><h2 id="cookie-settings-title">{{ i18n "cookieSettingsTitle" }}</h2></div>
+        <button type="button" class="cookie-close" data-cookie-close aria-label="{{ i18n "cookieClose" }}">×</button>
+      </div>
+      <div class="cookie-category cookie-category-essential">
+        <div><strong>{{ i18n "cookieEssentialTitle" }}</strong><p>{{ i18n "cookieEssentialText" }}</p></div>
+        <span>{{ i18n "cookieAlwaysActive" }}</span>
+      </div>
+      <label class="cookie-category cookie-category-toggle">
+        <div><strong>{{ i18n "cookieAnalyticsTitle" }}</strong><p>{{ i18n "cookieAnalyticsText" }}</p></div>
+        <input type="checkbox" data-cookie-analytics>
+        <span class="cookie-switch" aria-hidden="true"></span>
+      </label>
+      <div class="cookie-settings-actions">
+        <button type="button" class="button button-primary" data-cookie-save>{{ i18n "cookieSave" }}</button>
+        <button type="button" class="button button-outline" data-cookie-settings-reject>{{ i18n "cookieReject" }}</button>
+      </div>
+    </div>
+  </section>
+</div>
