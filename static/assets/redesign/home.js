@@ -121,8 +121,8 @@
     empty.hidden = count !== 0;
     grid.hidden = count === 0;
     status.textContent = count + (count === 1 ? ' herramienta destacada' : ' herramientas destacadas');
-    var url = new URL(root.dataset.catalogUrl, window.location.href);
-    if (category !== 'all') url.searchParams.set('tipo', category);
+    var url = new URL(category === 'template' && !query ? root.dataset.templateUrl : root.dataset.catalogUrl, window.location.href);
+    if (category !== 'all' && !(category === 'template' && !query)) url.searchParams.set('tipo', category);
     if (query) url.searchParams.set('q', search.value.trim());
     var labels = {
       all: 'Ver los ' + root.dataset.resourceCount + ' recursos',
