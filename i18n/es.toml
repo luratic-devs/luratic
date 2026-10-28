@@ -467,3 +467,12 @@ other = "Herramientas para medir y depurar"
 other = "Aquí destacamos las webs, extensiones y utilidades de Luratic. Las plantillas de Google Tag Manager tienen su propio catálogo."
 [viewGtmTemplates]
 other = "Explorar las %s plantillas para GTM"
+
+[moreResourcesTitle]
+other = "Más herramientas y utilidades"
+[moreResourcesText]
+other = "Recursos complementarios que siguen siendo útiles sin mezclar aquí todo el archivo de plantillas."
+[templateCatalogTitle]
+other = "Las plantillas, en su sitio."
+[templateCatalogText]
+other = "El catálogo de Google Tag Manager reúne las integraciones, su estado y la documentación técnica sin eclipsar las herramientas principales."
