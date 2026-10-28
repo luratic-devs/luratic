@@ -7,12 +7,13 @@
   "docsUrl": "https://www.luratic.com/en/posts/templates/tags/belboon-performance/",
   "sourceUrl": "https://github.com/luratic/BelboonPerformance/blob/master/template.tpl",
   "tags": [
+    "Discontinued",
     "GTM",
     "Affiliate",
     "Conversions"
   ],
   "featured": false,
-  "status": "published",
+  "status": "discontinued",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez and Brais Calvo.",
@@ -30,7 +31,8 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/belboon-performance/"
+  "legacyDocs": "/posts/templates/tags/belboon-performance/",
+  "discontinuedNotice": "The legacy Belboon platform was shut down on September 30, 2026 after its migration to Daisycon. We keep this template as a historical reference and do not recommend it for new implementations."
 }
 
 ## What it does

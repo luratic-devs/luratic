@@ -1,0 +1,337 @@
+{
+  "kakao": {
+    "endpoint": "https://t1.daumcdn.net/adfit/static/kp.js",
+    "fields": [
+      "Account Id",
+      "Event Type",
+      "Default event",
+      "Naver events",
+      "Payco events"
+    ]
+  },
+  "e-goi": {
+    "endpoint": "https://egoimmerce.e-goi.com/",
+    "fields": [
+      "Events"
+    ]
+  },
+  "tiktok": {
+    "endpoint": "https://analytics.tiktok.com/i18n/pixel/sdk.js",
+    "fields": [
+      "Pixel / SDK ID"
+    ],
+    "officialDocs": "https://ads.tiktok.com/resources/help/article/how-to-set-up-tiktok-pixel-in-google-tag-manager"
+  },
+  "ligatus": {
+    "endpoint": "https://tracking.lqm.io/conversion_event/account/",
+    "fields": [
+      "Account ID"
+    ],
+    "officialDocs": "https://www.outbrain.com/ligatus/"
+  },
+  "hubspot": {
+    "endpoint": "https://js.hs-scripts.com/",
+    "fields": [
+      "Account ID"
+    ]
+  },
+  "snapchat": {
+    "endpoint": "https://sc-static.net/scevent.min.js",
+    "fields": [
+      "Account ID",
+      "Event Name",
+      "Event Parameters",
+      "User Parameters"
+    ],
+    "officialDocs": "https://businesshelp.snapchat.com/s/article/formatting-pixel?language=en_US"
+  },
+  "monetate": {
+    "fields": []
+  },
+  "affocean": {
+    "endpoint": "https://ad.afftrck.com/",
+    "fields": [
+      "Customer ID",
+      "Transaction ID",
+      "Amount"
+    ]
+  },
+  "equalweb": {
+    "endpoint": "https://aacdn.nagich.com/core/2.0.2/accessibility.js",
+    "fields": [
+      "sitekey",
+      "Position",
+      "Menu language",
+      "Button style"
+    ]
+  },
+  "jsdelivr": {
+    "endpoint": "https://cdn.jsdelivr.net",
+    "fields": [
+      "Path or full URL"
+    ]
+  },
+  "weborama": {
+    "endpoint": "https://cstatic.weborama.fr/js/advertiserv2/adperf_conversion.js",
+    "fields": [
+      "Site ID",
+      "fullhost",
+      "Conversion page",
+      "Revenue",
+      "Invoice identifier",
+      "Items number",
+      "Client identifier",
+      "Is client",
+      "Optional parameters"
+    ]
+  },
+  "pushnews": {
+    "endpoint": "https://cdn.pn.vg/sites/",
+    "fields": [
+      "Site ID"
+    ]
+  },
+  "adgravity": {
+    "endpoint": "https://bucket.cdnwebcloud.com/",
+    "fields": [
+      "Account ID"
+    ]
+  },
+  "timestamp": {
+    "fields": []
+  },
+  "adyoulike": {
+    "endpoint": "User-provided script URL",
+    "fields": [
+      "URL Script"
+    ],
+    "officialDocs": "https://www.openweb.com/blog/introducing-openweb-exchange-an-ssp-built-for-openweb-partner-performance/"
+  },
+  "mailerlite": {
+    "endpoint": "https://static.mailerlite.com/js/universal.js",
+    "fields": [
+      "Account",
+      "ID",
+      "Type"
+    ]
+  },
+  "sealmetrics": {
+    "endpoint": "https://app.sealmetrics.com/tag/tracker",
+    "fields": [
+      "Tracker type",
+      "Account ID",
+      "Event type",
+      "Conversion or microconversion name",
+      "Conversion value",
+      "Add _adin parameter",
+      "Advanced configuration",
+      "Debug mode"
+    ],
+    "officialDocs": "https://docs.sealmetrics.com/"
+  },
+  "lucky-orange": {
+    "endpoint": "https://ssl.luckyorange.com/w.js",
+    "fields": [],
+    "officialDocs": "https://help-preview.luckyorange.com/article/272-how-to-place-your-tracking-code-standard-copy-paste"
+  },
+  "join-strings": {
+    "fields": [
+      "Join options",
+      "Separator"
+    ]
+  },
+  "trackingplan": {
+    "endpoint": "https://sdk.trackingplan.com/js/base/trackingplan-latest.min.js",
+    "fields": [
+      "Trackingplan ID",
+      "Environment",
+      "Source alias",
+      "Debug mode",
+      "Privacy encryption",
+      "Tags / custom parameters",
+      "Custom monitored domains",
+      "Data layer getter"
+    ]
+  },
+  "studyportals": {
+    "endpoint": "https://www.clickmeter.com/conversion.aspx",
+    "fields": [
+      "Account ID",
+      "Conversion value",
+      "Conversion commission",
+      "Conversion commission percentage",
+      "Custom conversion parameter",
+      "Debug messages"
+    ]
+  },
+  "apps-referrer": {
+    "fields": []
+  },
+  "document-title": {
+    "fields": []
+  },
+  "encode-to-base64": {
+    "fields": [
+      "Text to encode"
+    ]
+  },
+  "microsoft-clarity": {
+    "endpoint": "https://www.clarity.ms/tag/",
+    "fields": [
+      "Clarity Project ID",
+      "Custom Events",
+      "Custom Tags",
+      "Custom Identifiers",
+      "User ID",
+      "Session ID",
+      "Page ID",
+      "Friendly Name",
+      "Consent / analytics_storage",
+      "Consent / ad_storage",
+      "Prioritize sessions",
+      "Upgrade reason"
+    ],
+    "officialDocs": "https://learn.microsoft.com/en-us/clarity/setup-and-installation/clarity-api",
+    "screenshot": "home/microsoft-clarity.png"
+  },
+  "outbrain-enhanced": {
+    "endpoint": "https://amplify.outbrain.com/cp/obtp.js",
+    "fields": [
+      "Marketer ID (OB_ADV_ID)",
+      "Event",
+      "Additional parameters"
+    ],
+    "officialDocs": "https://www.outbrain.com/help/advertisers/outbrain-pixel-gtm/"
+  },
+  "decode-from-base64": {
+    "fields": [
+      "Text to decode"
+    ]
+  },
+  "amazon-advertising": {
+    "endpoint": "https://aax-eu.amazon-adsystem.com/s/iui3",
+    "fields": [
+      "d",
+      "ex-fargs",
+      "ex-fch",
+      "ex-src",
+      "ex-hargs"
+    ]
+  },
+  "oracle-bluekai-dmp": {
+    "endpoint": "https://tags.bkrtx.com/js/bk-coretag.js",
+    "fields": [
+      "Tracking ID"
+    ]
+  },
+  "linkedin-conversion": {
+    "endpoint": "https://px.ads.linkedin.com/collect/",
+    "fields": [
+      "Partner / Account ID (pid)",
+      "Conversion ID"
+    ],
+    "officialDocs": "https://www.linkedin.com/help/linkedin/answer/a416960"
+  },
+  "belboon-performance": {
+    "endpoint": "Advertiser-configured Belboon tracking domain",
+    "fields": [
+      "Advertiser ID",
+      "Advertiser Domain",
+      "Product Category",
+      "Short Description",
+      "Conversion Target",
+      "Conversion ID",
+      "Net Order Value",
+      "Currency Code"
+    ],
+    "officialDocs": "https://belboon.com/en/"
+  },
+  "landbot-main-library": {
+    "endpoint": "User-provided Landbot SDK URL",
+    "fields": [
+      "Landbot script SDK"
+    ]
+  },
+  "document-character-set": {
+    "fields": []
+  },
+  "cookiebot-consent-mode": {
+    "endpoint": "https://consent.cookiebot.com/uc.js",
+    "fields": [
+      "Cookiebot ID",
+      "Language",
+      "Language Variable",
+      "IAB TCF",
+      "Default Consent State",
+      "Preferences consent",
+      "Statistics / analytics_storage",
+      "Marketing / ad_storage"
+    ]
+  },
+  "belboon-container-tags": {
+    "endpoint": "https://containertags.belboon.de/belboonTag.js.php",
+    "fields": [
+      "ID",
+      "Page Type",
+      "Product Brand",
+      "Category ID",
+      "Order ID",
+      "Products",
+      "Order Transaction Amount"
+    ],
+    "officialDocs": "https://belboon.com/en/"
+  },
+  "fitanalytics-fit-finder": {
+    "endpoint": "https://integrations.fitanalytics.com/shop/",
+    "fields": [
+      "Integration option",
+      "Value"
+    ],
+    "officialDocs": "https://developers.fitanalytics.com/about-fit-finder/"
+  },
+  "salesforce-event-tracker": {
+    "endpoint": "https://beacon.krxd.net/event.gif",
+    "fields": []
+  },
+  "adsmurai-visual-commerce": {
+    "endpoint": "https://assets-cdn.adsmurai.com/adsmurai-tracking.min.js",
+    "fields": []
+  },
+  "salesforce-audience-studio": {
+    "endpoint": "https://cdn.krxd.net/controltag/",
+    "fields": [
+      "Data ID",
+      "Namespace ID",
+      "Route",
+      "Consent flags",
+      "Enable data collection",
+      "Enable analytics",
+      "Enable targeting",
+      "Cross-device linking",
+      "Data sharing",
+      "Re-identification",
+      "Callback function",
+      "Optional parameters",
+      "Debug messages"
+    ]
+  },
+  "ga4-client-id-session-info": {
+    "fields": [
+      "Data to return",
+      "GA4 Measurement ID",
+      "Session Field"
+    ]
+  },
+  "pipedrive-leadbooster-chatbot": {
+    "endpoint": "https://leadbooster-chat.pipedrive.com/assets/loader.js",
+    "fields": [
+      "Base",
+      "Company ID",
+      "Playbook UUID",
+      "Version"
+    ]
+  },
+  "ga4-ecommerce-sin-persistencia": {
+    "fields": []
+  }
+}

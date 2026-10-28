@@ -428,3 +428,72 @@ other = "%s herramientas destacadas"
 other = "%s recurso para explorar"
 [siteCountMany]
 other = "%s recursos para explorar"
+
+[manageCookies]
+other = "Configurar cookies"
+[cookieEyebrow]
+other = "Privacidad"
+[cookieTitle]
+other = "Tú decides qué medimos."
+[cookieDescription]
+other = "Usamos Google Analytics 4 y Microsoft Clarity para entender cómo se usa Luratic y mejorarla. La analítica es opcional; puedes aceptarla, rechazarla o cambiar tu elección cuando quieras."
+[cookiePrivacy]
+other = "Ver política de privacidad"
+[cookieAccept]
+other = "Aceptar analítica"
+[cookieReject]
+other = "Rechazar"
+[cookieSettings]
+other = "Configurar"
+[cookieSettingsTitle]
+other = "Preferencias de cookies"
+[cookieClose]
+other = "Cerrar preferencias"
+[cookieEssentialTitle]
+other = "Necesarias"
+[cookieEssentialText]
+other = "Permiten que la web funcione y guardan tu elección de privacidad."
+[cookieAlwaysActive]
+other = "Siempre activas"
+[cookieAnalyticsTitle]
+other = "Analítica"
+[cookieAnalyticsText]
+other = "Nos ayuda a entender el uso de la web con GA4 y Clarity."
+[cookieSave]
+other = "Guardar preferencias"
+[primaryResourcesTitle]
+other = "Herramientas para medir y depurar"
+[primaryResourcesText]
+other = "Aquí destacamos las webs, extensiones y utilidades de Luratic. Las plantillas de Google Tag Manager tienen su propio catálogo."
+[viewGtmTemplates]
+other = "Explorar las %s plantillas para GTM"
+
+[moreResourcesTitle]
+other = "Más herramientas y utilidades"
+[moreResourcesText]
+other = "Recursos complementarios que siguen siendo útiles sin mezclar aquí todo el archivo de plantillas."
+[templateCatalogTitle]
+other = "Las plantillas, en su sitio."
+[templateCatalogText]
+other = "El catálogo de Google Tag Manager reúne las integraciones, su estado y la documentación técnica sin eclipsar las herramientas principales."
+
+[supersededCard]
+other = "Plantilla GTM · Sustituida"
+[supersededResource]
+other = "Plantilla sustituida"
+[superseded]
+other = "Sustituida"
+[replacement]
+other = "Ver alternativa oficial"
+[templateTechnical]
+other = "Ficha técnica de la plantilla"
+[templateEndpoint]
+other = "Endpoint"
+[templateFields]
+other = "Campos configurables"
+[officialDocumentation]
+other = "Documentación oficial"
+[templateScreenshot]
+other = "Captura de la plantilla en GTM"
+[templateScreenshotPending]
+other = "Pendiente de una captura real de Google Tag Manager."

@@ -427,3 +427,72 @@ other = "%s featured tools"
 other = "%s resource to explore"
 [siteCountMany]
 other = "%s resources to explore"
+
+[manageCookies]
+other = "Cookie settings"
+[cookieEyebrow]
+other = "Privacy"
+[cookieTitle]
+other = "You decide what we measure."
+[cookieDescription]
+other = "We use Google Analytics 4 and Microsoft Clarity to understand how Luratic is used and improve it. Analytics is optional; you can accept it, reject it or change your choice at any time."
+[cookiePrivacy]
+other = "View privacy policy"
+[cookieAccept]
+other = "Accept analytics"
+[cookieReject]
+other = "Reject"
+[cookieSettings]
+other = "Settings"
+[cookieSettingsTitle]
+other = "Cookie preferences"
+[cookieClose]
+other = "Close preferences"
+[cookieEssentialTitle]
+other = "Necessary"
+[cookieEssentialText]
+other = "They keep the site working and store your privacy choice."
+[cookieAlwaysActive]
+other = "Always active"
+[cookieAnalyticsTitle]
+other = "Analytics"
+[cookieAnalyticsText]
+other = "Helps us understand site usage with GA4 and Clarity."
+[cookieSave]
+other = "Save preferences"
+[primaryResourcesTitle]
+other = "Tools for measuring and debugging"
+[primaryResourcesText]
+other = "This section highlights Luratic web tools, extensions and utilities. Google Tag Manager templates have their own catalog."
+[viewGtmTemplates]
+other = "Explore all %s GTM templates"
+
+[moreResourcesTitle]
+other = "More tools and utilities"
+[moreResourcesText]
+other = "Complementary resources that remain useful without mixing the whole template archive into this page."
+[templateCatalogTitle]
+other = "Templates, in their own place."
+[templateCatalogText]
+other = "The Google Tag Manager catalog brings integrations, status and technical documentation together without burying the main tools."
+
+[supersededCard]
+other = "GTM template · Superseded"
+[supersededResource]
+other = "Superseded template"
+[superseded]
+other = "Superseded"
+[replacement]
+other = "View official alternative"
+[templateTechnical]
+other = "Template technical sheet"
+[templateEndpoint]
+other = "Endpoint"
+[templateFields]
+other = "Configurable fields"
+[officialDocumentation]
+other = "Official documentation"
+[templateScreenshot]
+other = "Template screenshot in GTM"
+[templateScreenshotPending]
+other = "Waiting for a real Google Tag Manager screenshot."

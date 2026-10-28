@@ -7,12 +7,13 @@
   "docsUrl": "https://github.com/luratic/TikTok/blob/master/README.md",
   "sourceUrl": "https://github.com/luratic/TikTok/blob/master/template.tpl",
   "tags": [
+    "Superseded",
     "GTM",
     "Advertising",
     "TikTok"
   ],
   "featured": false,
-  "status": "published",
+  "status": "superseded",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez and Brais Calvo.",
@@ -30,7 +31,9 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/tiktok/"
+  "legacyDocs": "/posts/templates/tags/tiktok/",
+  "replacementNotice": "TikTok now provides an official integration for installing and configuring TikTok Pixel through Google Tag Manager. We keep this template as a reference, but recommend the official integration for new implementations.",
+  "replacementUrl": "https://ads.tiktok.com/resources/help/article/how-to-set-up-tiktok-pixel-in-google-tag-manager"
 }
 
 ## What it does

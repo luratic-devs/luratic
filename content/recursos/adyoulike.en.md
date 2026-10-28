@@ -7,12 +7,13 @@
   "docsUrl": "https://www.luratic.com/en/posts/templates/tags/adyoulike/",
   "sourceUrl": "https://github.com/luratic/Adyoulike/blob/master/template.tpl",
   "tags": [
+    "Superseded",
     "GTM",
     "Advertising",
     "Adyoulike"
   ],
   "featured": false,
-  "status": "published",
+  "status": "superseded",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez and Brais Calvo.",
@@ -30,7 +31,9 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/adyoulike/"
+  "legacyDocs": "/posts/templates/tags/adyoulike/",
+  "replacementNotice": "ADYOULIKE is now part of OpenWeb and its advertising technology is integrated into OpenWeb Exchange. We keep this template —which loads a provider-supplied script URL— as a historical reference; for new implementations, review OpenWeb Exchange.",
+  "replacementUrl": "https://www.openweb.com/openweb-exchange/"
 }
 
 ## What it does

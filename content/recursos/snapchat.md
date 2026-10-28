@@ -7,12 +7,13 @@
   "docsUrl": "https://www.luratic.com/posts/templates/tags/snapchat/",
   "sourceUrl": "https://github.com/luratic/Snapchat/blob/master/template.tpl",
   "tags": [
+    "Sustituida",
     "GTM",
     "Publicidad",
     "Snapchat"
   ],
   "featured": false,
-  "status": "published",
+  "status": "superseded",
   "license": "Apache-2.0",
   "unofficial": false,
   "attribution": "Alfonso Rodríguez, Txema Sánchez y Brais Calvo.",
@@ -29,7 +30,9 @@
   ],
   "icon": "code",
   "accent": "violet",
-  "legacyDocs": "/posts/templates/tags/snapchat/"
+  "legacyDocs": "/posts/templates/tags/snapchat/",
+  "replacementNotice": "Snapchat recomienda actualmente su plantilla oficial Snap Pixel by Snapchat para Google Tag Manager. Conservamos esta plantilla como referencia, pero recomendamos la alternativa oficial para nuevas implementaciones.",
+  "replacementUrl": "https://businesshelp.snapchat.com/s/article/formatting-pixel?language=en_US"
 }
 
 ## Qué puedes hacer
