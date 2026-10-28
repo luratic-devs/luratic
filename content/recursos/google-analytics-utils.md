@@ -30,7 +30,6 @@
   "accent": "violet",
   "legacyDocs": "",
   "demo": "utils",
-  "releaseNotice": "La actualización está pendiente de aprobación en Chrome Web Store. La versión disponible para instalar puede no incluir todavía todas las mejoras descritas.",
   "privacyUrl": "/google-analytics-utils/privacy-policy/"
 }
 
@@ -38,7 +37,7 @@
 
 Google Analytics UTILS reúne controles para depurar GA4, gestionar la carga de Google Tag Manager y Google tag y probar configuraciones en la página que estás revisando. Permite elegir un destino de pruebas, detener solicitudes o activar el modo de depuración.
 
-Esta ficha describe la actualización **0.7.1**, pendiente de aprobación. La ficha pública consultada aún ofrece **0.5**; comprueba la versión de la tienda al preparar tu entorno.
+La actualización **0.7.1** ya está publicada en Chrome Web Store. Esta ficha describe la versión disponible actualmente.
 
 ## Debug Mode: sigue una interacción hasta su evento
 
