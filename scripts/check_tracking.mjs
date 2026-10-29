@@ -5,7 +5,7 @@ import { join, relative, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import vm from 'node:vm';
 
-const GTM_URL = 'https://analytics.luratic.com/gtm.js?id=GTM-5D7RV9H';
+const GTM_URL = 'https://analytics.luratic.com/WoOxuE041FMahHgD?id=GTM-5D7RV9H';
 const MARKERS = /analytics\.luratic\.com\/gtm\.js|custom_page_view|GTM-5D7RV9H/i;
 // This route remains untracked after moving its original static HTML into Hugo.
 const NO_TRACKING_POLICIES = new Set([
