@@ -6,7 +6,7 @@ import { parseArgs } from 'node:util';
 import vm from 'node:vm';
 
 const GTM_URL = 'https://analytics.luratic.com/WoOxuE041FMahHgD?id=GTM-5D7RV9H';
-const MARKERS = /analytics\.luratic\.com\/gtm\.js|custom_page_view|GTM-5D7RV9H/i;
+const MARKERS = /analytics\.luratic\.com\/WoOxuE041FMahHgD|custom_page_view|GTM-5D7RV9H/i;
 // This route remains untracked after moving its original static HTML into Hugo.
 const NO_TRACKING_POLICIES = new Set([
   'google-analytics-utils/privacy-policy/index.html',
