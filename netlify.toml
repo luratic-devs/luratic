@@ -5,7 +5,7 @@ publish = "public"
 [build.environment]
 HUGO_VERSION = "0.168.0"
 HUGO_ENV = "production"
-NODE_VERSION = "20"
+NODE_VERSION = "24"
 
 [context.deploy-preview]
 command = "hugo --gc --minify --environment preview -b \"$DEPLOY_PRIME_URL\" && python3 scripts/check_privacy.py && node scripts/check_tracking.mjs --preview"
