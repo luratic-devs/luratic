@@ -5,8 +5,8 @@ import { join, relative, resolve } from 'node:path';
 import { parseArgs } from 'node:util';
 import vm from 'node:vm';
 
-const GTM_URL = 'https://analytics.luratic.com/WoOxuE041FMahHgD?id=GTM-5D7RV9H';
-const MARKERS = /analytics\.luratic\.com\/WoOxuE041FMahHgD|custom_page_view|GTM-5D7RV9H/i;
+const GTM_URL = 'https://analytics.luratic.com/WoOxuE041FMahHgD/';
+const MARKERS = /analytics\.luratic\.com\/WoOxuE041FMahHgD\/|custom_page_view|GTM-5D7RV9H/i;
 // This route remains untracked after moving its original static HTML into Hugo.
 const NO_TRACKING_POLICIES = new Set([
   'google-analytics-utils/privacy-policy/index.html',
@@ -78,7 +78,7 @@ function checkProduction(html, filename) {
     }
   }
 
-  const gtmLoads = loads.filter(({ url }) => /(?:^|\/)gtm\.js(?:[?#]|$)/i.test(url));
+  const gtmLoads = loads.filter(({ url }) => url === GTM_URL);
   if (gtmLoads.length !== 1 || gtmLoads[0].url !== GTM_URL) {
     throw new Error(`se esperaba una única carga de ${GTM_URL}; detectadas: ${JSON.stringify(gtmLoads.map(({ url }) => url))}`);
   }
