@@ -238,7 +238,7 @@ No se necesitan paquetes de Python ni otra instalación: el script usa la biblio
 
 Un cambio deliberado de una política requiere revisar su contenido, su URL y su HTML generado, y actualizar expresamente las huellas correspondientes en `POLICIES`, dentro del script, en el mismo cambio revisado. No se regeneran las huellas automáticamente para hacer pasar una compilación. Este control verifica la conservación de documentos y direcciones; **no certifica la validez legal de las políticas**.
 
-El contenedor existente es `GTM-5D7RV9H`, cargado desde `https://analytics.luratic.com/WoOxuE041FMahHgD/`. La medición conserva el evento `custom_page_view` y los objetos `page` y `context`, dentro de `head` como en la web original. Su carga queda limitada al entorno `production` y al dominio canónico configurado: local, preview de Sites, Deploy Previews y despliegues de rama no deben enviar esas visitas a la medición real. La página de privacidad de UTILS lleva `noTracking: true` y permanece sin GTM incluso en producción, conservando el comportamiento del HTML original.
+El contenedor existente es `GTM-5D7RV9H`, cargado desde `https://analytics.luratic.com/gtm.js?id=GTM-5D7RV9H`. La medición conserva el evento `custom_page_view` y los objetos `page` y `context`, dentro de `head` como en la web original. Su carga queda limitada al entorno `production` y al dominio canónico configurado: local, preview de Sites, Deploy Previews y despliegues de rama no deben enviar esas visitas a la medición real. La página de privacidad de UTILS lleva `noTracking: true` y permanece sin GTM incluso en producción, conservando el comportamiento del HTML original.
 
 Para comprobar los HTML generados, ejecuta el modo correspondiente sobre cada directorio de salida:
 
